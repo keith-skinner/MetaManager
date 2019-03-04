@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">MetaManager</string>
+    <string name="app_name">mymockups</string>
+    <string name="build_page_title">Build Page</string>
+    <string name="build_name">Character: Role</string>
+    <string name="rune_selection">Rune Selection</string>
+    <string name="summoner_selection">Summoner Selection</string>
+    <string name="start_items">Start Items</string>
+    <string name="start_skill">Start Skill</string>
+    <string name="enter_name">Character Name</string>
+    <string name="enter_role">Character Role</string>
+    <string name="custom_build_name">Custom Build Name</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="custom_build">Custom Build</string>
+    <string name="build_page">Build Page</string>
+    <string name="select">Select</string>
 </resources>
