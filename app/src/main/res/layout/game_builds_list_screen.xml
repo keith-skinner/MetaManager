@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".GameList">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:padding="0dp"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="241dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:autoText="true"
+        android:text="GAME BUILDS"
+        android:textColor="@android:color/background_light"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/colorPrimaryDark"
+        android:rotation="90"
+        app:layout_constraintEnd_toStartOf="@+id/header"
+        app:layout_constraintHorizontal_bias="0.16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/arrow_down_float" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="2dp"
+        android:background="@color/colorPrimaryDark"
+        android:rotation="90"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar"
+        app:layout_constraintHorizontal_bias="0.836"
+        app:layout_constraintStart_toEndOf="@+id/header"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_media_pause" />
+
+
+    <ScrollView
+        android:id="@+id/ScrollView01"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:scrollbarSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp">
+
+        <RelativeLayout
+            android:id="@+id/RelativeLayout01"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <LinearLayout
+                android:id="@+id/game_list_layout_col_0"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="3dp"
+                android:layout_marginRight="6dp"
+                android:layout_toStartOf="@+id/game_list_layout_col_0"
+                android:layout_toLeftOf="@+id/game_list_layout_col_0">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="135dp"
+                        android:layout_margin="20dp"
+                        android:background="@color/background"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <EditText
+                            android:id="@+id/build_title"
+                            android:layout_width="140dp"
+
+                            android:layout_height="71dp"
+                            android:layout_margin="1dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginRight="1dp"
+                            android:autoText="false"
+                            android:clickable="false"
+                            android:cursorVisible="false"
+                            android:ems="0"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:gravity="center"
+                            android:inputType="textPersonName"
+                            android:text="BUILD NAME"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/descrip"
+                            android:layout_width="140dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="descrip" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="135dp"
+                        android:layout_margin="20dp"
+                        android:background="@color/background"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <EditText
+                            android:id="@+id/build_title"
+                            android:layout_width="140dp"
+
+                            android:layout_height="71dp"
+                            android:layout_margin="1dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginRight="1dp"
+                            android:autoText="false"
+                            android:clickable="false"
+                            android:cursorVisible="false"
+                            android:ems="0"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:gravity="center"
+                            android:inputType="textPersonName"
+                            android:text="BUILD NAME"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/descrip"
+                            android:layout_width="140dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="descrip" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="135dp"
+                        android:layout_margin="20dp"
+                        android:background="@color/background"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <EditText
+                            android:id="@+id/build_title"
+                            android:layout_width="140dp"
+
+                            android:layout_height="71dp"
+                            android:layout_margin="1dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginRight="1dp"
+                            android:autoText="false"
+                            android:clickable="false"
+                            android:cursorVisible="false"
+                            android:ems="0"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:gravity="center"
+                            android:inputType="textPersonName"
+                            android:text="BUILD NAME"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/descrip"
+                            android:layout_width="140dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="descrip" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="135dp"
+                        android:layout_margin="20dp"
+                        android:background="@color/background"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <EditText
+                            android:id="@+id/build_title"
+                            android:layout_width="140dp"
+
+                            android:layout_height="71dp"
+                            android:layout_margin="1dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginRight="1dp"
+                            android:autoText="false"
+                            android:clickable="false"
+                            android:cursorVisible="false"
+                            android:ems="0"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:gravity="center"
+                            android:inputType="textPersonName"
+                            android:text="BUILD NAME"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/descrip"
+                            android:layout_width="140dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="descrip" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="135dp"
+                        android:layout_margin="20dp"
+                        android:background="@color/background"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <EditText
+                            android:id="@+id/build_title"
+                            android:layout_width="140dp"
+
+                            android:layout_height="71dp"
+                            android:layout_margin="1dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginRight="1dp"
+                            android:autoText="false"
+                            android:clickable="false"
+                            android:cursorVisible="false"
+                            android:ems="0"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:gravity="center"
+                            android:inputType="textPersonName"
+                            android:text="BUILD NAME"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/descrip"
+                            android:layout_width="140dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="descrip" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/game_list_layout_col_0"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="6dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="135dp"
+                        android:layout_margin="20dp"
+                        android:background="@color/background"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <EditText
+                            android:id="@+id/build_title"
+                            android:layout_width="140dp"
+
+                            android:layout_height="71dp"
+                            android:layout_margin="1dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginRight="1dp"
+                            android:autoText="false"
+                            android:clickable="false"
+                            android:cursorVisible="false"
+                            android:ems="0"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:gravity="center"
+                            android:inputType="textPersonName"
+                            android:text="BUILD NAME"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/descrip"
+                            android:layout_width="140dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="descrip" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="135dp"
+                        android:layout_margin="20dp"
+                        android:background="@color/background"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <EditText
+                            android:id="@+id/build_title"
+                            android:layout_width="140dp"
+
+                            android:layout_height="71dp"
+                            android:layout_margin="1dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginRight="1dp"
+                            android:autoText="false"
+                            android:clickable="false"
+                            android:cursorVisible="false"
+                            android:ems="0"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:gravity="center"
+                            android:inputType="textPersonName"
+                            android:text="BUILD NAME"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/descrip"
+                            android:layout_width="140dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="descrip" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="135dp"
+                        android:layout_margin="20dp"
+                        android:background="@color/background"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <EditText
+                            android:id="@+id/build_title"
+                            android:layout_width="140dp"
+
+                            android:layout_height="71dp"
+                            android:layout_margin="1dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginRight="1dp"
+                            android:autoText="false"
+                            android:clickable="false"
+                            android:cursorVisible="false"
+                            android:ems="0"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:gravity="center"
+                            android:inputType="textPersonName"
+                            android:text="BUILD NAME"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/descrip"
+                            android:layout_width="140dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="descrip" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="135dp"
+                        android:layout_margin="20dp"
+                        android:background="@color/background"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <EditText
+                            android:id="@+id/build_title"
+                            android:layout_width="140dp"
+
+                            android:layout_height="71dp"
+                            android:layout_margin="1dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginRight="1dp"
+                            android:autoText="false"
+                            android:clickable="false"
+                            android:cursorVisible="false"
+                            android:ems="0"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:gravity="center"
+                            android:inputType="textPersonName"
+                            android:text="BUILD NAME"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/descrip"
+                            android:layout_width="140dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="descrip" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="135dp"
+                        android:layout_margin="20dp"
+                        android:background="@color/background"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <EditText
+                            android:id="@+id/build_title"
+                            android:layout_width="140dp"
+
+                            android:layout_height="71dp"
+                            android:layout_margin="1dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginRight="1dp"
+                            android:autoText="false"
+                            android:clickable="false"
+                            android:cursorVisible="false"
+                            android:ems="0"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:gravity="center"
+                            android:inputType="textPersonName"
+                            android:text="BUILD NAME"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/descrip"
+                            android:layout_width="140dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="descrip" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</android.support.constraint.ConstraintLayout>
