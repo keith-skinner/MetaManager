@@ -110,7 +110,7 @@
                         android:layout_height="100dp"
                         android:layout_margin="10dp"
                         android:layout_weight="1"
-                        android:background="@drawable/megumin_hat_place_holder"
+                        android:background="@drawable/league_of_legens_icon"
                         tools:srcCompat="@tools:sample/avatars" />
 
 
@@ -126,9 +126,11 @@
                         android:focusable="false"
                         android:focusableInTouchMode="false"
                         android:inputType="textPersonName"
-                        android:text="Game Title . . ."
+                        android:text="@string/game_title_string"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        tools:text="League of Legends" />
 
                 </LinearLayout>
 
@@ -146,10 +148,9 @@
                         android:layout_height="100dp"
                         android:layout_margin="10dp"
                         android:adjustViewBounds="false"
-                        android:background="@drawable/megumin_hat_place_holder"
-                        tools:srcCompat="@tools:sample/avatars"
+                        android:background="@drawable/diablo_3_icon"
                         tools:onClick="@android:string/ok"
-                        />
+                        tools:srcCompat="@tools:sample/avatars" />
 
 
                     <EditText
@@ -164,9 +165,10 @@
                         android:focusable="false"
                         android:focusableInTouchMode="false"
                         android:inputType="textPersonName"
-                        android:text="Game Title . . ."
+                        android:text="@string/game_title_string"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        tools:text="Diablo 3" />
 
                 </LinearLayout>
 
@@ -184,7 +186,7 @@
                         android:layout_height="100dp"
                         android:layout_margin="10dp"
                         android:adjustViewBounds="false"
-                        android:background="@drawable/megumin_hat_place_holder"
+                        android:background="@drawable/hearthstone_icon"
                         tools:srcCompat="@tools:sample/avatars" />
 
 
@@ -200,9 +202,10 @@
                         android:focusable="false"
                         android:focusableInTouchMode="false"
                         android:inputType="textPersonName"
-                        android:text="Game Title . . ."
+                        android:text="@string/game_title_string"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        tools:text="Hearthstone" />
 
                 </LinearLayout>
 
@@ -220,7 +223,7 @@
                         android:layout_height="100dp"
                         android:layout_margin="10dp"
                         android:adjustViewBounds="false"
-                        android:background="@drawable/megumin_hat_place_holder"
+                        android:background="@drawable/dota_2_icon"
                         tools:srcCompat="@tools:sample/avatars" />
 
 
@@ -236,9 +239,10 @@
                         android:focusable="false"
                         android:focusableInTouchMode="false"
                         android:inputType="textPersonName"
-                        android:text="Game Title . . ."
+                        android:text="@string/game_title_string"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        tools:text="Dota 2" />
 
                 </LinearLayout>
 
@@ -256,7 +260,7 @@
                         android:layout_height="100dp"
                         android:layout_margin="10dp"
                         android:adjustViewBounds="false"
-                        android:background="@drawable/megumin_hat_place_holder"
+                        android:background="@drawable/starcraft_2_icon"
                         tools:srcCompat="@tools:sample/avatars" />
 
 
@@ -272,9 +276,10 @@
                         android:focusable="false"
                         android:focusableInTouchMode="false"
                         android:inputType="textPersonName"
-                        android:text="Game Title . . ."
+                        android:text="@string/game_title_string"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        tools:text="Starcraft 2" />
 
                 </LinearLayout>
 
@@ -292,7 +297,7 @@
                         android:layout_height="100dp"
                         android:layout_margin="10dp"
                         android:adjustViewBounds="false"
-                        android:background="@drawable/megumin_hat_place_holder"
+                        android:background="@drawable/path_of_exile_icon"
                         tools:srcCompat="@tools:sample/avatars" />
 
 
@@ -308,9 +313,10 @@
                         android:focusable="false"
                         android:focusableInTouchMode="false"
                         android:inputType="textPersonName"
-                        android:text="Game Title . . ."
+                        android:text="@string/game_title_string"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        tools:text="Path Of Exile" />
 
                 </LinearLayout>
 
@@ -344,9 +350,10 @@
                         android:focusable="false"
                         android:focusableInTouchMode="false"
                         android:inputType="textPersonName"
-                        android:text="Game Title . . ."
+                        android:text="@string/game_title_string"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        tools:text="Megumin Hat" />
 
                 </LinearLayout>
 

@@ -6,10 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.ImageButton;
-
-import static pocketspace.metamanager.R.id.gameImgBttn;
 
 public class GameList extends AppCompatActivity {
 
@@ -44,12 +41,12 @@ public class GameList extends AppCompatActivity {
         boolean isFirstXml=evaluatingConditionFunction();
         LayoutInflater inflator=getLayoutInflater();
 //        View view=inflator.inflate(isFirstXml?R.layout.myfirstxml:R.layout.myseconxml, null, false);
-        v = inflator.inflate(isFirstXml?R.layout.game_builds_list_screen:R.layout.game_list_screen, null, false);
+        v = inflator.inflate(isFirstXml ? R.layout.builds_list_screen : R.layout.game_list_screen, null, false);
         v.startAnimation(AnimationUtils.loadAnimation(this, android.R.anim.slide_out_right));
         setContentView(v);
 
         // old sol:
-//        setContentView(R.layout.game_builds_list_screen);
+//        setContentView(R.layout.builds_list_screen);
     }
 
     private boolean evaluatingConditionFunction() {
