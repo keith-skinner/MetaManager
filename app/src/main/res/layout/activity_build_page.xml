@@ -25,12 +25,10 @@
         android:id="@+id/imageButton2"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_alignBottom="@+id/imageButton"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="0dp"
         android:layout_marginEnd="0dp"
-        android:layout_marginBottom="0dp"
         app:srcCompat="@drawable/hamburger" />
 
     <TextView
@@ -40,7 +38,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="78dp"
-        android:fontFamily="@font/advent_pro_thin"
+        android:fontFamily="sans-serif"
         android:text="@string/build_name"
         android:textColor="@color/white"
         android:textSize="36sp" />
@@ -55,7 +53,7 @@
         android:layout_marginStart="128dp"
         android:layout_marginTop="169dp"
         android:layout_marginEnd="126dp"
-        android:fontFamily="@font/advent_pro_thin"
+        android:fontFamily="sans-serif"
         android:text="@string/rune_selection"
         android:textColor="@color/white"
         android:textSize="18sp" />
@@ -67,7 +65,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="229dp"
-        android:fontFamily="@font/advent_pro_thin"
+        android:fontFamily="sans-serif"
         android:text="@string/summoner_selection"
         android:textColor="@color/white"
         android:textSize="18sp" />
@@ -78,9 +76,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="45dp"
         android:layout_marginBottom="99dp"
-        android:fontFamily="@font/advent_pro_thin"
+        android:fontFamily="sans-serif"
         android:text="@string/start_items"
         android:textColor="@color/white"
         android:textSize="18sp" />
@@ -93,20 +91,10 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="-1dp"
         android:layout_marginEnd="48dp"
-        android:fontFamily="@font/advent_pro_thin"
+        android:fontFamily="sans-serif"
         android:text="@string/start_skill"
         android:textColor="@color/white"
         android:textSize="18sp" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="-20dp"
-        android:layout_marginTop="208dp"
-        android:layout_toEndOf="@+id/imageButton"
-        app:srcCompat="@android:drawable/sym_def_app_icon" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -128,21 +116,13 @@
         app:srcCompat="@android:drawable/sym_def_app_icon" />
 
     <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/imageView"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="138dp"
-        app:srcCompat="@android:drawable/sym_def_app_icon" />
-
-    <ImageView
         android:id="@+id/imageView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/imageView2"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="142dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="135dp"
         app:srcCompat="@android:drawable/sym_def_app_icon" />
 
     <ImageView
@@ -150,19 +130,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="-26dp"
-        android:layout_marginBottom="141dp"
+        android:layout_marginStart="-39dp"
+        android:layout_marginBottom="134dp"
         android:layout_toEndOf="@+id/textView"
-        app:srcCompat="@android:drawable/sym_def_app_icon" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="-8dp"
-        android:layout_marginBottom="9dp"
-        android:layout_toEndOf="@+id/imageButton"
         app:srcCompat="@android:drawable/sym_def_app_icon" />
 
     <ImageView
@@ -182,9 +152,39 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="3dp"
-        android:fontFamily="@font/advent_pro_thin"
+        android:fontFamily="sans-serif"
         android:text="@string/build_page"
         android:textColor="@color/white"
         android:textSize="36sp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView6"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="209dp"
+        android:src="@android:drawable/sym_def_app_icon" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-47dp"
+        android:layout_marginBottom="137dp"
+        android:layout_toStartOf="@+id/textView"
+        android:src="@android:drawable/sym_def_app_icon" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="53dp"
+        android:layout_marginBottom="15dp"
+        android:src="@android:drawable/sym_def_app_icon" />
 
 </RelativeLayout>
