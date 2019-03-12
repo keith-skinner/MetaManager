@@ -2,10 +2,12 @@ package pocketspace.metamanager;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class ChampionScreen extends AppCompatActivity {
 
@@ -18,6 +20,10 @@ public class ChampionScreen extends AppCompatActivity {
     }
 
     public void addListenerOnButton() {
+        Toast toast = Toast.makeText(getApplicationContext(), "some message", Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+        toast.show();
+
         ImageButton img = findViewById(R.id.jaxBttn);
         img.setOnClickListener(this::myFancyMethod);
     }
