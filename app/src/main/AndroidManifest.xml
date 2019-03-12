@@ -32,6 +32,10 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".CustomBuild"></activity>
+        <activity android:name=".BuildPage"></activity>
+        <activity android:name=".RuneSelect"></activity>
+
 
     </application>
 
