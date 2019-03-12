@@ -29,7 +29,7 @@
                 android:id="@+id/imageView7"
                 android:layout_width="match_parent"
                 android:layout_height="159dp"
-                android:src="@drawable/Jax_0" />
+                android:src="@drawable/jax_0" />
 
             <TextView
                 android:id="@+id/textView5"
@@ -80,7 +80,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:src="@drawable/Domination_splash_art" />
+                    android:src="@drawable/domination_splash_art" />
 
             </LinearLayout>
 
@@ -134,7 +134,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="143dp"
                     android:layout_weight="1"
-                    android:src="@drawable/Flash" />
+                    android:src="@drawable/flash" />
 
                 <ImageView
                     android:id="@+id/imageView17"
@@ -194,7 +194,7 @@
                     android:layout_width="343dp"
                     android:layout_height="164dp"
                     android:layout_weight="1"
-                    android:src="@drawable/Refillable_Potion_Old" />
+                    android:src="@drawable/refillable_potion_old" />
 
             </LinearLayout>
 
