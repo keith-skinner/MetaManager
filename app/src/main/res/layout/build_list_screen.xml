@@ -6,7 +6,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    android:id="@+id/drawer_layout">
 
     <!-- Layout to contian contents of main body of screen -->
     <include layout="@layout/build_list_content"

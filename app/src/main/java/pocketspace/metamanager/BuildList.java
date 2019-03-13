@@ -13,7 +13,8 @@ import android.support.v7.widget.Toolbar;
 
 public class BuildList extends AppCompatActivity
 {
-    Button buildButton;
+    private Button buildButton;
+    private Button customButton;
 
     private DrawerLayout mDrawerLayout;
 
@@ -27,13 +28,18 @@ public class BuildList extends AppCompatActivity
         buildButton = findViewById(R.id.demojungle);
         buildButton.setOnClickListener(v -> OpenBuildPage());
 
+        customButton = findViewById(R.id.customBtn);
+        customButton.setOnClickListener(v -> OpenCustomPage());
+
         Toolbar toolbar = findViewById(R.id.toolbar);
+
         this.setSupportActionBar(toolbar);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(R.string.build_list_activity_header);
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.ic_nav_menu);
+
 
         mDrawerLayout = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);

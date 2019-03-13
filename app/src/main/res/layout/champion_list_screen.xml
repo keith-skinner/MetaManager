@@ -95,7 +95,7 @@
                         android:orientation="vertical">
 
                         <ImageButton
-                            android:id="@+id/jaxBttn"
+                            android:id="@+id/jaxBtn"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"

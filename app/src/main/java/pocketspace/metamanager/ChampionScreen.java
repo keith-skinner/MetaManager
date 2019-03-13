@@ -22,27 +22,12 @@ public class ChampionScreen extends AppCompatActivity {
         setContentView(R.layout.champion_list_screen);
 
         //addListenerOnButton();
-        img = findViewById(R.id.jaxBttn);
+        img = findViewById(R.id.jaxBtn);
 
-        img.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                OpenBuildSelection();
-            }
-        });
+        img.setOnClickListener(v->OpenBuildSelection());
     }
 
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
+
 
     public void OpenBuildSelection()
     {

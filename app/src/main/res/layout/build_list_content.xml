@@ -229,6 +229,7 @@
                         android:padding="10dp">
 
                         <Button
+                            android:id="@+id/customBtn"
                             android:layout_width="match_parent"
                             android:layout_height="119dp"
                             android:layout_weight="1"
