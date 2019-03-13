@@ -18,7 +18,7 @@
         android:background="@color/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:padding="0dp"
-        android:theme="?attr/actionBarTheme"
+        android:theme="?android:attr/actionBarTheme"
         app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -340,6 +340,9 @@
 
             </LinearLayout>
         </RelativeLayout>
+
+
+
 
     </ScrollView>
 
