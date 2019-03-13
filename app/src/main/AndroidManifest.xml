@@ -33,6 +33,12 @@
         </activity>
 
 
+        <activity android:name=".CustomBuild"></activity>
+        <activity android:name=".BuildPage"></activity>
+        <activity android:name=".RuneSelect"></activity>
+        <activity android:name=".BuildList"></activity>
+        <activity android:name=".ChampionScreen"></activity>
+
     </application>
 
 </manifest>

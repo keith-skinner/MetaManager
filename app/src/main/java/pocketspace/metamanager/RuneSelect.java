@@ -6,12 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class BuildPage extends AppCompatActivity
+public class RuneSelect extends AppCompatActivity
 {
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.build_page);
+        setContentView(R.layout.runeselectlist);
     }
 }
