@@ -1,5 +1,7 @@
 package pocketspace.metamanager;
 
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -20,39 +22,17 @@ public class ChampionScreen extends AppCompatActivity {
         setContentView(R.layout.champion_list_screen);
 
         //addListenerOnButton();
-        img = findViewById(R.id.jaxBttn);
+        img = findViewById(R.id.jaxBtn);
 
-        img.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                OpenBuildSelection();
-            }
-        });
+        img.setOnClickListener(v->OpenBuildSelection());
     }
+
+
 
     public void OpenBuildSelection()
     {
         Intent intent = new Intent(this, BuildList.class);
         startActivity(intent);
     }
-
-    /*public void addListenerOnButton() {
-        Toast toast = Toast.makeText(getApplicationContext(), "some message", Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-        toast.show();
-
-        ImageButton img = findViewById(R.id.jaxBttn);
-        img.setOnClickListener(this::myFancyMethod);
-    }
-
-    public void myFancyMethod(View v) {
-        // does something very interesting
-        LayoutInflater inflator=getLayoutInflater();
-        v = inflator.inflate(R.layout.builds_list_screen, null, false);
-        v.startAnimation(AnimationUtils.loadAnimation(this, android.R.anim.fade_out));
-        setContentView(v);
-    }*/
 
 }

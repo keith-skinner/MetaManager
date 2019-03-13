@@ -39,25 +39,4 @@ public class GameList extends AppCompatActivity {
         Intent championIntent = new Intent(this, ChampionScreen.class);
         startActivity(championIntent);
     }
-
-    /*public void addListenerOnButton() {
-
-        ImageButton img = findViewById(R.id.gameImgBttn);
-        img.setOnClickListener(this::myFancyMethod);
-    }*/
-
-// some more code
-
-    /*public void myFancyMethod(View v) {
-        // does something very interesting
-        LayoutInflater inflator=getLayoutInflater();
-        v = inflator.inflate(R.layout.champion_list_screen, null, false);
-        v.startAnimation(AnimationUtils.loadAnimation(this, android.R.anim.fade_out));
-        setContentView(v);
-
-        // old sol:
-//        setContentView(R.layout.builds_list_screen);
-    }*/
-
-
 }
