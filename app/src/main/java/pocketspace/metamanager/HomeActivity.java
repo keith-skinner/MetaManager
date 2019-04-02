@@ -1,14 +1,14 @@
 package pocketspace.metamanager;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
 
-public class HomeActivity extends Activity {
+public class HomeActivity extends AppCompatActivity {
 
     LinearLayout linearLayout;
 
@@ -19,12 +19,9 @@ public class HomeActivity extends Activity {
         setContentView(R.layout.home);
 
         Button gameButton = (Button) findViewById(R.id.butt);
-        gameButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this, .character_select.class));
-            }
-        });
 
+        gameButton.setOnClickListener(v ->
+                startActivity(new Intent(HomeActivity.this, null)));
     }
 
 }

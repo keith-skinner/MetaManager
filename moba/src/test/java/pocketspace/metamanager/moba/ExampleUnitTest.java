@@ -1,4 +1,4 @@
-package com.example.common;
+package pocketspace.metamanager.moba;
 
 import org.junit.Test;
 

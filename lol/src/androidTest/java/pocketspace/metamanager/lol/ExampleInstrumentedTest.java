@@ -1,4 +1,4 @@
-package com.example.moba;
+package pocketspace.metamanager.lol;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.moba.test", appContext.getPackageName());
+        assertEquals("pocketspace.metamanager.lol.test", appContext.getPackageName());
     }
 }
