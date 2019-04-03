@@ -20,8 +20,15 @@ public class HomeActivity extends AppCompatActivity {
 
         Button gameButton = (Button) findViewById(R.id.butt);
 
-        gameButton.setOnClickListener(v ->
-                startActivity(new Intent(HomeActivity.this, null)));
+//        gameButton.setOnClickListener(v -> {
+//            startActivity( new Intent(HomeActivity.this, pocketspace.metamanager.CharacterSelectActivity.class));
+//        });
+
+        gameButton.setOnClickListener(v-> {
+            Intent box = new Intent(HomeActivity.this, pocketspace.metamanager.CharacterSelectActivity.class);
+            box.putExtra("gameName","lol");
+            startActivity(box);
+        });
     }
 
 }
