@@ -4,6 +4,20 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/character_select_content">
+    >
+
+    <RelativeLayout
+        android:id="@+id/character_select_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- INSERT CharacterSelectElement's here! -->
+        <FrameLayout
+            android:id="@+id/character_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </FrameLayout>
+
+    </RelativeLayout>
 
 </ScrollView>

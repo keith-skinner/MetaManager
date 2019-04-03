@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/character_row_element"
+    android:id="@+id/character_select_element"
     style="@style/CharacterNameFont"
     android:layout_width="200dp"
     android:layout_height="200dp"
     android:background="@color/darkGrey"
     android:clickable="true"
     android:focusable="true"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -33,7 +33,7 @@
             android:background="#222"
             android:ellipsize="end"
             android:singleLine="true"
-            android:text="@string/character_profile_description"
+            android:text="dicks"
 
             android:textSize="12pt" />
     </LinearLayout>
