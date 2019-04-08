@@ -44,8 +44,10 @@ public class CharacterAdapter extends ArrayAdapter<Character> {
         ImageView image = (ImageView)listItem.findViewById(R.id.character_img);
         image.setImageResource(currentCharacter.getCharacter_img());
 
+
         TextView name = (TextView) listItem.findViewById(R.id.character_name);
         name.setText(currentCharacter.getCharacter_name());
+
 
 
         return listItem;

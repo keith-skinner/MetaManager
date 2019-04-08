@@ -20,6 +20,7 @@ public class CharacterSelectActivity extends AppCompatActivity{
 
 
     private ListView listView;
+
     private CharacterAdapter mAdapter;
 
 
@@ -54,17 +55,17 @@ public class CharacterSelectActivity extends AppCompatActivity{
     String name = "Neeko";
 
     ArrayList<Character> characterList = new ArrayList<>();
+
     characterList.add( new Character(R.drawable.neeko, name) );
-        characterList.add( new Character(R.drawable.neeko, name) );
-        characterList.add( new Character(R.drawable.neeko, name) );
-        characterList.add( new Character(R.drawable.neeko, name) );
-        characterList.add( new Character(R.drawable.neeko, name) );
+    characterList.add( new Character(R.drawable.neeko, name) );
+    characterList.add( new Character(R.drawable.neeko, name) );
+    characterList.add( new Character(R.drawable.neeko, name) );
+    characterList.add( new Character(R.drawable.neeko, name) );
 
 
     mAdapter = new CharacterAdapter(this, characterList);
+
     listView.setAdapter(mAdapter);
-
-
 
 
         // Begin the transaction
