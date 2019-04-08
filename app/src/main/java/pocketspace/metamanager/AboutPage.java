@@ -9,5 +9,7 @@ public class AboutPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.about_page);
+        setTheme(pocketspace.metamanager.common.R.style.MainAppTheme);
+
     }
 }

@@ -9,8 +9,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/hat_ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning"
+
+        android:theme="@style/MainAppTheme"
+        >
 
         <activity
             android:name=".HomeActivity"
@@ -27,6 +29,8 @@
             android:label="@string/default_character_name"
             android:theme="@style/NoActionBar">
         </activity>
+
+
 
     </application>
 

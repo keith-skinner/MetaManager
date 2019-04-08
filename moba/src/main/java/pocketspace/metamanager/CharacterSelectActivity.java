@@ -28,7 +28,9 @@ public class CharacterSelectActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstance){
         super.onCreate(savedInstance);
 
+        setTheme(pocketspace.metamanager.common.R.style.MainAppTheme);
         setContentView(R.layout.character_select);
+
 
 //        Bundle b = getIntent().getExtras();
         String value = getIntent().getStringExtra("gameName");
