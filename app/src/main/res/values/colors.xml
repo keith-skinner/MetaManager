@@ -2,9 +2,20 @@
 <resources>
     <color name="colorPrimary">#450085</color>
     <color name="colorPrimaryDark">#6B6A6C</color>
-    <color name="background">#A5A4A6</color>
     <color name="white">#ffffff</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="backgroundDark">#666</color>
+
+    <!-- General Background Color For Activities -->
+    <color name="defaultBackground">#6B6A6C</color>
+
+    <!-- About Page Activity -->
+    <color name="layoutBackground">#888</color>
+    <color name="horizontalRule">@android:color/white</color>
+
+    <!-- Game List Activity -->
+    <color name="buttonBackgroundDark">#222</color>
+    <color name="buttonBackgroundLight">#888</color>
+    <color name="buttonOutline">#8600C8</color>
+
     <drawable name="icon" />
 </resources>

@@ -3,11 +3,11 @@ package pocketspace.metamanager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class AboutPage extends AppCompatActivity {
+public class ActivityAboutPage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.about_page);
+        setContentView(R.layout.activity_about_content);
     }
 }
