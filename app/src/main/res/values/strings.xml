@@ -17,4 +17,5 @@
     <string name="game_title_string" />
     <string name="jungle_title">Jungle</string>
     <string name="build_list_activity_header">Builds</string>
+    <string name="title_activity_main">MainActivity</string>
 </resources>

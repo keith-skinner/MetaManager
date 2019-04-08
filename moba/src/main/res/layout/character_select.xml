@@ -1,6 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <!-- HEADER && NAV WINDOW -->
+
+    <!-- CONTENT -->
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Character Select Screen"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="gameID" />
+
+    <!--NEW-->
+    <fragment
+        android:id="@+id/fragment1"
+        android:name="pocketspace.metamanager.FragmentList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+
+    <!--TEST-->
+    <ListView
+        android:id="@+id/character_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+
+    works: old
+    <!--<FrameLayout-->
+        <!--android:id="@+id/character_placeholder"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+
+        <!--&lt;!&ndash;android:name="pocketspace.metamanager.FragmentCharacter"&ndash;&gt;-->
+        <!--<fragment-->
+            <!--android:name="pocketspace.metamanager.FragmentCharacter"-->
+            <!--android:id="@+id/fragmentTest"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
+
+    <!--</FrameLayout>-->
+
 
 </LinearLayout>
