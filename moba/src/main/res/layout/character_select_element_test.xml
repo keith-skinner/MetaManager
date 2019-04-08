@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@android:color/holo_purple"
+            android:background="@color/darkGrey"
             android:padding="10dp"
             android:src="@drawable/neeko" />
 

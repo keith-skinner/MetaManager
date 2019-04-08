@@ -9,12 +9,13 @@ import android.view.ViewGroup;
 import pocketspace.metamanager.moba.R;
 
 public class FragmentCharacter extends Fragment {
+
     // The onCreateView method is called when Fragment should create its View object hierarchy,
     // either dynamically or via XML layout inflation.
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         // Defines the xml file for the fragment
-        return inflater.inflate(R.layout.character_select_element, parent, false);
+        return inflater.inflate(R.layout.character_select_element_test, parent, false);
     }
 
     // This event is triggered soon after onCreateView().
@@ -24,4 +25,5 @@ public class FragmentCharacter extends Fragment {
         // Setup any handles to view objects here
         // EditText etFoo = (EditText) view.findViewById(R.id.etFoo);
     }
+
 }
