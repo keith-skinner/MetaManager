@@ -1,35 +1,65 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="@android:style/Theme.DeviceDefault.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:actionBarStyle">@style/AppTheme.ActionBarStyle</item>
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/defaultBackground</item>
+        <item name="android:textColor">@android:color/white</item>
     </style>
 
 
-    <style name="AppTheme.ActionBarStyle" parent="@android:style/Widget.Holo.Light.ActionBar">
-        <item name="android:titleTextStyle">@style/AppTheme.ActionBarStyle.TitleTextStyle</item>
-        <item name="android:background">@color/colorPrimary</item>
+    <!-- (Home) Game List Specific -->
+    <style name="GameList" parent="AppTheme"/>
+    <style name="GameList.Row" parent="GameList">
+        <item name="android:background">@color/layoutBackground</item>
+    </style>
+    <style name="GameList.Row.Image" parent="GameList.Row">
+        <item name="android:background">@color/gameIconBackground</item>
+    </style>
+    <style name="GameList.Row.Text" parent="GameList.Row">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">@dimen/largeTextSize</item>
     </style>
 
-    <style name="AppTheme.ActionBarStyle.TitleTextStyle">
-        <item name="android:textColor">@color/white</item>
+    <!-- Role Selection Specific-->
+    <style name="RoleSelection" parent="AppTheme">
+        <item name="android:background">@color/defaultBackground</item>
+    </style>
+    <style name="RoleSelection.Role" parent="RoleSelection">
+        <item name="android:onClick"></item>
+        <item name="android:clickable">true</item>
+        <item name="android:selectable">true</item>
     </style>
 
-    <style name="SplashTheme" parent="@android:style/Theme.DeviceDefault.NoActionBar">
-        <item name="android:windowBackground">@drawable/hat_splash</item>
+    <!-- About Page Specific -->
+    <style name="AboutPage" parent="AppTheme"/>
+    <style name="AboutPage.Layout" parent="AboutPage">
+        <item name="android:background">@color/layoutBackground</item>
+    </style>
+    <style name="AboutPage.LargeText" parent="AboutPage">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/largeTextSize</item>
+    </style>
+    <style name="AboutPage.NormalText" parent="AboutPage">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/smallTextSize</item>
     </style>
 
-    <style name="NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+    <!-- Character List Specific -->
+    <style name="CharacterList" parent="AppTheme"/>
+    <style name="CharacterList.Row" parent="CharacterList"/>
+    <style name="CharacterList.Row.Image" parent="CharacterList.Row"/>
+    <style name="CharacterList.Row.Name" parent="CharacterList.Row">
+        <item name="android:textSize">@dimen/mediumTextSize</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
     </style>
 
-    <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
+    <!-- Horizontal Rule -->
+    <style name="HorizontalRule" parent="AppTheme">
+        <item name="android:background">@color/horizontalRule</item>
+        <item name="android:layout_marginVertical">8dp</item>
+    </style>
 </resources>
