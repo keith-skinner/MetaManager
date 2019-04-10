@@ -54,10 +54,10 @@ public class AdapterCharacterList extends RecyclerView.Adapter<AdapterCharacterL
 
         LinearLayoutCompat characterLayout = viewHolder.characterLayout;
         characterLayout.setOnClickListener((View view)->{
-            Intent intent = new Intent(view.getContext(), ActivityAboutPage.class);
+            Intent intent = new Intent(view.getContext(), ActivityRole.class);
+            intent.putExtra(view.getResources().getString(R.string.characterName), character.name);
             view.getContext().startActivity(intent);
         });
-
     }
 
     @Override

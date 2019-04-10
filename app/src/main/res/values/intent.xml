@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gameName">com.pocketspace.metamanager.app.game</string>
+    <string name="characterName">com.pocketspace.metamanager.common.character</string>
+    <string name="lolRole">com.pocketspace.metamanager.lol.role</string>
+</resources>

@@ -2,26 +2,34 @@
 <android.support.v7.widget.LinearLayoutCompat
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/gameListRow"
+    style="@style/GameList.Row"
     android:layout_width="match_parent"
     android:layout_height="70dp"
-    android:background="@color/defaultBackground"
     android:layout_margin="8dp"
     android:contextClickable="true"
-    android:clickable="true">
+    android:padding="1dp"
+    android:clickable="true"
+    android:focusable="true">
+
+    <!-- TODO: Change the layout to be weighted or constrained -->
 
     <ImageView
         android:id="@+id/gameLogoIcon"
-        android:layout_width="70dp"
+        style="@style/GameList.Row.Image"
+        android:layout_width="66dp"
         android:layout_height="match_parent"
+        android:layout_margin="3dp"
         android:contextClickable="false"
         android:contentDescription="@string/game_list_image_desc"/>
 
     <TextView
         android:id="@+id/gameName"
+        style="@style/GameList.Row.Text"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_margin="8dp"
         android:text="@string/default_game_name"
         android:textAlignment="viewStart"
-        style="@style/GameList.Row.Text"/>
+        />
+
 </android.support.v7.widget.LinearLayoutCompat>

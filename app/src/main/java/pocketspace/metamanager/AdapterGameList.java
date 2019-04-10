@@ -32,6 +32,7 @@ public class AdapterGameList extends RecyclerView.Adapter<AdapterGameList.ViewHo
 
     AdapterGameList(List<ActivityGameList.Game> games) {
         this.games = games;
+        //what the hell man.
     }
 
     @Override
@@ -52,12 +53,12 @@ public class AdapterGameList extends RecyclerView.Adapter<AdapterGameList.ViewHo
         gameName.setText(game.gameName);
 
         ImageView gameLogoIcon = viewHolder.gameLogoIcon;
-        gameLogoIcon.setBackgroundResource(game.gameImageResource);
+        gameLogoIcon.setImageResource(game.gameImageResource);
 
         LinearLayoutCompat gameListRow = viewHolder.gameListRow;
         gameListRow.setOnClickListener((View view)->{
             Intent intent = new Intent(view.getContext(), game.nextActivity);
-            intent.putExtra("gameName", game.gameName);
+            intent.putExtra(view.getResources().getResourceName(R.string.gameName), game.gameName);
             view.getContext().startActivity(intent);
         });
     }
