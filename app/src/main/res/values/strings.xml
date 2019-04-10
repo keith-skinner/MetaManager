@@ -45,4 +45,7 @@
     <string name="support_lane_image_desc">Image of support role</string>
     <string name="bot_lane_image_desc">Image of bot lane role</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

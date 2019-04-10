@@ -10,6 +10,8 @@
     <!-- Game List Activity -->
     <color name="gameIconBackground">#222</color>
 
+    <color name="darkPurple">#4a148c</color>
+    <color name="lightPurple">#7c43bd</color>
 
     <drawable name="icon" />
 </resources>

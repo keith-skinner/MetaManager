@@ -1,44 +1,65 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:showIn=".ActivityBuildView"
-    >
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:showIn=".ActivityBuildView">
+
+    <!--<include layout="@layout/app_bar" />-->
+
+    <android.support.design.widget.TabLayout
+    android:id="@+id/tabLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="?actionBarSize"
+    app:tabGravity="fill"
+    app:tabIndicatorColor="@color/lightPurple"
+    app:tabIndicatorHeight="4dp"
+    app:tabTextColor="@android:color/white"
+    app:tabMode="fixed">
+    </android.support.design.widget.TabLayout>
 
     <TextView
         android:id="@+id/Game"
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:textSize="@dimen/largeTextSize"
-        android:layout_margin="8dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="Game"/>
-
-    <TextView
-        android:id="@+id/Character"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:textSize="@dimen/largeTextSize"
         android:layout_margin="8dp"
-        app:layout_constraintTop_toBottomOf="@id/Game"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="Game"
+        android:textSize="@dimen/largeTextSize"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="Character"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/Role"
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:textSize="@dimen/largeTextSize"
+        android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        app:layout_constraintTop_toBottomOf="@id/Character"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="Role"
+        android:textSize="@dimen/largeTextSize"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="Role"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Character" />
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/Character"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Character"
+        android:textSize="@dimen/largeTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Game" />
+
+    <android.support.v4.view.ViewPager
+    android:id="@+id/viewPager"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    </android.support.v4.view.ViewPager>
+
+
+</LinearLayout>
+

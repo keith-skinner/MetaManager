@@ -17,9 +17,15 @@ import static com.google.android.flexbox.FlexWrap.WRAP;
 
 public class ActivityCharacterList extends AppCompatActivity {
 
+    public enum ROLE_TAG
+    {
+        Assassin, Fighter, Mage, Marksman, Support, Tank;
+    }
+
     static class Character {
         String name;
         int image;
+        int role_tag;
 
         Character(String name, int image) {
             this.image = image;

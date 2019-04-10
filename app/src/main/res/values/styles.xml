@@ -62,4 +62,13 @@
         <item name="android:background">@color/horizontalRule</item>
         <item name="android:layout_marginVertical">8dp</item>
     </style>
+
+
+    <!-- Tool Bar Theme -->
+    <style name="MyToolbarTheme"
+        parent="@style/ThemeOverlay.AppCompat.Dark">
+        <item name="colorControlNormal">@color/defaultBackground</item>
+        <item name="titleTextColor">@color/horizontalRule</item>
+    </style>
+
 </resources>
