@@ -3,4 +3,5 @@
     <dimen name="largeTextSize">32sp</dimen>
     <dimen name="mediumTextSize">20sp</dimen>
     <dimen name="smallTextSize">16sp</dimen>
+    <dimen name="runeSize">80dp</dimen>
 </resources>
