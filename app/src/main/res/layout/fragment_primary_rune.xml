@@ -19,6 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <include
+        android:id="@+id/secoundaryRunes"
         layout="@layout/precision_secondary_runes"
         android:layout_width="386dp"
         android:layout_height="252dp"
