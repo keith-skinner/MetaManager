@@ -20,39 +20,6 @@
     app:tabMode="fixed">
     </android.support.design.widget.TabLayout>
 
-    <TextView
-        android:id="@+id/Game"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:text="Game"
-        android:textSize="@dimen/largeTextSize"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/Role"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:text="Role"
-        android:textSize="@dimen/largeTextSize"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Character" />
-
-    <TextView
-        android:id="@+id/Character"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:text="Character"
-        android:textSize="@dimen/largeTextSize"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Game" />
-
     <android.support.v4.view.ViewPager
     android:id="@+id/viewPager"
     android:layout_width="match_parent"

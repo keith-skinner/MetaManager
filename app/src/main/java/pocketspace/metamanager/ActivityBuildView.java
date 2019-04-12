@@ -33,15 +33,6 @@ public class ActivityBuildView extends AppCompatActivity {
         character = intent.getStringExtra(getResources().getString(R.string.characterName));
         role = intent.getStringExtra(getResources().getString(R.string.lolRole));
 
-        // For now...
-        TextView gameView = findViewById(R.id.Game);
-        gameView.setText(game);
-
-        TextView characterView = findViewById(R.id.Character);
-        characterView.setText(character);
-
-        TextView roleView = findViewById(R.id.Role);
-        roleView.setText(role);
 
 
 
@@ -54,10 +45,10 @@ public class ActivityBuildView extends AppCompatActivity {
         adapter.addFragment(new TabItemFragment(), "ITEM");
         adapter.addFragment(new TabSkillFragment(), "SKILL");
 
+
+
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
-
-
     }
 
 }
