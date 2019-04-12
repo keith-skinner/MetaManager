@@ -40,7 +40,8 @@ public class ActivityBuildView extends AppCompatActivity {
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         adapter = new TabAdapter(getSupportFragmentManager());
 
-        adapter.addFragment(new TabRuneFragment(), "RUNE");
+        adapter.addFragment(new TabPrimeRuneFragment(), "PRIME");
+        adapter.addFragment(new TabSecondaryRuneFragment(), "SECOND");
         adapter.addFragment(new TabSpellFragment(), "SPELL");
         adapter.addFragment(new TabItemFragment(), "ITEM");
         adapter.addFragment(new TabSkillFragment(), "SKILL");

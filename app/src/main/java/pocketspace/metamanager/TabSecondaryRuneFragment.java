@@ -9,13 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-public class TabRuneFragment extends Fragment {
+public class TabSecondaryRuneFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
 
-        return inflater.inflate(R.layout.fragment_primary_rune, container, false);
+        return inflater.inflate(pocketspace.metamanager.lol.R.layout.fragment_secondary_rune, container, false);
 
 
     }
@@ -31,4 +31,5 @@ public class TabRuneFragment extends Fragment {
         ColorMatrixColorFilter filter = new ColorMatrixColorFilter(matrix);
         myImage.setColorFilter(filter);
     }
+
 }
