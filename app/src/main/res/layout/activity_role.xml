@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
     android:theme="@style/RoleSelection"
     tools:context=".ActivityRole">
 
@@ -12,63 +12,73 @@
 
     <ImageView
         android:id="@+id/topRoleButton"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_width="292dp"
+        android:layout_height="90dp"
+        android:layout_margin="20dp"
+        android:contentDescription="@string/top_lane_image_desc"
         android:theme="@style/RoleSelection.Role"
+        app:layout_constraintBottom_toTopOf="@+id/jungleRoleButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icon_top"
-        android:contentDescription="@string/top_lane_image_desc"/>
+        app:layout_constraintVertical_chainStyle="spread_inside"
+        app:srcCompat="@drawable/icon_top" />
 
     <ImageView
         android:id="@+id/jungleRoleButton"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_width="292dp"
+        android:layout_height="90dp"
+        android:layout_margin="20dp"
+        android:contentDescription="@string/jungle_lane_image_desc"
         android:theme="@style/RoleSelection.Role"
+        app:layout_constraintBottom_toTopOf="@+id/midRoleButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topRoleButton"
-        app:srcCompat="@drawable/icon_jungle"
-        android:contentDescription="@string/jungle_lane_image_desc"/>
+        app:srcCompat="@drawable/icon_jungle" />
 
     <ImageView
         android:id="@+id/midRoleButton"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_width="292dp"
+        android:layout_height="90dp"
+        android:layout_margin="20dp"
+        android:contentDescription="@string/mid_lane_image_desc"
         android:theme="@style/RoleSelection.Role"
+        app:layout_constraintBottom_toTopOf="@+id/supportRoleButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/jungleRoleButton"
-        app:srcCompat="@drawable/icon_mid"
-        android:contentDescription="@string/mid_lane_image_desc"/>
+        app:srcCompat="@drawable/icon_mid" />
 
     <ImageView
         android:id="@+id/supportRoleButton"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_width="292dp"
+        android:layout_height="90dp"
+        android:layout_margin="20dp"
+        android:contentDescription="@string/support_lane_image_desc"
         android:theme="@style/RoleSelection.Role"
+        app:layout_constraintBottom_toTopOf="@+id/botRoleButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/midRoleButton"
-        app:srcCompat="@drawable/icon_support"
-        android:contentDescription="@string/support_lane_image_desc"/>
+        app:srcCompat="@drawable/icon_support" />
 
     <ImageView
         android:id="@+id/botRoleButton"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_width="292dp"
+        android:layout_height="90dp"
+        android:layout_margin="20dp"
+        android:contentDescription="@string/bot_lane_image_desc"
         android:theme="@style/RoleSelection.Role"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/supportRoleButton"
-        app:srcCompat="@drawable/icon_bot"
-        android:contentDescription="@string/bot_lane_image_desc"/>
+        app:srcCompat="@drawable/icon_bot" />
 
 </android.support.constraint.ConstraintLayout>

@@ -57,9 +57,32 @@
     </style>
 
 
+    <!-- Character Build Specific -->
+    <style name="CharacterBuild" parent="AppTheme"/>
+    <style name="PrimaryRuneTab" parent="CharacterBuild"/>
+    <style name="PrimaryRuneTab.PrimaryRunes" parent="PrimaryRuneTab"/>
+    <style name="PrimaryRuneTab.KeystoneRunes" parent="PrimaryRuneTab"/>
+    <style name="PrimaryRuneTab.SecondaryRunes" parent="PrimaryRuneTab"/>
+
+    <style name="SecondaryRuneTab" parent="CharacterBuild">
+        <item name="android:layout_margin">8dp</item>
+    </style>
+
+
+
+
     <!-- Horizontal Rule -->
     <style name="HorizontalRule" parent="AppTheme">
         <item name="android:background">@color/horizontalRule</item>
         <item name="android:layout_marginVertical">8dp</item>
     </style>
+
+
+    <!-- Tool Bar Theme -->
+    <style name="MyToolbarTheme"
+        parent="@style/ThemeOverlay.AppCompat.Dark">
+        <item name="colorControlNormal">@color/defaultBackground</item>
+        <item name="titleTextColor">@color/horizontalRule</item>
+    </style>
+
 </resources>

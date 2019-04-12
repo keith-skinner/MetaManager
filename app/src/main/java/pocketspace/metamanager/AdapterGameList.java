@@ -31,8 +31,8 @@ public class AdapterGameList extends RecyclerView.Adapter<AdapterGameList.ViewHo
     private List<ActivityGameList.Game> games;
 
     AdapterGameList(List<ActivityGameList.Game> games) {
+        super();
         this.games = games;
-        //what the hell man.
     }
 
     @Override
