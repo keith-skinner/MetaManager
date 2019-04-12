@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/precisionPrimaryRunes"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:visibility="visible">
 
@@ -13,43 +13,55 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:contentDescription="@string/todo"
-        android:src="@drawable/press_the_attack"
+        android:src="@drawable/precision"
         app:layout_constraintEnd_toStartOf="@+id/primary2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/primary2" />
 
     <ImageView
         android:id="@+id/primary2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:contentDescription="@string/todo"
-        android:src="@drawable/lethal_tempo"
+        android:src="@drawable/domination"
         app:layout_constraintEnd_toStartOf="@+id/primary3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/primary1"
-        app:layout_constraintTop_toTopOf="@+id/primary1" />
+        app:layout_constraintTop_toTopOf="@+id/primary3" />
 
     <ImageView
         android:id="@+id/primary3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:contentDescription="@string/todo"
-        android:src="@drawable/fleet_footwork"
+        android:src="@drawable/sorcery"
         app:layout_constraintEnd_toStartOf="@+id/primary4"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/primary2"
-        app:layout_constraintTop_toTopOf="@+id/primary1" />
+        app:layout_constraintTop_toTopOf="@+id/primary4" />
 
     <ImageView
         android:id="@+id/primary4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:contentDescription="@string/todo"
-        android:src="@drawable/conqueror"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/resolve"
+        app:layout_constraintEnd_toStartOf="@+id/primary5"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/primary3"
-        app:layout_constraintTop_toTopOf="@+id/primary1" />
+        app:layout_constraintTop_toTopOf="@+id/primary5" />
+
+    <ImageView
+        android:id="@+id/primary5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/inspiration"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/primary4" />
 
 </android.support.constraint.ConstraintLayout>

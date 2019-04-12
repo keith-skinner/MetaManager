@@ -57,6 +57,14 @@
     </style>
 
 
+    <!-- Character Build Specific -->
+    <style name="CharacterBuild" parent="AppTheme"/>
+    <style name="PrimaryRuneTab" parent="CharacterBuild"/>
+    <style name="PrimaryRuneTab.PrimaryRunes" parent="PrimaryRuneTab"/>
+    <style name="PrimaryRuneTab.KeystoneRunes" parent="PrimaryRuneTab"/>
+    <style name="PrimaryRuneTab.SecondaryRunes" parent="PrimaryRuneTab"/>
+
+
     <!-- Horizontal Rule -->
     <style name="HorizontalRule" parent="AppTheme">
         <item name="android:background">@color/horizontalRule</item>
