@@ -64,6 +64,12 @@
     <style name="PrimaryRuneTab.KeystoneRunes" parent="PrimaryRuneTab"/>
     <style name="PrimaryRuneTab.SecondaryRunes" parent="PrimaryRuneTab"/>
 
+    <style name="SecondaryRuneTab" parent="CharacterBuild">
+        <item name="android:layout_margin">8dp</item>
+    </style>
+
+
+
 
     <!-- Horizontal Rule -->
     <style name="HorizontalRule" parent="AppTheme">

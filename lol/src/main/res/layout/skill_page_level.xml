@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:background="@color/dBackground"
+    >
+
+    <TextView
+        android:id="@+id/lvlNumber"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/outline_square"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="36sp" />
+
+    <View
+        android:id="@+id/skillQ"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/outline_square" />
+
+    <View
+        android:id="@+id/skillW"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/outline_square" />
+
+    <View
+        android:id="@+id/skillE"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/outline_square" />
+
+    <View
+        android:id="@+id/skillR"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/outline_square" />
+
+</LinearLayout>

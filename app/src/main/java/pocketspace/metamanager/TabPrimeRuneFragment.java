@@ -12,7 +12,7 @@ public class TabPrimeRuneFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
 
-        return inflater.inflate(pocketspace.metamanager.lol.R.layout.fragment_secondary_rune, container, false);
+        return inflater.inflate(pocketspace.metamanager.lol.R.layout.fragment_primary_rune, container, false);
 
 
     }
