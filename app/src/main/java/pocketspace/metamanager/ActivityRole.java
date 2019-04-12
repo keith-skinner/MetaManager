@@ -70,27 +70,21 @@ public class ActivityRole extends AppCompatActivity {
         switch( view.getId()) {
             case R.id.topRoleButton:
                 role = "TOP";
-                Toast.makeText(getApplicationContext(),role,Toast.LENGTH_SHORT).show();
                 break;
             case R.id.jungleRoleButton:
                 role = "JUNGLE";
-                Toast.makeText(getApplicationContext(),role,Toast.LENGTH_SHORT).show();
                 break;
             case R.id.midRoleButton:
                 role = "MID";
-                Toast.makeText(getApplicationContext(),role,Toast.LENGTH_SHORT).show();
                 break;
             case R.id.supportRoleButton:
                 role = "SUPPORT";
-                Toast.makeText(getApplicationContext(),role,Toast.LENGTH_SHORT).show();
                 break;
             case R.id.botRoleButton:
                 role = "BOT";
-                Toast.makeText(getApplicationContext(),role,Toast.LENGTH_SHORT).show();
                 break;
             default:
                 role = "ERROR";
-                Toast.makeText(getApplicationContext(),role,Toast.LENGTH_SHORT).show();
         }
         return role;
     }
