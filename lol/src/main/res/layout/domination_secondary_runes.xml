@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -18,40 +17,40 @@
         >
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/summoner1"
             style="@style/PrimaryRuneTab"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/cheap_shot"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageView6"
+            app:layout_constraintEnd_toStartOf="@+id/summoner2"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             />
 
         <ImageView
-            android:id="@+id/imageView6"
+            android:id="@+id/summoner2"
             style="@style/PrimaryRuneTab"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/taste_of_blood"
-            app:layout_constraintStart_toEndOf="@+id/imageView5"
-            app:layout_constraintEnd_toStartOf="@+id/imageView7"
+            app:layout_constraintStart_toEndOf="@+id/summoner1"
+            app:layout_constraintEnd_toStartOf="@+id/summoner3"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             />
 
         <ImageView
-            android:id="@+id/imageView7"
+            android:id="@+id/summoner3"
             style="@style/PrimaryRuneTab"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:adjustViewBounds="false"
             android:contentDescription="@string/todo"
             android:src="@drawable/sudden_impact"
-            app:layout_constraintStart_toEndOf="@+id/imageView6"
+            app:layout_constraintStart_toEndOf="@+id/summoner2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -70,39 +69,39 @@
         app:layout_constraintBottom_toTopOf="@+id/row3">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/summoner4"
             style="@style/PrimaryRuneTab"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/zombie_ward"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageView3"
+            app:layout_constraintEnd_toStartOf="@+id/summoner5"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             />
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/summoner5"
             style="@style/PrimaryRuneTab"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/ghost_poro"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintEnd_toStartOf="@+id/imageView4"
+            app:layout_constraintStart_toEndOf="@+id/summoner4"
+            app:layout_constraintEnd_toStartOf="@+id/summoner6"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             />
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/summoner6"
             style="@style/PrimaryRuneTab"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/eyeball_collection"
-            app:layout_constraintStart_toEndOf="@+id/imageView3"
+            app:layout_constraintStart_toEndOf="@+id/summoner5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -121,39 +120,39 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageView
-            android:id="@+id/imageView8"
+            android:id="@+id/summoner7"
             style="@style/PrimaryRuneTab"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/ravenous_hunter"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageView9"
+            app:layout_constraintEnd_toStartOf="@+id/summoner8"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             />
 
         <ImageView
-            android:id="@+id/imageView9"
+            android:id="@+id/summoner8"
             style="@style/PrimaryRuneTab"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/ingenious_hunter"
-            app:layout_constraintStart_toEndOf="@+id/imageView8"
-            app:layout_constraintEnd_toStartOf="@+id/imageView10"
+            app:layout_constraintStart_toEndOf="@+id/summoner7"
+            app:layout_constraintEnd_toStartOf="@+id/summoner9"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             />
 
         <ImageView
-            android:id="@+id/imageView10"
+            android:id="@+id/summoner9"
             style="@style/PrimaryRuneTab"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/relentless_hunter"
-            app:layout_constraintStart_toEndOf="@+id/imageView9"
+            app:layout_constraintStart_toEndOf="@+id/summoner8"
             app:layout_constraintEnd_toStartOf="@+id/imageView2"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -166,7 +165,7 @@
             android:layout_height="0dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/ultimate_hunter"
-            app:layout_constraintStart_toEndOf="@+id/imageView10"
+            app:layout_constraintStart_toEndOf="@+id/summoner9"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
