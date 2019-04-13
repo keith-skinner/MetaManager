@@ -1,5 +1,7 @@
 package pocketspace.metamanager;
 
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,8 +10,16 @@ import android.support.v7.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
+import pocketspace.metamanager.database.MetaManagerDatabaseHelper;
+
+
 public class ActivityGameList extends AppCompatActivity
 {
+    SQLiteDatabase writeableDB;
+    SQLiteDatabase readableDB;
+    MetaManagerDatabaseHelper dbHelper;
+    Context appContext;
+
     static class Game {
         int gameImageResource;
         String gameName;
@@ -27,6 +37,12 @@ public class ActivityGameList extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        appContext = getApplicationContext();
+
+        writeableDB = new MetaManagerDatabaseHelper(appContext).getWritableDatabase();
+        readableDB = new MetaManagerDatabaseHelper(appContext).getReadableDatabase();
+
         setContentView(R.layout.activity_game_list);
         RecyclerView recyclerView = findViewById(R.id.gameListRecycler);
         games = createGameList();
