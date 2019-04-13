@@ -29,7 +29,7 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
         db.execSQL("create table " + CharacterTable.NAME + "("
             + CharacterTable.Cols.NAME + " TEXT primary key, "
             + CharacterTable.Cols.DESCRIPTION + ", "
-            + CharacterTable.Cols.THUMBNAIL + ", "
+             + "Thumbnail integer, "
             + CharacterTable.Cols.SPLASH + ")");
 
         db.execSQL("create table " + BuildTable.NAME + "( _id integer primary key autoincrement, "

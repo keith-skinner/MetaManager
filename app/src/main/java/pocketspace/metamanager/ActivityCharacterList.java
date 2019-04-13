@@ -2,6 +2,7 @@ package pocketspace.metamanager;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -69,9 +70,31 @@ public class ActivityCharacterList extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
     }
 
-    private static List<Character> createCharacterList() {
+    public Cursor getAllDataFromCharacterTable()
+    {
+        Cursor result = writeableDB.rawQuery("select * from " + CharacterTable.NAME, null);
+        return result;
+    }
+
+    private List<Character> createCharacterList() {
+        int indexOfCharacterName;
+        int indexOfCharacterThumbnail;
+
         List<Character> characters = new ArrayList<>();
-        characters.add(new Character("Aatrox", R.drawable.aatrox_thumbnail));
+
+        Cursor cursor = getAllDataFromCharacterTable();
+
+        indexOfCharacterName = cursor.getColumnIndex(CharacterTable.Cols.NAME);
+        indexOfCharacterThumbnail = cursor.getColumnIndex(CharacterTable.Cols.THUMBNAIL);
+
+        while (cursor.moveToNext())
+        {
+            characters.add(new Character(cursor.getString(indexOfCharacterName), cursor.getInt(indexOfCharacterThumbnail)));
+        }
+
+        cursor.close();
+
+        /*characters.add(new Character("Aatrox", R.drawable.aatrox_thumbnail));
         characters.add(new Character("Ahri", R.drawable.ahri_thumbnail));
         characters.add(new Character("Akali", R.drawable.akali_thumbnail));
         characters.add(new Character("Alistar", R.drawable.alistar_thumbnail));
@@ -80,7 +103,7 @@ public class ActivityCharacterList extends AppCompatActivity {
         characters.add(new Character("Annie", R.drawable.annie_thumbnail));
         characters.add(new Character("Ashe", R.drawable.ashe_thumbnail));
         characters.add(new Character("Aurelion Sol", R.drawable.aurelion_sol_thumbnail));
-        characters.add(new Character("Azir", R.drawable.azir_thumbnail));
+        characters.add(new Character("Azir", R.drawable.azir_thumbnail));*/
         return characters;
     }
 

@@ -9,9 +9,9 @@ public class MetaManagerDatabaseSchema
         public static final class Cols
         {
             public static final String NAME = "Character_Name";
+            public static final String DESCRIPTION = "Description";
             public static final String THUMBNAIL = "Thumbnail";
             public static final String SPLASH = "Splash";
-            public static final String DESCRIPTION = "Description";
         }
     }
 

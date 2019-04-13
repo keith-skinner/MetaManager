@@ -78,7 +78,7 @@ public class ActivityGameList extends AppCompatActivity
 
     //Database methods:
 
-    public void insertCharacterData(String name, String thumbnail, String splash, String description)
+    public void insertCharacterData(String name, int thumbnail, String splash, String description)
     {
         ContentValues cv = new ContentValues();
         cv.put(CharacterTable.Cols.NAME, name);
@@ -91,16 +91,16 @@ public class ActivityGameList extends AppCompatActivity
 
     public void hardCodeCharacterTable()
     {
-        insertCharacterData("Aatrox", "R.drawable.aatrox_thumbnail", "", "");
-        insertCharacterData("Ahri", "R.drawable.ahri_thumbnail", "", "");
-        insertCharacterData("Akali", "R.drawable.akali_thumbnail", "", "");
-        insertCharacterData("Alistar", "R.drawable.alistar_thumbnail", "", "");
-        insertCharacterData("Amumu", "R.drawable.amumu_thumbnail", "", "");
-        insertCharacterData("Anivia", "R.drawable.anivia_thumbnail", "", "");
-        insertCharacterData("Annie", "R.drawable.annie_thumbnail", "", "");
-        insertCharacterData("Ashe", "R.drawable.ashe_thumbnail", "", "");
-        insertCharacterData("Aurelion_Sol", "R.drawable.aurelion_sol_thumbnail", "", "");
-        insertCharacterData("Azir", "R.drawable.azir_thumbnail", "", "");
+        insertCharacterData("Aatrox", R.drawable.aatrox_thumbnail, "", "");
+        insertCharacterData("Ahri", R.drawable.ahri_thumbnail, "", "");
+        insertCharacterData("Akali", R.drawable.akali_thumbnail, "", "");
+        insertCharacterData("Alistar", R.drawable.alistar_thumbnail, "", "");
+        insertCharacterData("Amumu", R.drawable.amumu_thumbnail, "", "");
+        insertCharacterData("Anivia", R.drawable.anivia_thumbnail, "", "");
+        insertCharacterData("Annie", R.drawable.annie_thumbnail, "", "");
+        insertCharacterData("Ashe", R.drawable.ashe_thumbnail, "", "");
+        insertCharacterData("Aurelion_Sol", R.drawable.aurelion_sol_thumbnail, "", "");
+        insertCharacterData("Azir", R.drawable.azir_thumbnail, "", "");
     }
 
 }
