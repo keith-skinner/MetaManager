@@ -16,7 +16,7 @@ import pocketspace.metamanager.database.MetaManagerDatabaseSchema.BuildRunesTabl
 public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
 {
     private static final String DATABASE_NAME = "LOL.db";
-    private static final int VERSION = 1;
+    private static final int VERSION = 2;
 
     public MetaManagerDatabaseHelper(Context context)
     {
@@ -27,7 +27,7 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
     public void onCreate(SQLiteDatabase db)
     {
         db.execSQL("create table " + CharacterTable.NAME + "("
-            + CharacterTable.Cols.NAME + "TEXT primary key, "
+            + CharacterTable.Cols.NAME + " TEXT primary key, "
             + CharacterTable.Cols.DESCRIPTION + ", "
             + CharacterTable.Cols.THUMBNAIL + ", "
             + CharacterTable.Cols.SPLASH + ")");
@@ -36,14 +36,14 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
             + BuildTable.Cols.CHARACTER + ")");
 
         db.execSQL("create table " + SkillTable.NAME + "("
-            + SkillTable.Cols.NAME + "TEXT primary key, "
+            + SkillTable.Cols.NAME + " TEXT primary key, "
             + SkillTable.Cols.SKILL_Q + ", "
             + SkillTable.Cols.SKILL_W + ", "
             + SkillTable.Cols.SKILL_E + ", "
             + SkillTable.Cols.SKILL_R + ")");
 
         db.execSQL("create table " + SummonerTable.NAME + "("
-            + SummonerTable.Cols.NAME + "TEXT primary key, "
+            + SummonerTable.Cols.NAME + " TEXT primary key, "
             + SummonerTable.Cols.DESCRIPTION + ", "
             + SummonerTable.Cols.IMAGE + ")");
 
@@ -51,7 +51,7 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
             + BuildSummonerTable.Cols.SUMMONER_NAME + ")");
 
         db.execSQL("create table " + RuneTable.NAME + "("
-            + RuneTable.Cols.NAME + "TEXT primary key, "
+            + RuneTable.Cols.NAME + " TEXT primary key, "
             + RuneTable.Cols.DESCRIPTION + ", "
             + RuneTable.Cols.IMAGE + ")");
 

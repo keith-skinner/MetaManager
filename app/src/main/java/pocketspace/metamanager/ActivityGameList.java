@@ -1,5 +1,6 @@
 package pocketspace.metamanager;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import pocketspace.metamanager.database.MetaManagerDatabaseHelper;
+
+import pocketspace.metamanager.database.MetaManagerDatabaseSchema.CharacterTable;
 
 
 public class ActivityGameList extends AppCompatActivity
@@ -37,13 +40,15 @@ public class ActivityGameList extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_game_list);
 
         appContext = getApplicationContext();
 
         writeableDB = new MetaManagerDatabaseHelper(appContext).getWritableDatabase();
         readableDB = new MetaManagerDatabaseHelper(appContext).getReadableDatabase();
 
-        setContentView(R.layout.activity_game_list);
+        hardCodeCharacterTable();
+
         RecyclerView recyclerView = findViewById(R.id.gameListRecycler);
         games = createGameList();
         AdapterGameList adapter = new AdapterGameList(games);
@@ -70,4 +75,32 @@ public class ActivityGameList extends AppCompatActivity
 
         return gameList;
     }
+
+    //Database methods:
+
+    public void insertCharacterData(String name, String thumbnail, String splash, String description)
+    {
+        ContentValues cv = new ContentValues();
+        cv.put(CharacterTable.Cols.NAME, name);
+        cv.put(CharacterTable.Cols.THUMBNAIL, thumbnail);
+        cv.put(CharacterTable.Cols.SPLASH, splash);
+        cv.put(CharacterTable.Cols.DESCRIPTION, description);
+
+        writeableDB.insert(CharacterTable.NAME, null, cv);
+    }
+
+    public void hardCodeCharacterTable()
+    {
+        insertCharacterData("Aatrox", "R.drawable.aatrox_thumbnail", "", "");
+        insertCharacterData("Ahri", "R.drawable.ahri_thumbnail", "", "");
+        insertCharacterData("Akali", "R.drawable.akali_thumbnail", "", "");
+        insertCharacterData("Alistar", "R.drawable.alistar_thumbnail", "", "");
+        insertCharacterData("Amumu", "R.drawable.amumu_thumbnail", "", "");
+        insertCharacterData("Anivia", "R.drawable.anivia_thumbnail", "", "");
+        insertCharacterData("Annie", "R.drawable.annie_thumbnail", "", "");
+        insertCharacterData("Ashe", "R.drawable.ashe_thumbnail", "", "");
+        insertCharacterData("Aurelion_Sol", "R.drawable.aurelion_sol_thumbnail", "", "");
+        insertCharacterData("Azir", "R.drawable.azir_thumbnail", "", "");
+    }
+
 }

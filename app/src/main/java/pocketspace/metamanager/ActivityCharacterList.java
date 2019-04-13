@@ -1,5 +1,8 @@
 package pocketspace.metamanager;
 
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
@@ -15,7 +18,14 @@ import java.util.List;
 
 import static com.google.android.flexbox.FlexWrap.WRAP;
 
+import pocketspace.metamanager.database.MetaManagerDatabaseHelper;
+import pocketspace.metamanager.database.MetaManagerDatabaseSchema.CharacterTable;
+
 public class ActivityCharacterList extends AppCompatActivity {
+
+    SQLiteDatabase writeableDB;
+    SQLiteDatabase readableDB;
+    Context appContext;
 
     public enum ROLE_TAG
     {
@@ -40,6 +50,11 @@ public class ActivityCharacterList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_character_list);
 
+        appContext = getApplicationContext();
+
+        writeableDB = new MetaManagerDatabaseHelper(appContext).getWritableDatabase();
+        readableDB = new MetaManagerDatabaseHelper(appContext).getReadableDatabase();
+
         RecyclerView recyclerView = findViewById(R.id.characterListRecycler);
         characters = createCharacterList();
 
@@ -53,7 +68,6 @@ public class ActivityCharacterList extends AppCompatActivity {
         layoutManager.setAlignItems(AlignItems.FLEX_START);
         recyclerView.setLayoutManager(layoutManager);
     }
-
 
     private static List<Character> createCharacterList() {
         List<Character> characters = new ArrayList<>();
@@ -69,4 +83,5 @@ public class ActivityCharacterList extends AppCompatActivity {
         characters.add(new Character("Azir", R.drawable.azir_thumbnail));
         return characters;
     }
+
 }
