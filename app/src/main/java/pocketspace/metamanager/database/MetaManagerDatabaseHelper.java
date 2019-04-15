@@ -4,13 +4,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import pocketspace.metamanager.database.MetaManagerDatabaseSchema.CharacterTable;
-import pocketspace.metamanager.database.MetaManagerDatabaseSchema.BuildTable;
-import pocketspace.metamanager.database.MetaManagerDatabaseSchema.SkillTable;
-import pocketspace.metamanager.database.MetaManagerDatabaseSchema.SummonerTable;
-import pocketspace.metamanager.database.MetaManagerDatabaseSchema.BuildSummonerTable;
-import pocketspace.metamanager.database.MetaManagerDatabaseSchema.RuneTable;
-import pocketspace.metamanager.database.MetaManagerDatabaseSchema.BuildRunesTable;
+import pocketspace.metamanager.database.MetaManagerDatabaseSchema.*;
+
 
 
 public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
