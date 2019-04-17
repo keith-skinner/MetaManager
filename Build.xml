@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<leagueoflegends character="Aatrox" role="Top">
+    <title>Build name :)</title>
+    <runes>
+
+        </>
+        
+        <primary page="precision">
+            <keystone name="Press The Attack"/>
+            <rune name="overheal"/>
+            <rune name="alacrity"/>
+            <rune name="coup_de_grace"/>
+        </primary>
+        
+        <secondary page="domination">
+            <rune name="cheap_shot"/>
+            <rune name="ravenous_hunter"/>
+        </secondary>
+        
+        <tertiary>
+            <offense pos="1"/>
+            <flex pos="1"/>
+            <defense pos="1"/>
+        </tertiary>
+
+    </runes>
+
+    <summoners>
+        <first name="flash"/>
+        <second name="teleport"/>
+    </summoners>
+
+    <items>
+
+        <starting>
+            <item name="dorans_sheild" quantity="3"/>
+            <item name="cloth_armour"/>
+        </starting>
+
+        <core>
+            <item name="trinity_force"/>
+        </core>
+
+        <situational>
+
+            <itemBlock name="Heavy AP">
+                <item name="spirit_visage"/>
+                <item name="abyssal_mask"/>
+            </itemBlock>
+        
+        </situational>
+
+    </items>
+    <skills>
+        <skill skill="Q"/>
+        <skill skill="W"/>
+        <skill skill="E"/>
+        <skill skill="Q"/>
+        <skill skill="Q"/>
+        <skill skill="R"/>
+        
+        <skill skill="E"/>
+        <skill skill="W"/>
+        <skill skill="W"/>
+        <skill skill="W"/>
+        <skill skill="W"/>
+        <skill skill="W"/>
+        
+        <skill skill="W"/>
+        <skill skill="W"/>
+        <skill skill="W"/>
+        <skill skill="W"/>
+        <skill skill="W"/>
+        <skill skill="W"/>
+    </skills>
+</leagueoflegends>
