@@ -20,10 +20,7 @@ import pocketspace.metamanager.database.MetaManagerDatabaseSchema.*;
 
 public class ActivityGameList extends AppCompatActivity
 {
-    SQLiteDatabase writeableDB;
-    SQLiteDatabase readableDB;
     MetaManagerDatabaseHelper dbHelper;
-    Context appContext;
 
     static class Game {
         int gameImageResource;
@@ -44,12 +41,9 @@ public class ActivityGameList extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_list);
 
-        appContext = getApplicationContext();
+        dbHelper = new MetaManagerDatabaseHelper(this);
 
-        writeableDB = new MetaManagerDatabaseHelper(appContext).getWritableDatabase();
-        readableDB = new MetaManagerDatabaseHelper(appContext).getReadableDatabase();
-
-        hardCodeCharacterTable();
+        dbHelper.hardCodeCharacterTable();
 
         RecyclerView recyclerView = findViewById(R.id.gameListRecycler);
         games = createGameList();
@@ -78,83 +72,4 @@ public class ActivityGameList extends AppCompatActivity
 
         return gameList;
     }
-
-    //Database methods:
-
-    public void insertCharacterData(String name, int thumbnail, String splash, String description)
-    {
-        ContentValues cv = new ContentValues();
-        cv.put(CharacterTable.Cols.NAME, name);
-        cv.put(CharacterTable.Cols.THUMBNAIL, thumbnail);
-        cv.put(CharacterTable.Cols.SPLASH, splash);
-        cv.put(CharacterTable.Cols.DESCRIPTION, description);
-
-        writeableDB.insert(CharacterTable.NAME, null, cv);
-    }
-
-    public void hardCodeCharacterTable()
-    {
-        insertCharacterData("Aatrox", R.drawable.aatrox_thumbnail, "", "");
-        insertCharacterData("Ahri", R.drawable.ahri_thumbnail, "", "");
-        insertCharacterData("Akali", R.drawable.akali_thumbnail, "", "");
-        insertCharacterData("Alistar", R.drawable.alistar_thumbnail, "", "");
-        insertCharacterData("Amumu", R.drawable.amumu_thumbnail, "", "");
-        insertCharacterData("Anivia", R.drawable.anivia_thumbnail, "", "");
-        insertCharacterData("Annie", R.drawable.annie_thumbnail, "", "");
-        insertCharacterData("Ashe", R.drawable.ashe_thumbnail, "", "");
-        insertCharacterData("Aurelion_Sol", R.drawable.aurelion_sol_thumbnail, "", "");
-        insertCharacterData("Azir", R.drawable.azir_thumbnail, "", "");
-    }
-
-    public void insertBuildData(String character)
-    {
-        ContentValues cv = new ContentValues();
-        cv.put(BuildTable.Cols.CHARACTER, character);
-        writeableDB.insert(BuildTable.NAME, null, cv);
-    }
-
-    public void insertSkillData(String name, String q, String w, String e, String r, String description)
-    {
-        ContentValues cv = new ContentValues();
-        cv.put(SkillTable.Cols.NAME, name);
-        cv.put(SkillTable.Cols.SKILL_Q, q);
-        cv.put(SkillTable.Cols.SKILL_W, w);
-        cv.put(SkillTable.Cols.SKILL_E, e);
-        cv.put(SkillTable.Cols.SKILL_R, r);
-        cv.put(SkillTable.Cols.DESCRIPTION, description);
-        writeableDB.insert(SkillTable.NAME, null, cv);
-    }
-
-    public void insertSummonerData(String name, String description, String image)
-    {
-        ContentValues cv = new ContentValues();
-        cv.put(SummonerTable.Cols.NAME, name);
-        cv.put(SummonerTable.Cols.DESCRIPTION, description);
-        cv.put(SummonerTable.Cols.IMAGE, image);
-    }
-
-    public void insertBuildSummonerData(String summonerName)
-    {
-        ContentValues cv = new ContentValues();
-        cv.put(BuildSummonerTable.NAME, summonerName);
-        writeableDB.insert(BuildSummonerTable.NAME, null, cv);
-    }
-
-    public void insertRuneData(String name, String description, String image)
-    {
-        ContentValues cv = new ContentValues();
-        cv.put(RuneTable.Cols.NAME, name);
-        cv.put(RuneTable.Cols.DESCRIPTION, description);
-        cv.put(RuneTable.Cols.IMAGE, image);
-        writeableDB.insert(RuneTable.NAME, null, cv);
-    }
-
-    public void insertBuildRunesData(String runeName, String image)
-    {
-        ContentValues cv = new ContentValues();
-        cv.put(RuneTable.Cols.NAME, runeName);
-        cv.put(RuneTable.Cols.IMAGE, image);
-        writeableDB.insert(BuildRunesTable.NAME, null, cv);
-    }
-
 }

@@ -15,17 +15,6 @@ public class MetaManagerDatabaseSchema
         }
     }
 
-    public static final class BuildTable
-    {
-        public static final String NAME = "Build";
-
-        public static final class Cols
-        {
-            public static final String ID = "ID";
-            public static final String CHARACTER = "Character";
-        }
-    }
-
     public static final class SkillTable
     {
         public static final String NAME = "Skill";
@@ -53,17 +42,6 @@ public class MetaManagerDatabaseSchema
         }
     }
 
-    public static final class BuildSummonerTable
-    {
-        public static final String NAME = "Build_Summoner";
-
-        public static final class Cols
-        {
-            public static final String BUILD_ID = "Build_ID";
-            public static final String SUMMONER_NAME = "Summoner_Name";
-        }
-    }
-
     public static final class RuneTable
     {
         public static final String NAME = "Rune";
@@ -76,16 +54,16 @@ public class MetaManagerDatabaseSchema
         }
     }
 
-    public static final class BuildRunesTable
+    public static final class ItemTable
     {
-        public static final String NAME = "Build_Runes";
+        public static final String NAME = "Item";
 
         public static final class Cols
         {
-            public static final String ID = "ID";
-            public static final String RUNES_NAME = "Runes_Name";
+            public static final String NAME = "Item_Name";
+            public static final String DESCRIPTION = "Description";
+            public static final String IMAGE = "Image";
         }
-
     }
 
 }

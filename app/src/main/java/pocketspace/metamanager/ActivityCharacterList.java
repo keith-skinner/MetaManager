@@ -24,9 +24,7 @@ import pocketspace.metamanager.database.MetaManagerDatabaseSchema.CharacterTable
 
 public class ActivityCharacterList extends AppCompatActivity {
 
-    SQLiteDatabase writeableDB;
-    SQLiteDatabase readableDB;
-    Context appContext;
+    MetaManagerDatabaseHelper dbHelper;
 
     public enum ROLE_TAG
     {
@@ -51,10 +49,7 @@ public class ActivityCharacterList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_character_list);
 
-        appContext = getApplicationContext();
-
-        writeableDB = new MetaManagerDatabaseHelper(appContext).getWritableDatabase();
-        readableDB = new MetaManagerDatabaseHelper(appContext).getReadableDatabase();
+        dbHelper = new MetaManagerDatabaseHelper(this);
 
         RecyclerView recyclerView = findViewById(R.id.characterListRecycler);
         characters = createCharacterList();
@@ -70,19 +65,13 @@ public class ActivityCharacterList extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
     }
 
-    public Cursor getAllDataFromCharacterTable()
-    {
-        Cursor result = writeableDB.rawQuery("select * from " + CharacterTable.NAME, null);
-        return result;
-    }
-
     private List<Character> createCharacterList() {
         int indexOfCharacterName;
         int indexOfCharacterThumbnail;
 
         List<Character> characters = new ArrayList<>();
 
-        Cursor cursor = getAllDataFromCharacterTable();
+        Cursor cursor = dbHelper.getAllDataFromCharacterTable();
 
         indexOfCharacterName = cursor.getColumnIndex(CharacterTable.Cols.NAME);
         indexOfCharacterThumbnail = cursor.getColumnIndex(CharacterTable.Cols.THUMBNAIL);
@@ -96,5 +85,4 @@ public class ActivityCharacterList extends AppCompatActivity {
 
         return characters;
     }
-
 }
