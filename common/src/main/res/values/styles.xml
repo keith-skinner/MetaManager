@@ -1,0 +1,88 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/defaultBackground</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+
+    <!-- (Home) Game List Specific -->
+    <style name="GameList" parent="AppTheme"/>
+    <style name="GameList.Row" parent="GameList">
+        <item name="android:background">@color/layoutBackground</item>
+    </style>
+    <style name="GameList.Row.Image" parent="GameList.Row">
+        <item name="android:background">@color/gameIconBackground</item>
+    </style>
+    <style name="GameList.Row.Text" parent="GameList.Row">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">@dimen/largeTextSize</item>
+    </style>
+
+    <!-- Role Selection Specific-->
+    <style name="RoleSelection" parent="AppTheme">
+        <item name="android:background">@color/defaultBackground</item>
+    </style>
+    <style name="RoleSelection.Role" parent="RoleSelection">
+        <item name="android:onClick"></item>
+        <item name="android:clickable">true</item>
+        <item name="android:selectable">true</item>
+    </style>
+
+    <!-- About Page Specific -->
+    <style name="AboutPage" parent="AppTheme"/>
+    <style name="AboutPage.Layout" parent="AboutPage">
+        <item name="android:background">@color/layoutBackground</item>
+    </style>
+    <style name="AboutPage.LargeText" parent="AboutPage">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/largeTextSize</item>
+    </style>
+    <style name="AboutPage.NormalText" parent="AboutPage">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/smallTextSize</item>
+    </style>
+
+    <!-- Character List Specific -->
+    <style name="CharacterList" parent="AppTheme"/>
+    <style name="CharacterList.Row" parent="CharacterList"/>
+    <style name="CharacterList.Row.Image" parent="CharacterList.Row"/>
+    <style name="CharacterList.Row.Name" parent="CharacterList.Row">
+        <item name="android:textSize">@dimen/mediumTextSize</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+
+    <!-- Character Build Specific -->
+    <style name="CharacterBuild" parent="AppTheme"/>
+    <style name="PrimaryRuneTab" parent="CharacterBuild"/>
+    <style name="PrimaryRuneTab.PrimaryRunes" parent="PrimaryRuneTab"/>
+    <style name="PrimaryRuneTab.KeystoneRunes" parent="PrimaryRuneTab"/>
+    <style name="PrimaryRuneTab.SecondaryRunes" parent="PrimaryRuneTab"/>
+
+    <style name="SecondaryRuneTab" parent="CharacterBuild">
+        <item name="android:layout_margin">8dp</item>
+    </style>
+
+
+
+
+    <!-- Horizontal Rule -->
+    <style name="HorizontalRule" parent="AppTheme">
+        <item name="android:background">@color/horizontalRule</item>
+        <item name="android:layout_marginVertical">8dp</item>
+    </style>
+
+
+    <!-- Tool Bar Theme -->
+    <style name="MyToolbarTheme"
+        parent="@style/ThemeOverlay.AppCompat.Dark">
+        <item name="colorControlNormal">@color/defaultBackground</item>
+        <item name="titleTextColor">@color/horizontalRule</item>
+    </style>
+
+</resources>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/about_content"
+    android:id="@+id/about_contact_info"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/contactInfoTitle"
+        style=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/AboutPage.Layout"
+        >
+
+    <TextView
+        android:id="@+id/officialWebsitePrompt"
+        style="@style/AboutPage.NormalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/official_website_prompt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/officialWebsiteText"
+        style="@style/AboutPage.NormalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:text="@string/official_website_text"
+        app:layout_constraintBottom_toBottomOf="@+id/officialWebsitePrompt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/officialWebsitePrompt"
+        app:layout_constraintTop_toTopOf="@+id/officialWebsitePrompt"
+        />
+
+        <TextView
+            android:id="@+id/supportPhoneNumberPrompt"
+            style="@style/AboutPage.NormalText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/support_phone_number"
+            app:layout_constraintStart_toStartOf="@+id/officialWebsitePrompt"
+            app:layout_constraintTop_toBottomOf="@+id/officialWebsitePrompt" />
+
+    <TextView
+        android:id="@+id/supportPhoneNumberText"
+        style="@style/AboutPage.NormalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:text="@string/support_phone_number_text"
+        app:layout_constraintBottom_toBottomOf="@+id/supportPhoneNumberPrompt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/supportPhoneNumberPrompt"
+        app:layout_constraintTop_toTopOf="@+id/supportPhoneNumberPrompt"
+        />
+
+    <TextView
+        android:id="@+id/supportEmailPrompt"
+        style="@style/AboutPage.NormalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/support_email"
+        app:layout_constraintStart_toStartOf="@+id/supportPhoneNumberPrompt"
+        app:layout_constraintTop_toBottomOf="@+id/supportPhoneNumberPrompt"
+        />
+
+    <TextView
+        android:id="@+id/supportEmailText"
+        style="@style/AboutPage.NormalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:text="@string/support_email_text"
+        app:layout_constraintBottom_toBottomOf="@+id/supportEmailPrompt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/supportEmailPrompt"
+        app:layout_constraintTop_toTopOf="@+id/supportEmailPrompt"
+        />
+
+    </android.support.constraint.ConstraintLayout>
+</LinearLayout>
