@@ -27,30 +27,31 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
             + CharacterTable.Cols.NAME + " TEXT primary key, "
             + CharacterTable.Cols.DESCRIPTION + ", "
              + "Thumbnail integer, "
-            + CharacterTable.Cols.SPLASH + ")");
+            + CharacterTable.Cols.SPLASH + ")"); //keep it this way b/c its not being used and is already populated as an empty string
 
         db.execSQL("create table " + SkillTable.NAME + "("
             + SkillTable.Cols.NAME + " TEXT primary key, "
             + SkillTable.Cols.DESCRIPTION + ", "
-            + SkillTable.Cols.SKILL_Q + ", "
-            + SkillTable.Cols.SKILL_W + ", "
-            + SkillTable.Cols.SKILL_E + ", "
-            + SkillTable.Cols.SKILL_R + ")");
+            + "Skill_Q integer, "
+            + "Skill_W integer, "
+            + "Skill_E integer, "
+            + "Skill_R integer, "
+            + "Passive integer)");
 
         db.execSQL("create table " + SummonerTable.NAME + "("
             + SummonerTable.Cols.NAME + " TEXT primary key, "
             + SummonerTable.Cols.DESCRIPTION + ", "
-            + SummonerTable.Cols.IMAGE + ")");
+            + "Image integer)");
 
         db.execSQL("create table " + RuneTable.NAME + "("
             + RuneTable.Cols.NAME + " TEXT primary key, "
             + RuneTable.Cols.DESCRIPTION + ", "
-            + RuneTable.Cols.IMAGE + ")");
+            + "Image integer)");
 
         db.execSQL("create table " + ItemTable.NAME + "("
             + ItemTable.Cols.NAME + " TEXT primary key, "
             + ItemTable.Cols.DESCRIPTION + ", "
-            + ItemTable.Cols.IMAGE + ")");
+            + "Image integer)");
     }
 
     @Override
@@ -78,7 +79,7 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
         writeableDB.insert(CharacterTable.NAME, null, cv);
     }
 
-    public void insertSkillData(String name, String q, String w, String e, String r, String description)
+    public void insertSkillData(String name, int q, int w, int e, int r, int passive, String description)
     {
         SQLiteDatabase writeableDB = getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -87,11 +88,12 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
         cv.put(SkillTable.Cols.SKILL_W, w);
         cv.put(SkillTable.Cols.SKILL_E, e);
         cv.put(SkillTable.Cols.SKILL_R, r);
+        cv.put(SkillTable.Cols.PASSIVE, passive);
         cv.put(SkillTable.Cols.DESCRIPTION, description);
         writeableDB.insert(SkillTable.NAME, null, cv);
     }
 
-    public void insertSummonerData(String name, String description, String image)
+    public void insertSummonerData(String name, String description, int image)
     {
         SQLiteDatabase writeableDB = getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -101,7 +103,7 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
         writeableDB.insert(SummonerTable.NAME, null, cv);
     }
 
-    public void insertRuneData(String name, String description, String image)
+    public void insertRuneData(String name, String description, int image)
     {
         SQLiteDatabase writeableDB = getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -111,7 +113,7 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
         writeableDB.insert(RuneTable.NAME, null, cv);
     }
 
-    public void insertItemData(String name, String description, String image)
+    public void insertItemData(String name, String description, int image)
     {
         SQLiteDatabase writeableDB = getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -298,17 +300,18 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
         insertCharacterData("Zyra", R.drawable.zyra, "", "");
     }
 
+    public void hardCodeSkillTable()
+    {
+
+    }
+
     public void hardCodeRuneTable()
     {
 
     }
 
+    //todo later 
     public void hardCodeItemTable()
-    {
-
-    }
-
-    public void hardCodeSkillTable()
     {
 
     }
