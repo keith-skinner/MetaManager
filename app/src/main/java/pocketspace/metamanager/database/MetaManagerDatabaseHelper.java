@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.strictmode.SqliteObjectLeakedViolation;
 
 import pocketspace.metamanager.R;
 import pocketspace.metamanager.database.MetaManagerDatabaseSchema.*;
@@ -124,6 +125,34 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
     {
         SQLiteDatabase writeableDB = getWritableDatabase();
         Cursor result = writeableDB.rawQuery("select * from " + CharacterTable.NAME, null);
+        return result;
+    }
+
+    public Cursor getAllDataFromRuneTable()
+    {
+        SQLiteDatabase writeableDB = getWritableDatabase();
+        Cursor result = writeableDB.rawQuery("select * from " + RuneTable.NAME, null);
+        return result;
+    }
+
+    public Cursor getAllDataFromItemTable()
+    {
+        SQLiteDatabase writeableDB = getWritableDatabase();
+        Cursor result = writeableDB.rawQuery("select * from " + ItemTable.NAME, null);
+        return result;
+    }
+
+    public Cursor getAllDataFromSkillTable()
+    {
+        SQLiteDatabase writeableDB = getWritableDatabase();
+        Cursor result = writeableDB.rawQuery("select * from " + SkillTable.NAME, null);
+        return result;
+    }
+
+    public Cursor getAllDataFromSummonerTable()
+    {
+        SQLiteDatabase writeableDB = getWritableDatabase();
+        Cursor result = writeableDB.rawQuery("select * from " + SummonerTable.NAME, null);
         return result;
     }
 
@@ -267,6 +296,26 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
         insertCharacterData("Zilean", R.drawable.zilean, "", "");
         insertCharacterData("Zoe", R.drawable.zoe, "", "");
         insertCharacterData("Zyra", R.drawable.zyra, "", "");
+    }
+
+    public void hardCodeRuneTable()
+    {
+
+    }
+
+    public void hardCodeItemTable()
+    {
+
+    }
+
+    public void hardCodeSkillTable()
+    {
+
+    }
+
+    public void hardCodeSummonerTable()
+    {
+
     }
 
 }
