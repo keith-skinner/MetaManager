@@ -26,6 +26,7 @@ public class MetaManagerDatabaseSchema
             public static final String SKILL_W = "Skill_W";
             public static final String SKILL_E = "Skill_E";
             public static final String SKILL_R = "Skill_R";
+            public static final String PASSIVE = "Passive";
             public static final String DESCRIPTION = "Description";
         }
     }
