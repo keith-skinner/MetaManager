@@ -44,6 +44,8 @@ public class ActivityGameList extends AppCompatActivity
         dbHelper = new MetaManagerDatabaseHelper(this);
 
         dbHelper.hardCodeCharacterTable();
+        dbHelper.hardCodeSkillTable();
+        dbHelper.hardCodeRuneTable();
 
         RecyclerView recyclerView = findViewById(R.id.gameListRecycler);
         games = createGameList();
