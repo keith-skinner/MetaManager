@@ -1,12 +1,13 @@
 package pocketspace.metamanager.screen_activities;
 
 import android.content.Intent;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
+import com.google.android.material.tabs.TabLayout;
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import pocketspace.metamanager.R;
+import pocketspace.metamanager.data.Build;
 import pocketspace.metamanager.tab.TabAdapter;
 import pocketspace.metamanager.tab.TabItemFragment;
 import pocketspace.metamanager.tab.TabPrimeRuneFragment;
@@ -26,33 +27,27 @@ public class ActivityBuildView extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.build_screen);
 
-
-//        Toolbar toolbar = findViewById(R.id.app_toolbar);
-//        getSupportActionBar().setDisplayShowHomeEnabled(true);
-
-
         Intent intent = getIntent();
-        game = intent.getStringExtra(getResources().getString(R.string.gameName));
-        character = intent.getStringExtra(getResources().getString(R.string.characterName));
-        role = intent.getStringExtra(getResources().getString(R.string.lolRole));
+        //character = intent.getStringExtra(getResources().getString(R.string.characterName));
+        //role = intent.getStringExtra(getResources().getString(R.string.lolRole));
 
+        game = "league_of_legends";
+        character = "aatrox";
+        role = "TOP";
 
-
-
-        viewPager = (ViewPager) findViewById(R.id.viewPager);
-        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+        viewPager = findViewById(R.id.viewPager);
+        tabLayout = findViewById(R.id.tabLayout);
         adapter = new TabAdapter(getSupportFragmentManager());
 
-        adapter.addFragment(new TabPrimeRuneFragment(), "PRIME");
+        adapter.addFragment(TabPrimeRuneFragment.newInstance(Build.testing().runes.primary), "PRIME");
         adapter.addFragment(new TabSecondaryRuneFragment(), "SECOND");
         adapter.addFragment(new TabSpellFragment(), "SPELL");
         adapter.addFragment(new TabItemFragment(), "ITEM");
         adapter.addFragment(new TabSkillFragment(), "SKILL");
-
-
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);

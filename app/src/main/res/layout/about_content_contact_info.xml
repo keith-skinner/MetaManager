@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent"
         />
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/AboutPage.Layout"
@@ -102,5 +102,5 @@
         app:layout_constraintTop_toTopOf="@+id/supportEmailPrompt"
         />
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

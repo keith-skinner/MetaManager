@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/precisionPrimaryRunes"
@@ -9,36 +9,36 @@
     android:visibility="visible">
 
     <ImageView
-        android:id="@+id/keystone1"
+        android:id="@+id/resolveKeystone1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:contentDescription="@string/todo"
         android:src="@drawable/grasp_of_the_undying"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/keystone2"
+        app:layout_constraintEnd_toStartOf="@+id/resolveKeystone2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/keystone2"
+        android:id="@+id/resolveKeystone2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:contentDescription="@string/todo"
         android:src="@drawable/aftershock"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/keystone3"
-        app:layout_constraintStart_toEndOf="@+id/keystone1"
+        app:layout_constraintEnd_toStartOf="@+id/resolveKeystone3"
+        app:layout_constraintStart_toEndOf="@+id/resolveKeystone1"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/keystone3"
+        android:id="@+id/resolveKeystone3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:contentDescription="@string/todo"
         android:src="@drawable/guardian"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/keystone2"
+        app:layout_constraintStart_toEndOf="@+id/resolveKeystone2"
         app:layout_constraintTop_toTopOf="parent" />
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

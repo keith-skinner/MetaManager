@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.LinearLayoutCompat
+<androidx.appcompat.widget.LinearLayoutCompat
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/characterElementLayout"
     android:layout_width="150dp"
@@ -9,15 +9,14 @@
     android:clickable="true"
     android:focusable="true">
 
-    <android.support.v7.widget.AppCompatImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/characterThumbnail"
         style="@style/CharacterList.Row.Image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="@drawable/aatrox_thumbnail"/>
+        android:layout_gravity="center" />
 
-    <android.support.v7.widget.AppCompatTextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/characterName"
         style="@style/CharacterList.Row.Name"
         android:layout_width="wrap_content"
@@ -25,4 +24,4 @@
         android:layout_gravity="center"
         android:text="@string/default_text"/>
 
-</android.support.v7.widget.LinearLayoutCompat>
+</androidx.appcompat.widget.LinearLayoutCompat>

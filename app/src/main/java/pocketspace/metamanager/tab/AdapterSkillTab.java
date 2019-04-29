@@ -1,7 +1,5 @@
 package pocketspace.metamanager.tab;
 
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,21 +7,22 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import pocketspace.metamanager.R;
 
 public class AdapterSkillTab extends RecyclerView.Adapter<AdapterSkillTab.ViewHolder>
 {
 
+
     class ViewHolder extends RecyclerView.ViewHolder {
-        TextView lvlNumber;
-        View skillQ;
-        View skillW;
-        View skillE;
-        View skillR;
+        TextView skillQ;
+        TextView skillW;
+        TextView skillE;
+        TextView skillR;
 
         ViewHolder(View view) {
             super(view);
-            lvlNumber = view.findViewById(R.id.lvlNumber);
             skillQ = view.findViewById(R.id.skillQ);
             skillW = view.findViewById(R.id.skillW);
             skillE = view.findViewById(R.id.skillE);
@@ -42,7 +41,7 @@ public class AdapterSkillTab extends RecyclerView.Adapter<AdapterSkillTab.ViewHo
     @Override
     public AdapterSkillTab.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View contactView = inflater.inflate(R.layout.skill_page_level, parent, false);
+        View contactView = inflater.inflate(R.layout.activity_skill_containers, parent, false);
         return new ViewHolder(contactView);
     }
 
@@ -50,15 +49,17 @@ public class AdapterSkillTab extends RecyclerView.Adapter<AdapterSkillTab.ViewHo
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
         final String skill = this.skills.get(position);
 
-        TextView lvlNumber = viewHolder.lvlNumber;
-        lvlNumber.setText(String.valueOf(position+1));
+        viewHolder.skillQ.setBackgroundResource(R.color.box);
+        viewHolder.skillW.setBackgroundResource(R.color.box);
+        viewHolder.skillE.setBackgroundResource(R.color.box);
+        viewHolder.skillR.setBackgroundResource(R.color.box);
 
-        viewHolder.skillQ.setBackgroundResource(R.drawable.outline_square);
-        viewHolder.skillW.setBackgroundResource(R.drawable.outline_square);
-        viewHolder.skillE.setBackgroundResource(R.drawable.outline_square);
-        viewHolder.skillR.setBackgroundResource(R.drawable.outline_square);
+        viewHolder.skillQ.setText("");
+        viewHolder.skillW.setText("");
+        viewHolder.skillE.setText("");
+        viewHolder.skillR.setText("");
 
-        View activeSkill = null;
+        TextView activeSkill = null;
         if (skill.equals("Q"))
             activeSkill = viewHolder.skillQ;
         else if (skill.equals("W"))
@@ -68,10 +69,11 @@ public class AdapterSkillTab extends RecyclerView.Adapter<AdapterSkillTab.ViewHo
         else if (skill.equals("R"))
             activeSkill = viewHolder.skillR;
 
-        if (activeSkill != null)
-            activeSkill.setBackgroundResource(R.color.darkPurple);
+        if (activeSkill != null) {
+            activeSkill.setBackgroundResource(R.drawable.numbered);
+            activeSkill.setText(""+(position+1));
+        }
     }
-
     @Override
     public int getItemCount() {
         return skills.size();

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/row1"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -16,38 +16,38 @@
         app:layout_constraintBottom_toTopOf="@+id/row2">
 
         <ImageView
-            android:id="@+id/summoner1"
+            android:id="@+id/tertiaryRow1Col1"
             style="@style/SecondaryRuneTab"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/diamond"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/summoner2"
+            app:layout_constraintEnd_toStartOf="@+id/tertiaryRow1Col2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/summoner2"
+            android:id="@+id/tertiaryRow1Col2"
             style="@style/SecondaryRuneTab"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/axe"
-            app:layout_constraintStart_toEndOf="@+id/summoner1"
-            app:layout_constraintEnd_toStartOf="@+id/summoner3"
+            app:layout_constraintStart_toEndOf="@+id/tertiaryRow1Col1"
+            app:layout_constraintEnd_toStartOf="@+id/tertiaryRow1Col3"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
 
         <ImageView
-            android:id="@+id/summoner3"
+            android:id="@+id/tertiaryRow1Col3"
             style="@style/SecondaryRuneTab"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:adjustViewBounds="false"
             android:contentDescription="@string/todo"
             android:src="@drawable/time"
-            app:layout_constraintStart_toEndOf="@+id/summoner2"
+            app:layout_constraintStart_toEndOf="@+id/tertiaryRow1Col2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
@@ -55,9 +55,9 @@
 
 
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/row2"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -68,44 +68,44 @@
         app:layout_constraintBottom_toTopOf="@+id/row3" >
 
         <ImageView
-            android:id="@+id/summoner4"
+            android:id="@+id/tertiaryRow2Col1"
             style="@style/SecondaryRuneTab"
             android:layout_width="0dp"
             android:layout_height="234dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/diamond"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/summoner5"
+            app:layout_constraintEnd_toStartOf="@+id/tertiaryRow2Col2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/summoner5"
+            android:id="@+id/tertiaryRow2Col2"
             style="@style/SecondaryRuneTab"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/shield"
-            app:layout_constraintStart_toEndOf="@+id/summoner4"
-            app:layout_constraintEnd_toStartOf="@+id/summoner6"
+            app:layout_constraintStart_toEndOf="@+id/tertiaryRow2Col1"
+            app:layout_constraintEnd_toStartOf="@+id/tertiaryRow2Col3"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
         <ImageView
-            android:id="@+id/summoner6"
+            android:id="@+id/tertiaryRow2Col3"
             style="@style/SecondaryRuneTab"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/circle"
-            app:layout_constraintStart_toEndOf="@+id/summoner5"
+            app:layout_constraintStart_toEndOf="@+id/tertiaryRow2Col2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/row3"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -116,41 +116,41 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageView
-            android:id="@+id/summoner7"
+            android:id="@+id/tertiaryRow3Col1"
             style="@style/SecondaryRuneTab"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/heart"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/summoner8"
+            app:layout_constraintEnd_toStartOf="@+id/tertiaryRow3Col2"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
         <ImageView
-            android:id="@+id/summoner8"
+            android:id="@+id/tertiaryRow3Col2"
             style="@style/SecondaryRuneTab"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/shield"
-            app:layout_constraintStart_toEndOf="@+id/summoner7"
-            app:layout_constraintEnd_toStartOf="@+id/summoner9"
+            app:layout_constraintStart_toEndOf="@+id/tertiaryRow3Col1"
+            app:layout_constraintEnd_toStartOf="@+id/tertiaryRow3Col3"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
         <ImageView
-            android:id="@+id/summoner9"
+            android:id="@+id/tertiaryRow3Col3"
             style="@style/SecondaryRuneTab"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/circle"
-            app:layout_constraintStart_toEndOf="@+id/summoner8"
+            app:layout_constraintStart_toEndOf="@+id/tertiaryRow3Col2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

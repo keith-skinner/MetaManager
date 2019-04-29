@@ -1,8 +1,8 @@
 package pocketspace.metamanager.screen_activities;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.flexbox.AlignItems;
 import com.google.android.flexbox.FlexDirection;
@@ -59,16 +59,16 @@ public class ActivityCharacterList extends AppCompatActivity {
 
     private static List<Character> createCharacterList() {
         List<Character> characters = new ArrayList<>();
-        characters.add(new Character("Aatrox", R.drawable.aatrox_thumbnail));
-        characters.add(new Character("Ahri", R.drawable.ahri_thumbnail));
-        characters.add(new Character("Akali", R.drawable.akali_thumbnail));
-        characters.add(new Character("Alistar", R.drawable.alistar_thumbnail));
-        characters.add(new Character("Amumu", R.drawable.amumu_thumbnail));
-        characters.add(new Character("Anivia", R.drawable.anivia_thumbnail));
-        characters.add(new Character("Annie", R.drawable.annie_thumbnail));
-        characters.add(new Character("Ashe", R.drawable.ashe_thumbnail));
-        characters.add(new Character("Aurelion Sol", R.drawable.aurelion_sol_thumbnail));
-        characters.add(new Character("Azir", R.drawable.azir_thumbnail));
+//        characters.add(new Character("Aatrox", R.drawable.aatrox_thumbnail));
+//        characters.add(new Character("Ahri", R.drawable.ahri_thumbnail));
+//        characters.add(new Character("Akali", R.drawable.akali_thumbnail));
+//        characters.add(new Character("Alistar", R.drawable.alistar_thumbnail));
+//        characters.add(new Character("Amumu", R.drawable.amumu_thumbnail));
+//        characters.add(new Character("Anivia", R.drawable.anivia_thumbnail));
+//        characters.add(new Character("Annie", R.drawable.annie_thumbnail));
+//        characters.add(new Character("Ashe", R.drawable.ashe_thumbnail));
+//        characters.add(new Character("Aurelion Sol", R.drawable.aurelion_sol_thumbnail));
+//        characters.add(new Character("Azir", R.drawable.azir_thumbnail));
         return characters;
     }
 }
