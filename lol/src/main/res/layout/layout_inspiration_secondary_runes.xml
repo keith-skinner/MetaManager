@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/row1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/row2">
+
+        <ImageView
+            android:id="@+id/inspirationSecondary11"
+            style="@style/SecondaryRuneTab"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/hextech_flashtraption"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/inspirationSecondary12"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/inspirationSecondary12"
+            style="@style/SecondaryRuneTab"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/magical_footwear"
+            app:layout_constraintStart_toEndOf="@+id/inspirationSecondary11"
+            app:layout_constraintEnd_toStartOf="@+id/inspirationSecondary13"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <ImageView
+            android:id="@+id/inspirationSecondary13"
+            style="@style/SecondaryRuneTab"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:adjustViewBounds="false"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/perfect_timing"
+            app:layout_constraintStart_toEndOf="@+id/inspirationSecondary12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/row2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@id/row1"
+        app:layout_constraintEnd_toEndOf="@id/row1"
+        app:layout_constraintTop_toBottomOf="@+id/row1"
+        app:layout_constraintBottom_toTopOf="@+id/row3" >
+
+        <ImageView
+            android:id="@+id/inspirationSecondary21"
+            style="@style/SecondaryRuneTab"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/futures_market"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/inspirationSecondary22"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <ImageView
+            android:id="@+id/inspirationSecondary22"
+            style="@style/SecondaryRuneTab"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/minion_dematerializer"
+            app:layout_constraintStart_toEndOf="@+id/inspirationSecondary21"
+            app:layout_constraintEnd_toStartOf="@+id/inspirationSecondary23"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <ImageView
+            android:id="@+id/inspirationSecondary23"
+            style="@style/SecondaryRuneTab"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/biscuit_delivery"
+            app:layout_constraintStart_toEndOf="@+id/inspirationSecondary22"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/row3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@id/row2"
+        app:layout_constraintEnd_toEndOf="@id/row2"
+        app:layout_constraintTop_toBottomOf="@+id/row2"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/inspirationSecondary31"
+            style="@style/SecondaryRuneTab"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/cosmic_insight"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/inspirationSecondary32"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/inspirationSecondary32"
+            style="@style/SecondaryRuneTab"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/approach_velocity"
+            app:layout_constraintStart_toEndOf="@+id/inspirationSecondary31"
+            app:layout_constraintEnd_toStartOf="@+id/inspirationSecondary33"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <ImageView
+            android:id="@+id/inspirationSecondary33"
+            style="@style/SecondaryRuneTab"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/time_warp_tonic"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/inspirationSecondary32"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,9 +10,15 @@
     <!-- Game List Activity -->
     <color name="gameIconBackground">#222</color>
 
-    <color name="darkPurple">#4a148c</color>
-    <color name="lightPurple">#7c43bd</color>
+    <color name="darkPurple">#7b8bbb</color>
+    <!--<color name="darkPurple">#4a148c</color>-->
 
+    <color name="lightPurple">#7b8bbb</color>
+    <!--<color name="lightPurple">#7c43bd</color>-->
+
+
+    <color name="splashBackgroundColor">#7b8bbb </color>
+    <color name="box">#21343b</color>
     <drawable name="icon" />
 
 </resources>

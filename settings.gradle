@@ -1,1 +1,1 @@
-include ':app', ':moba', ':lol', ':common', ':lol'
+include ':app', ':lol', ':common', ':lol'
