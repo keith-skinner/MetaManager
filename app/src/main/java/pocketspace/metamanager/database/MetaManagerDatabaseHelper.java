@@ -94,33 +94,33 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
         writeableDB.insert(SkillTable.NAME, null, cv);
     }
 
-    public void insertSummonerData(String name, String description, String image)
+    public void insertSummonerData(String name, String image, String description)
     {
         SQLiteDatabase writeableDB = getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(SummonerTable.Cols.NAME, name);
-        cv.put(SummonerTable.Cols.DESCRIPTION, description);
         cv.put(SummonerTable.Cols.IMAGE, image);
+        cv.put(SummonerTable.Cols.DESCRIPTION, description);
         writeableDB.insert(SummonerTable.NAME, null, cv);
     }
 
-    public void insertRuneData(String name, String description, String image)
+    public void insertRuneData(String name, String image, String description)
     {
         SQLiteDatabase writeableDB = getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(RuneTable.Cols.NAME, name);
-        cv.put(RuneTable.Cols.DESCRIPTION, description);
         cv.put(RuneTable.Cols.IMAGE, image);
+        cv.put(RuneTable.Cols.DESCRIPTION, description);
         writeableDB.insert(RuneTable.NAME, null, cv);
     }
 
-    public void insertItemData(String name, String description, String image)
+    public void insertItemData(String name, String image, String description)
     {
         SQLiteDatabase writeableDB = getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(ItemTable.Cols.NAME, name);
-        cv.put(ItemTable.Cols.DESCRIPTION, description);
         cv.put(ItemTable.Cols.IMAGE, image);
+        cv.put(ItemTable.Cols.DESCRIPTION, description);
         writeableDB.insert(ItemTable.NAME, null, cv);
     }
 
@@ -189,89 +189,89 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
 
     public void hardCodeRuneTable()
     {
-        /*insertRuneData("Absolute_Focus", "", R.drawable.absolute_focus);
-        insertRuneData("Aftershock", "", R.drawable.aftershock);
-        insertRuneData("Approach_Velocity", "", R.drawable.approach_velocity);
-        insertRuneData("Arcane_Comet", "", R.drawable.arcane_comet);
-        insertRuneData("Axe", "", R.drawable.axe);
-        insertRuneData("Barrier", "", R.drawable.barrier);
-        insertRuneData("Biscuit_Delivery", "", R.drawable.biscuit_delivery);
-        insertRuneData("Bone_Plating", "", R.drawable.bone_plating);
-        insertRuneData("Celerity", "", R.drawable.celerity);
-        insertRuneData("Cheap_Shot", "", R.drawable.cheap_shot);
-        insertRuneData("Circle", "", R.drawable.circle);
-        insertRuneData("Cleanse", "", R.drawable.cleanse);
-        insertRuneData("Conditioning", "", R.drawable.conditioning);
-        insertRuneData("Conqueror", "", R.drawable.conqueror);
-        insertRuneData("Cosmic_Insight", "", R.drawable.cosmic_insight);
-        insertRuneData("Coup_De_Grace", "", R.drawable.coup_de_grace);
-        insertRuneData("Cut_Down", "", R.drawable.cut_down);
-        insertRuneData("Dark_Harvest", "", R.drawable.dark_harvest);
-        insertRuneData("Demolish", "", R.drawable.demolish);
-        insertRuneData("Diamond", "", R.drawable.diamond);
-        insertRuneData("Domination", "", R.drawable.domination);
-        insertRuneData("Electrocute", "", R.drawable.electrocute);
-        insertRuneData("Exhaust", "", R.drawable.exhaust);
-        insertRuneData("Eyeball_Collection", "", R.drawable.eyeball_collection);
-        insertRuneData("Flash", "", R.drawable.flash);
-        insertRuneData("Fleet_Footwork", "", R.drawable.fleet_footwork);
-        insertRuneData("Font_Of_Life", "", R.drawable.font_of_life);
-        insertRuneData("Futures_Market", "", R.drawable.futures_market);
-        insertRuneData("Gathering_Storm", "", R.drawable.gathering_storm);
-        insertRuneData("Ghost", "", R.drawable.ghost);
-        insertRuneData("Ghost_Poro", "", R.drawable.ghost_poro);
-        insertRuneData("Glacial_Augment", "", R.drawable.glacial_augment);
-        insertRuneData("Grasp_Of_The_Undying", "", R.drawable.grasp_of_the_undying);
-        insertRuneData("Guardian", "", R.drawable.guardian);
-        insertRuneData("Hail_Of_Blades", "", R.drawable.hail_of_blades);
-        insertRuneData("Heal", "", R.drawable.heal);
-        insertRuneData("Heart", "", R.drawable.heart);
-        insertRuneData("Hextech_Flashtraption", "", R.drawable.hextech_flashtraption);
-        insertRuneData("Ignite", "", R.drawable.ignite);
-        insertRuneData("Ingenious_Hunter", "", R.drawable.ingenious_hunter);
-        insertRuneData("Inspiration", "", R.drawable.inspiration);
-        insertRuneData("Kleptomancy", "", R.drawable.kleptomancy);
-        insertRuneData("Last_Stand", "", R.drawable.last_stand);
-        insertRuneData("Legend_Alacrity", "", R.drawable.legend_alacrity);
-        insertRuneData("Legend_Bloodline", "", R.drawable.legend_bloodline);
-        insertRuneData("Legend_Tenacity", "", R.drawable.legend_tenacity);
-        insertRuneData("Lethal_Tempo", "", R.drawable.lethal_tempo);
-        insertRuneData("Magical_Footwear", "", R.drawable.magical_footwear);
-        insertRuneData("Manaflow_Band", "", R.drawable.manaflow_band);
-        insertRuneData("Minion_Dematerializer", "", R.drawable.minion_dematerializer);
-        insertRuneData("Nimbus_Cloak", "", R.drawable.nimbus_cloak);
-        insertRuneData("Nullifying_Orb", "", R.drawable.nullifying_orb);
-        insertRuneData("Overgrowth", "", R.drawable.overgrowth);
-        insertRuneData("Overheal", "", R.drawable.overheal);
-        insertRuneData("Perfect_Timing", "", R.drawable.perfect_timing);
-        insertRuneData("Phase_Rush", "", R.drawable.phase_rush);
-        insertRuneData("Precision", "", R.drawable.precision);
-        insertRuneData("Predator", "", R.drawable.predator);
-        insertRuneData("Presence_Of_Mind", "", R.drawable.presence_of_mind);
-        insertRuneData("Press_The_Attack", "", R.drawable.press_the_attack);
-        insertRuneData("Ravenous_Hunter", "", R.drawable.ravenous_hunter);
-        insertRuneData("Relentless_Hunter", "", R.drawable.relentless_hunter);
-        insertRuneData("Resolve", "", R.drawable.resolve);
-        insertRuneData("Revitalize", "", R.drawable.revitalize);
-        insertRuneData("Scorch", "", R.drawable.scorch);
-        insertRuneData("Second_Wind", "", R.drawable.second_wind);
-        insertRuneData("Shield", "", R.drawable.shield);
-        insertRuneData("Shield_Bash", "", R.drawable.shield_bash);
-        insertRuneData("Smite", "", R.drawable.smite);
-        insertRuneData("Sorcery", "", R.drawable.sorcery);
-        insertRuneData("Sudden_Impact", "", R.drawable.sudden_impact);
-        insertRuneData("Summon_Aery", "", R.drawable.summon_aery);
-        insertRuneData("Taste_Of_Blood", "", R.drawable.taste_of_blood);
-        insertRuneData("Teleport", "", R.drawable.teleport);
-        insertRuneData("Time", "", R.drawable.time);
-        insertRuneData("Time_Warp_Tonic", "", R.drawable.time_warp_tonic);
-        insertRuneData("Transcendence", "", R.drawable.transcendence);
-        insertRuneData("Triumph", "", R.drawable.triumph);
-        insertRuneData("Ultimate_Hunter", "", R.drawable.ultimate_hunter);
-        insertRuneData("Unflinching", "", R.drawable.unflinching);
-        insertRuneData("Unsealed_Spellbook", "", R.drawable.unsealed_spellbook);
-        insertRuneData("Waterwalking", "", R.drawable.waterwalking);
-        insertRuneData("Zombie_Ward", "", R.drawable.zombie_ward); */
+        insertRuneData("Absolute_Focus", "rune/absolute_focus.png", "");
+        insertRuneData("Aftershock", "rune/aftershock.png", "");
+        insertRuneData("Approach_Velocity", "rune/approach_velocity.png", "");
+        insertRuneData("Arcane_Comet", "rune/arcane_comet.png", "");
+        insertRuneData("Axe", "rune/axe.png", "");
+        insertRuneData("Barrier", "rune/barrier.png", "");
+        insertRuneData("Biscuit_Delivery", "rune/biscuit_delivery.png", "");
+        insertRuneData("Bone_Plating", "rune/bone_plating.png", "");
+        insertRuneData("Celerity", "rune/celerity.png", "");
+        insertRuneData("Cheap_Shot", "rune/cheap_shot.png", "");
+        insertRuneData("Circle", "rune/circle.png", "");
+        insertRuneData("Cleanse", "rune/cleanse.png", "");
+        insertRuneData("Conditioning", "rune/conditioning.png", "");
+        insertRuneData("Conqueror", "rune/conqueror.png", "");
+        insertRuneData("Cosmic_Insight", "rune/cosmic_insight.png", "");
+        insertRuneData("Coup_De_Grace", "rune/coup_de_grace.png", "");
+        insertRuneData("Cut_Down", "rune/cut_down.png", "");
+        insertRuneData("Dark_Harvest", "rune/dark_harvest.png", "");
+        insertRuneData("Demolish", "rune/demolish.png", "");
+        insertRuneData("Diamond", "rune/diamond.png", "");
+        insertRuneData("Domination", "rune/domination.png", "");
+        insertRuneData("Electrocute", "rune/electrocute.png", "");
+        insertRuneData("Exhaust", "rune/exhaust.png", "");
+        insertRuneData("Eyeball_Collection", "rune/eyeball_collection.png", "");
+        insertRuneData("Flash", "rune/flash.png", "");
+        insertRuneData("Fleet_Footwork", "rune/fleet_footwork.png", "");
+        insertRuneData("Font_Of_Life", "rune/font_of_life.png", "");
+        insertRuneData("Futures_Market", "rune/futures_market.png", "");
+        insertRuneData("Gathering_Storm", "rune/gathering_storm.png", "");
+        insertRuneData("Ghost", "rune/ghost.png", "");
+        insertRuneData("Ghost_Poro", "rune/ghost_poro.png", "");
+        insertRuneData("Glacial_Augment", "rune/glacial_augment.png", "");
+        insertRuneData("Grasp_Of_The_Undying", "rune/grasp_of_the_undying.png", "");
+        insertRuneData("Guardian", "rune/guardian.png", "");
+        insertRuneData("Hail_Of_Blades", "rune/hail_of_blades.png", "");
+        insertRuneData("Heal", "rune/heal.png", "");
+        insertRuneData("Heart", "rune/heart.png", "");
+        insertRuneData("Hextech_Flashtraption", "rune/hextech_flashtraption.png", "");
+        insertRuneData("Ignite", "rune/ignite.png", "");
+        insertRuneData("Ingenious_Hunter", "rune/ingenious_hunter.png", "");
+        insertRuneData("Inspiration", "rune/inspiration.png", "");
+        insertRuneData("Kleptomancy", "rune/kleptomancy.png", "");
+        insertRuneData("Last_Stand", "rune/last_stand.png", "");
+        insertRuneData("Legend_Alacrity", "rune/legend_alacrity.png", "");
+        insertRuneData("Legend_Bloodline", "rune/legend_bloodline.png", "");
+        insertRuneData("Legend_Tenacity", "rune/legend_tenacity.png", "");
+        insertRuneData("Lethal_Tempo", "rune/lethal_tempo.png", "");
+        insertRuneData("Magical_Footwear", "rune/magical_footwear.png", "");
+        insertRuneData("Manaflow_Band", "rune/manaflow_band.png", "");
+        insertRuneData("Minion_Dematerializer", "rune/minion_dematerializer.png", "");
+        insertRuneData("Nimbus_Cloak", "rune/nimbus_cloak.png", "");
+        insertRuneData("Nullifying_Orb", "rune/nullifying_orb.png", "");
+        insertRuneData("Overgrowth", "rune/overgrowth.png", "");
+        insertRuneData("Overheal", "rune/overheal.png", "");
+        insertRuneData("Perfect_Timing", "rune/perfect_timing.png", "");
+        insertRuneData("Phase_Rush", "rune/phase_rush.png", "");
+        insertRuneData("Precision", "rune/precision.png", "");
+        insertRuneData("Predator", "rune/predator.png", "");
+        insertRuneData("Presence_Of_Mind", "rune/presence_of_mind.png", "");
+        insertRuneData("Press_The_Attack", "rune/press_the_attack.png", "");
+        insertRuneData("Ravenous_Hunter", "rune/ravenous_hunter.png", "");
+        insertRuneData("Relentless_Hunter", "rune/relentless_hunter.png", "");
+        insertRuneData("Resolve", "rune/resolve.png", "");
+        insertRuneData("Revitalize", "rune/revitalize.png", "");
+        insertRuneData("Scorch", "rune/scorch.png", "");
+        insertRuneData("Second_Wind", "rune/second_wind.png", "");
+        insertRuneData("Shield", "rune/shield.png", "");
+        insertRuneData("Shield_Bash", "rune/shield_bash.png", "");
+        insertRuneData("Smite", "rune/smite.png", "");
+        insertRuneData("Sorcery", "rune/sorcery.png", "");
+        insertRuneData("Sudden_Impact", "rune/sudden_impact.png", "");
+        insertRuneData("Summon_Aery", "rune/summon_aery.png", "");
+        insertRuneData("Taste_Of_Blood", "rune/taste_of_blood.png", "");
+        insertRuneData("Teleport", "rune/teleport.png", "");
+        insertRuneData("Time", "rune/time.png", "");
+        insertRuneData("Time_Warp_Tonic", "rune/time_warp_tonic.png", "");
+        insertRuneData("Transcendence", "rune/transcendence.png", "");
+        insertRuneData("Triumph", "rune/triumph.png", "");
+        insertRuneData("Ultimate_Hunter", "rune/ultimate_hunter.png", "");
+        insertRuneData("Unflinching", "rune/unflinching.png", "");
+        insertRuneData("Unsealed_Spellbook", "rune/unsealed_spellbook.png", "");
+        insertRuneData("Waterwalking", "rune/waterwalking.png", "");
+        insertRuneData("Zombie_Ward", "rune/zombie_ward.png", "");
     }
 
     //todo later sprint 3
