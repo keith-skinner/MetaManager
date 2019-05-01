@@ -15,7 +15,7 @@ import pocketspace.metamanager.tab.TabSecondaryRuneFragment;
 import pocketspace.metamanager.tab.TabSkillFragment;
 import pocketspace.metamanager.tab.TabSpellFragment;
 
-public class ActivityBuildView extends AppCompatActivity {
+public class BuildScreen extends AppCompatActivity {
 
     String game;
     String character;

@@ -5,6 +5,9 @@
 
     <!-- TODO: Make the onclick actually work -->
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+
     <application
         android:icon="@mipmap/hat_ic_launcher"
         android:label="@string/app_name"
@@ -13,7 +16,7 @@
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
 
         <activity
-            android:name=".screen_activities.ActivityHomeScreen"
+            android:name=".screen_activities.HomeScreen"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,35 +26,35 @@
 
 
         <activity
-            android:name=".screen_activities.ActivityGameList"
+            android:name=".screen_activities.GameListScreen"
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name=".screen_activities.ActivityCharacterList"
+            android:name=".screen_activities.CharacterListScreen"
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name=".screen_activities.ActivityRole"
+            android:name=".screen_activities.RoleScreen"
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name=".screen_activities.ActivityBuildView"
+            android:name=".screen_activities.BuildScreen"
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name=".screen_activities.ActivityAboutScreen"
+            android:name=".screen_activities.AboutScreen"
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name=".screen_activities.ActivityViewBuildsScreen"
+            android:name=".screen_activities.ViewBuildsScreen"
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name=".screen_activities.ActivityImportScreen"
+            android:name=".screen_activities.ImportScreen"
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name=".screen_activities.ActivityCreateScreen"
+            android:name=".screen_activities.CreateScreen"
             android:theme="@style/AppTheme"/>
 
     </application>

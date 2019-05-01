@@ -1,16 +1,17 @@
 package pocketspace.metamanager.screen_activities;
 
 import android.os.Bundle;
+import android.os.PersistableBundle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import pocketspace.metamanager.R;
 
-public class ActivityCreateScreen extends AppCompatActivity {
+public class ImportScreen extends AppCompatActivity {
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.create_screen);
+        setContentView(R.layout.import_screen);
     }
 }

@@ -17,7 +17,7 @@ import pocketspace.metamanager.R;
 
 import static com.google.android.flexbox.FlexWrap.WRAP;
 
-public class ActivityCharacterList extends AppCompatActivity {
+public class CharacterListScreen extends AppCompatActivity {
 
     public enum ROLE_TAG
     {
@@ -48,7 +48,7 @@ public class ActivityCharacterList extends AppCompatActivity {
         AdapterCharacterList adapter = new AdapterCharacterList(characters);
         recyclerView.setAdapter(adapter);
 
-        FlexboxLayoutManager layoutManager = new FlexboxLayoutManager(ActivityCharacterList.this);
+        FlexboxLayoutManager layoutManager = new FlexboxLayoutManager(CharacterListScreen.this);
         layoutManager.setFlexDirection(FlexDirection.ROW);
         layoutManager.setFlexWrap(WRAP);
         layoutManager.setJustifyContent(JustifyContent.SPACE_AROUND);

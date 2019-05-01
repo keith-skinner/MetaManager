@@ -11,7 +11,7 @@ import java.util.List;
 import pocketspace.metamanager.list.AdapterGameList;
 import pocketspace.metamanager.R;
 
-public class ActivityGameList extends AppCompatActivity
+public class GameListScreen extends AppCompatActivity
 {
     public static class Game {
         public int gameImageResource;
@@ -43,16 +43,16 @@ public class ActivityGameList extends AppCompatActivity
 
         gameList.add(new Game(
                 "League Of Legends", R.drawable.game_icon_league_of_legends,
-                ActivityCharacterList.class));
+                CharacterListScreen.class));
 
         gameList.add(new Game(
                 "Smite", R.drawable.game_icon_smite,
-                ActivityAboutScreen.class
+                AboutScreen.class
         ));
 
         gameList.add(new Game(
                 "Dota2", R.drawable.game_icon_dota2,
-                ActivityAboutScreen.class
+                AboutScreen.class
         ));
 
         return gameList;
