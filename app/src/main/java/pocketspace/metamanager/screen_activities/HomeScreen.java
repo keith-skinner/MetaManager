@@ -6,12 +6,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import pocketspace.metamanager.R;
+import pocketspace.metamanager.database.MetaManagerDatabaseHelper;
 
 public class HomeScreen extends AppCompatActivity {
+
+    MetaManagerDatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        db = new MetaManagerDatabaseHelper(this);
+        db.hardCodeCharacterTable();
+        db.hardCodeSkillTable();
+        db.hardCodeRuneTable();
+        db.hardCodeSummonerTable();
+
         setContentView(R.layout.home_screen);
 
 
