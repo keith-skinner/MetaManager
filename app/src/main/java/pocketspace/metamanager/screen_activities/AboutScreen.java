@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import pocketspace.metamanager.R;
 
-public class ActivityAboutScreen extends AppCompatActivity {
+public class AboutScreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

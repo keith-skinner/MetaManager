@@ -8,7 +8,7 @@ import android.widget.ImageView;
 
 import pocketspace.metamanager.R;
 
-public class ActivityRole extends AppCompatActivity {
+public class RoleScreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +21,7 @@ public class ActivityRole extends AppCompatActivity {
 
         ImageView img = this.findViewById(R.id.topRoleButton);
         img.setOnClickListener(view -> {
-            Intent intent1 = new Intent(this, ActivityBuildView.class);
+            Intent intent1 = new Intent(this, BuildScreen.class);
             intent1.putExtra(view.getResources().getString(R.string.gameName), name);
             intent1.putExtra(view.getResources().getString(R.string.characterName), character);
             intent1.putExtra(view.getResources().getString(R.string.lolRole), getRole(view));
@@ -30,7 +30,7 @@ public class ActivityRole extends AppCompatActivity {
 
         ImageView img1 = this.findViewById(R.id.midRoleButton);
         img1.setOnClickListener(view -> {
-            Intent intent1 = new Intent(this, ActivityBuildView.class);
+            Intent intent1 = new Intent(this, BuildScreen.class);
             intent1.putExtra(view.getResources().getString(R.string.gameName), name);
             intent1.putExtra(view.getResources().getString(R.string.characterName), character);
             intent1.putExtra(view.getResources().getString(R.string.lolRole), getRole(view));
@@ -39,7 +39,7 @@ public class ActivityRole extends AppCompatActivity {
 
         ImageView img2 = this.findViewById(R.id.botRoleButton);
         img2.setOnClickListener(view -> {
-            Intent intent1 = new Intent(this, ActivityBuildView.class);
+            Intent intent1 = new Intent(this, BuildScreen.class);
             intent1.putExtra(view.getResources().getString(R.string.gameName), name);
             intent1.putExtra(view.getResources().getString(R.string.characterName), character);
             intent1.putExtra(view.getResources().getString(R.string.lolRole), getRole(view));
@@ -48,7 +48,7 @@ public class ActivityRole extends AppCompatActivity {
 
         ImageView img3 = this.findViewById(R.id.supportRoleButton);
         img3.setOnClickListener(view -> {
-            Intent intent1 = new Intent(this, ActivityBuildView.class);
+            Intent intent1 = new Intent(this, BuildScreen.class);
             intent1.putExtra(view.getResources().getString(R.string.gameName), name);
             intent1.putExtra(view.getResources().getString(R.string.characterName), character);
             intent1.putExtra(view.getResources().getString(R.string.lolRole), getRole(view));
@@ -57,7 +57,7 @@ public class ActivityRole extends AppCompatActivity {
 
         ImageView img4 = this.findViewById(R.id.jungleRoleButton);
         img4.setOnClickListener(view -> {
-            Intent intent1 = new Intent(this, ActivityBuildView.class);
+            Intent intent1 = new Intent(this, BuildScreen.class);
             intent1.putExtra(view.getResources().getString(R.string.gameName), name);
             intent1.putExtra(view.getResources().getString(R.string.characterName), character);
             intent1.putExtra(view.getResources().getString(R.string.lolRole), getRole(view));

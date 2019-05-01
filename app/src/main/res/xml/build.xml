@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<leagueoflegends character="Aatrox" role="Top">
+
+    <buildName>dick</buildName>
+
+    <primary page="precision">
+        <keystone>0</keystone>
+        <rune>1</rune>
+        <rune>2</rune>
+        <rune>0</rune>
+    </primary>
+
+    <secondary page="domination">
+        <rune>1</rune>
+        <rune>2</rune>
+        <rune>-1</rune>
+    </secondary>
+
+    <tertiary>
+        <rune>1</rune>
+        <rune>1</rune>
+        <rune>1</rune>
+    </tertiary>
+
+    <summoners>
+        <spell name="flash"/>
+        <spell name="teleport"/>
+    </summoners>
+
+    <starting>
+        <item name="dorans_sheild" quantity="3"/>
+        <item name="cloth_armour"/>
+    </starting>
+
+    <core>
+        <item name="trinity_force"/>
+    </core>
+
+    <situational>
+        <block name="Heavy AP">
+            <item name="spirit_visage"/>
+            <item name="abyssal_mask"/>
+        </block>
+    </situational>
+
+    <skills>
+        <skill>Q</skill> // level 1
+        <skill>W</skill> // 2
+        <skill>E</skill> // 3
+        <skill>Q</skill> // 4
+        <skill>Q</skill> // 5
+        <skill>R</skill> // 6
+        <skill>E</skill> // 7
+        <skill>W</skill> // 8
+        <skill>W</skill> // 9
+        <skill>W</skill> // 10
+        <skill>W</skill> // 11
+        <skill>W</skill> // 12
+        <skill>W</skill> // 13
+        <skill>W</skill> // 14
+        <skill>W</skill> // 15
+        <skill>W</skill> // 16
+        <skill>W</skill> // 17
+        <skill>W</skill> // 18
+    </skills>
+
+</leagueoflegends>

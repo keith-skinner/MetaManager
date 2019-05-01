@@ -1,6 +1,7 @@
 <resources>
 
     <string name="app_name">MetaManager</string>
+    <string name="directory">Environment.getExternalStorageDirectory() + "/" + "Builds"</string>
 
     <!-- ACTION BAR TITLES -->
     <string name="actionbar_game_list">Games</string>
