@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import pocketspace.metamanager.database.MetaManagerDatabaseSchema.*;
+import pocketspace.metamanager.screen_activities.CharacterListScreen;
 
 public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
 {
@@ -82,6 +83,8 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
         writeableDB.insert(CharacterTable.NAME, null, cv);
     }
 
+    //insert methods for tables:
+
     public void insertSkillData(String name, String q, String w, String e, String r, String passive, String description)
     {
         SQLiteDatabase writeableDB = getWritableDatabase();
@@ -126,6 +129,8 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
         writeableDB.insert(ItemTable.NAME, null, cv);
     }
 
+    //methods that return a cursor to entire tables
+
     public Cursor getAllDataFromCharacterTable()
     {
         SQLiteDatabase writeableDB = getWritableDatabase();
@@ -160,6 +165,30 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
         Cursor result = writeableDB.rawQuery("select * from " + SummonerTable.NAME, null);
         return result;
     }
+
+    //methods to grab image uri's:
+
+    public String getCharacterImageURI(String key)
+    {
+        Cursor cursor = getAllDataFromCharacterTable();
+        while (cursor.moveToNext())
+        {
+            if (cursor.getString(cursor.getColumnIndex(CharacterTable.Cols.NAME)).equals(key))
+            {
+                String uri = cursor.getString(cursor.getColumnIndex(CharacterTable.Cols.THUMBNAIL));
+                cursor.close();
+                return uri;
+            }
+        }
+        return "uri not found";
+    }
+
+    public String getQSkillURI(String key)
+    {
+        return "";
+    }
+
+    //methods to hardcode populate tables:
 
     public void hardCodeCharacterTable()
     {
