@@ -168,12 +168,13 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
 
     //methods to grab image uri's:
 
-    public String getCharacterImageURI(String key)
+    //character table:
+    public String getCharacterImageURI(String character_name)
     {
         Cursor cursor = getAllDataFromCharacterTable();
         while (cursor.moveToNext())
         {
-            if (cursor.getString(cursor.getColumnIndex(CharacterTable.Cols.NAME)).equals(key))
+            if (cursor.getString(cursor.getColumnIndex(CharacterTable.Cols.NAME)).equals(character_name))
             {
                 String uri = cursor.getString(cursor.getColumnIndex(CharacterTable.Cols.THUMBNAIL));
                 cursor.close();
@@ -183,9 +184,113 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
         return "uri not found";
     }
 
-    public String getQSkillURI(String key)
+    //Skill table:
+    public String getQSkillURI(String character_name)
     {
-        return "";
+        Cursor cursor = getAllDataFromSkillTable();
+        while (cursor.moveToNext())
+        {
+            if (cursor.getString(cursor.getColumnIndex(SkillTable.Cols.NAME)).equals(character_name))
+            {
+                String uri = cursor.getString(cursor.getColumnIndex(SkillTable.Cols.SKILL_Q));
+                cursor.close();
+                return uri;
+            }
+        }
+        return "uri not found";
+    }
+
+    public String getWSkillURI(String character_name)
+    {
+        Cursor cursor = getAllDataFromSkillTable();
+        while (cursor.moveToNext())
+        {
+            if (cursor.getString(cursor.getColumnIndex(SkillTable.Cols.NAME)).equals(character_name))
+            {
+                String uri = cursor.getString(cursor.getColumnIndex(SkillTable.Cols.SKILL_W));
+                cursor.close();
+                return uri;
+            }
+        }
+        return "uri not found";
+    }
+
+    public String getESkillURI(String character_name)
+    {
+        Cursor cursor = getAllDataFromSkillTable();
+        while (cursor.moveToNext())
+        {
+            if (cursor.getString(cursor.getColumnIndex(SkillTable.Cols.NAME)).equals(character_name))
+            {
+                String uri = cursor.getString(cursor.getColumnIndex(SkillTable.Cols.SKILL_E));
+                cursor.close();
+                return uri;
+            }
+        }
+        return "placeholder.png";
+    }
+
+    public String getRSkillURI(String character_name)
+    {
+        Cursor cursor = getAllDataFromSkillTable();
+        while (cursor.moveToNext())
+        {
+            if (cursor.getString(cursor.getColumnIndex(SkillTable.Cols.NAME)).equals(character_name))
+            {
+                String uri = cursor.getString(cursor.getColumnIndex(SkillTable.Cols.SKILL_R));
+                cursor.close();
+                return uri;
+            }
+        }
+        return "placeholder.png";
+    }
+
+    //Rune table:
+    public String getRuneURI(String rune_name)
+    {
+        Cursor cursor = getAllDataFromRuneTable();
+        while (cursor.moveToNext())
+        {
+            if (cursor.getString(cursor.getColumnIndex(RuneTable.Cols.NAME)).equals(rune_name))
+            {
+                String uri = cursor.getString(cursor.getColumnIndex(RuneTable.Cols.IMAGE));
+                cursor.close();
+                return uri;
+            }
+        }
+        return "placeholder.png";
+    }
+
+    //Summoner table:
+    public String getSummonerURI(String summoner_name)
+    {
+        Cursor cursor = getAllDataFromSummonerTable();
+        while (cursor.moveToNext())
+        {
+            if (cursor.getString(cursor.getColumnIndex(SummonerTable.Cols.NAME)).equals(summoner_name))
+            {
+                String uri = cursor.getString(cursor.getColumnIndex(SummonerTable.Cols.IMAGE));
+                cursor.close();
+                return uri;
+            }
+        }
+        return "placeholder.png";
+    }
+
+    //Item table:
+    public String getItemURI(String item_name)
+    {
+        Cursor cursor = getAllDataFromItemTable();
+        while (cursor.moveToNext())
+        {
+            if (cursor.getString(cursor.getColumnIndex(ItemTable.Cols.NAME)).equals(item_name));
+            {
+                String uri = cursor.getString(cursor.getColumnIndex(ItemTable.Cols.IMAGE));
+                cursor.close();
+                return uri;
+            }
+        }
+        return "placeholder.png";
     }
 
     //methods to hardcode populate tables:
