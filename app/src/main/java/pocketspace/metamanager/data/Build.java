@@ -16,10 +16,35 @@ public class Build {
         BOT
     }
 
-    String name;
+    String buildName;
     String characterId;
     String characterName;
     ROLE role;
+    public List<Skill> skills;
+
+    public Build(){
+        buildName = "";
+        characterId = "";
+        characterName = "";
+        role = ROLE.BOT;
+
+        runes = new Runes();
+        runes.primary = new Runes.Primary();
+        runes.secondary = new Runes.Secondary();
+        runes.tertiary = new Runes.Tertiary();
+
+
+        summoners = new Summoners();
+
+        items = new ItemSection();
+        items.starting = new ArrayList<>();
+        items.core = new ArrayList<>();
+        items.situational = new ArrayList<>();
+
+
+        skills = new ArrayList<>();
+    }
+
 
     public enum RuneFamily {
         INVALID,
@@ -35,9 +60,12 @@ public class Build {
             return RuneFamily.PRECISION;
         if (family.compareToIgnoreCase("domination") == 0)
             return RuneFamily.DOMINATION;
-        if (family.compareToIgnoreCase( "sorcery") == 0)
+        if (family.compareToIgnoreCase("sorcery") == 0)
             return RuneFamily.SORCERY;
-        //...
+        if (family.compareToIgnoreCase("resolve") == 0)
+            return RuneFamily.RESOLVE;
+        if (family.compareToIgnoreCase("inspiration") == 0)
+            return RuneFamily.INSPIRATION;
         return RuneFamily.INVALID;
     }
 
@@ -78,7 +106,7 @@ public class Build {
     public enum Skill {
         INVALID, Q, W, E, R
     }
-    List<Skill> skills;
+
     public Skill charToSkill(char skill){
         switch (skill){
             case 'Q':
@@ -109,7 +137,7 @@ public class Build {
     public static Build testing()
     {
         Build build = new Build();
-        build.name = "A new build";
+//        build.name = "A new build";
         build.characterId = "aatrox";
         build.characterName = "Aatrox";
 

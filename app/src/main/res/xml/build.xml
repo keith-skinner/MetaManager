@@ -2,14 +2,14 @@
 
 <leagueoflegends buildName="dick" character="Aatrox" role="Top">
 
-    <primary page="precision">
+    <primary family="precision">
         <keystone>0</keystone>
         <rune>1</rune>
         <rune>2</rune>
         <rune>0</rune>
     </primary>
 
-    <secondary page="domination">
+    <secondary family="domination">
         <rune>1</rune>
         <rune>2</rune>
         <rune>-1</rune>
