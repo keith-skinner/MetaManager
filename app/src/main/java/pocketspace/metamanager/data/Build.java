@@ -22,12 +22,25 @@ public class Build {
     ROLE role;
 
     public enum RuneFamily {
+        INVALID,
         PRECISION,
         DOMINATION,
         SORCERY,
         RESOLVE,
-        INSPIRATION
+        INSPIRATION,
+
     }
+    public RuneFamily strToRuneFamily(String family){
+        if (family.compareToIgnoreCase("precision") == 0)
+            return RuneFamily.PRECISION;
+        if (family.compareToIgnoreCase("domination") == 0)
+            return RuneFamily.DOMINATION;
+        if (family.compareToIgnoreCase( "sorcery") == 0)
+            return RuneFamily.SORCERY;
+        //...
+        return RuneFamily.INVALID;
+    }
+
     public static class Runes {
         public static class Primary {
             public RuneFamily family;
@@ -55,9 +68,7 @@ public class Build {
     }
     public Runes runes;
 
-    enum Summoner {
 
-    }
     public static class Summoners {
         public String summoner1;
         public String summoner2;
@@ -65,9 +76,23 @@ public class Build {
     public Summoners summoners;
 
     public enum Skill {
-        Q, W, E, R
+        INVALID, Q, W, E, R
     }
     List<Skill> skills;
+    public Skill charToSkill(char skill){
+        switch (skill){
+            case 'Q':
+                return Skill.Q;
+            case 'W':
+                return Skill.W;
+            case 'E':
+                return Skill.E;
+            case 'R':
+                return Skill.R;
+            default:
+                return Skill.INVALID;
+        }
+    }
 
     public static class ItemGroup {
         String name = "";
