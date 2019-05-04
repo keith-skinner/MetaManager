@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<leagueoflegends character="Aatrox" role="Top">
-
-    <buildName>dick</buildName>
+<leagueoflegends buildName="dick" character="Aatrox" role="Top">
 
     <primary page="precision">
         <keystone>0</keystone>
@@ -11,7 +9,7 @@
         <rune>0</rune>
     </primary>
 
-    <secondary page="domination">
+    <secondary family="domination">
         <rune>1</rune>
         <rune>2</rune>
         <rune>-1</rune>
@@ -45,24 +43,24 @@
     </situational>
 
     <skills>
-        <skill>Q</skill> // level 1
-        <skill>W</skill> // 2
-        <skill>E</skill> // 3
-        <skill>Q</skill> // 4
-        <skill>Q</skill> // 5
-        <skill>R</skill> // 6
-        <skill>E</skill> // 7
-        <skill>W</skill> // 8
-        <skill>W</skill> // 9
-        <skill>W</skill> // 10
-        <skill>W</skill> // 11
-        <skill>W</skill> // 12
-        <skill>W</skill> // 13
-        <skill>W</skill> // 14
-        <skill>W</skill> // 15
-        <skill>W</skill> // 16
-        <skill>W</skill> // 17
-        <skill>W</skill> // 18
+        <skill>Q</skill> <!-- level 1 -->
+        <skill>W</skill> <!-- level 2 -->
+        <skill>E</skill> <!-- level 3 -->
+        <skill>Q</skill> <!-- level 4 -->
+        <skill>Q</skill> <!-- level 5 -->
+        <skill>R</skill> <!-- level 6 -->
+        <skill>E</skill> <!-- level 7 -->
+        <skill>W</skill> <!-- level 8 -->
+        <skill>W</skill> <!-- level 9 -->
+        <skill>W</skill> <!-- level 10 -->
+        <skill>W</skill> <!-- level 11 -->
+        <skill>W</skill> <!-- level 12 -->
+        <skill>W</skill> <!-- level 13 -->
+        <skill>W</skill> <!-- level 14 -->
+        <skill>W</skill> <!-- level 15 -->
+        <skill>W</skill> <!-- level 16 -->
+        <skill>W</skill> <!-- level 17 -->
+        <skill>W</skill> <!-- level 18 -->
     </skills>
 
 </leagueoflegends>

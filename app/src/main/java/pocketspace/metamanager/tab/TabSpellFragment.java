@@ -1,5 +1,7 @@
 package pocketspace.metamanager.tab;
 
+import android.content.Context;
+import android.database.Cursor;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import android.os.Bundle;
@@ -10,20 +12,41 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import pocketspace.metamanager.R;
+import pocketspace.metamanager.database.MetaManagerDatabaseHelper;
+import pocketspace.metamanager.database.MetaManagerDatabaseSchema;
 
 public class TabSpellFragment extends Fragment {
+
+    MetaManagerDatabaseHelper db;
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.summoner_spells_container,
-                container, false);
+        db = new MetaManagerDatabaseHelper(getActivity());
 
+        //setViews();
+
+        View view = inflater.inflate(R.layout.summoner_spells_container, container, false);
         makeInactive(view);
         return view;
+    }
+
+    public void setViews()
+    {
+        Cursor cursor = db.getAllDataFromSummonerTable();
+        int indexOfSummonerName = cursor.getColumnIndex(MetaManagerDatabaseSchema.SummonerTable.Cols.NAME);
+        int indexOfSummonerImage = cursor.getColumnIndex(MetaManagerDatabaseSchema.SummonerTable.Cols.IMAGE);
+
+        View view = new View(getActivity());
+        ImageView image1 = view.findViewById(R.id.summoner11);
+
+        //Picasso.get().load("file:///android_asset/barrier.png").into(image1);
     }
 
     void makeInactive(View view)
