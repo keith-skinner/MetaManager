@@ -19,7 +19,8 @@ public class ParseBuildEntry {
 
     public final Build build = new Build();
     private static final String ns = null;
-    public String dickString = "";
+
+
 
     public ParseBuildEntry(InputStream inStream) throws XmlPullParserException, IOException
     {
@@ -46,11 +47,8 @@ public class ParseBuildEntry {
             if (parser.getEventType() != XmlPullParser.START_TAG) {
                 continue;
             }
-            String name = parser.getName();
-
-            // Starts by looking for the entry tag
-//            if (name.equals("primary")) {
-//                entries.add(readPrimary(parser));
+            if (parser.getName().equals("primary")) {
+                readPrimary(parser);
 //            } else if (name.equals("secondary")) {
 //                entries.add(readSecondary(parser));
 //            } else if (name.equals("tertiary")){
@@ -63,35 +61,74 @@ public class ParseBuildEntry {
 //                entries.add(readCore(parser));
 //            } else if (name.equals("situational")){
 //                entries.add(readSituational(parser));
-//            } else
-            if (name.equals("skills"))
-            {
+            } else if (parser.getName().equals("skills")) {
                 readSkills(parser);
-            }
-            else
-            {
+            } else {
                 skip(parser);
+            }
+        }
+    }
+
+    private void readPrimary(XmlPullParser parser) throws  IOException, XmlPullParserException
+    {
+        parser.require(XmlPullParser.START_TAG, ns, "primary");
+        Log.d("key",""+parser.getAttributeValue(ns,"family"));
+        build.runes.primary.family = build.strToRuneFamily(parser.getAttributeValue(ns,"family"));
+        int runeCount = 0;
+        while (parser.next() != XmlPullParser.END_TAG)
+        {
+            if (parser.getEventType() != XmlPullParser.START_TAG) {
+                continue;
+            }
+            if (parser.getName().equals("keystone")) {
+                parser.require(XmlPullParser.START_TAG, ns, "keystone");
+                build.runes.primary.keystone = Integer.parseInt(parser.nextText());
+                parser.require(XmlPullParser.END_TAG, ns, "keystone");
+            }
+            if (parser.getName().equals("rune")) {
+                runeCount++;
+                parser.require(XmlPullParser.START_TAG, ns, "rune");
+                switch (runeCount){
+                    case 1:
+                        build.runes.primary.row1 = Integer.parseInt(parser.nextText());
+                        break;
+                    case 2:
+                        build.runes.primary.row2 = Integer.parseInt(parser.nextText());
+                        break;
+                    case 3:
+                        build.runes.primary.row3 = Integer.parseInt(parser.nextText());
+                        break;
+                }
+                parser.require(XmlPullParser.END_TAG, ns, "rune");
             }
         }
     }
 
     private void readSkills(XmlPullParser parser) throws IOException, XmlPullParserException
     {
-        int count = 0;
         parser.require(XmlPullParser.START_TAG, ns, "skills");
-        while (parser.next() != XmlPullParser.END_TAG) {
-
+        while (parser.next() != XmlPullParser.END_TAG)
+        {
             if (parser.getEventType() != XmlPullParser.START_TAG) {
                 continue;
             }
-            String n = parser.getName();
-
-            if (n.equals("skill")) {
-                count++;
-                Log.d("skill", " -> skill: " + parser.getText() + " - Count: " + count);
+            if (parser.getName().equals("skill")) {
+                parser.require(XmlPullParser.START_TAG, ns, "skill");
+                char c = parser.nextText().charAt(0);
+                Build.Skill s = build.charToSkill(c);
+                build.skills.add(s);
+                parser.require(XmlPullParser.END_TAG, ns, "skill");
             }
-            skip(parser);
         }
+    }
+
+    private String readText(XmlPullParser parser) throws IOException, XmlPullParserException {
+        String result = "";
+        if (parser.next() == XmlPullParser.TEXT) {
+            result = parser.getText();
+            parser.nextTag();
+        }
+        return result;
     }
 
 //    private void readPrimary(XmlPullParser parser) throws  IOException, XmlPullParserException
