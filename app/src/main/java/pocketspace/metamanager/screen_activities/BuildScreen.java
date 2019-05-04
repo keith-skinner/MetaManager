@@ -2,12 +2,18 @@ package pocketspace.metamanager.screen_activities;
 
 import android.content.Intent;
 import com.google.android.material.tabs.TabLayout;
+import com.squareup.picasso.Picasso;
+
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import pocketspace.metamanager.R;
 import pocketspace.metamanager.data.Build;
+import pocketspace.metamanager.database.MetaManagerDatabaseHelper;
+import pocketspace.metamanager.database.MetaManagerDatabaseSchema;
 import pocketspace.metamanager.tab.TabAdapter;
 import pocketspace.metamanager.tab.TabItemFragment;
 import pocketspace.metamanager.tab.TabPrimeRuneFragment;
@@ -25,6 +31,8 @@ public class BuildScreen extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
+    MetaManagerDatabaseHelper db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -34,6 +42,8 @@ public class BuildScreen extends AppCompatActivity {
         Intent intent = getIntent();
         //character = intent.getStringExtra(getResources().getString(R.string.characterName));
         //role = intent.getStringExtra(getResources().getString(R.string.lolRole));
+
+        db = new MetaManagerDatabaseHelper(this);
 
         game = "league_of_legends";
         character = "aatrox";
@@ -49,8 +59,17 @@ public class BuildScreen extends AppCompatActivity {
         adapter.addFragment(new TabItemFragment(), "ITEM");
         adapter.addFragment(new TabSkillFragment(), "SKILL");
 
+        setSpellViews();
+
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
+    }
+
+    public void setSpellViews()
+    {
+        ImageView image1 = findViewById(R.id.summoner11);
+        Picasso.get().load("file://asset/summoner/barrier.png").into(image1);
+
     }
 
 }

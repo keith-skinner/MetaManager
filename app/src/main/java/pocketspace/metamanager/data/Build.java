@@ -16,18 +16,56 @@ public class Build {
         BOT
     }
 
-    String name;
+    String buildName;
     String characterId;
     String characterName;
     ROLE role;
+    public List<Skill> skills;
+
+    public Build(){
+        buildName = "";
+        characterId = "";
+        characterName = "";
+        role = ROLE.BOT;
+
+        runes = new Runes();
+        runes.primary = new Runes.Primary();
+        runes.secondary = new Runes.Secondary();
+        runes.tertiary = new Runes.Tertiary();
+
+
+        summoners = new Summoners();
+
+        items = new ItemSection();
+        items.starting = new ArrayList<>();
+        items.core = new ArrayList<>();
+        items.situational = new ArrayList<>();
+
+
+        skills = new ArrayList<>();
+    }
+
 
     public enum RuneFamily {
+        INVALID,
         PRECISION,
         DOMINATION,
         SORCERY,
         RESOLVE,
-        INSPIRATION
+        INSPIRATION,
+
     }
+    public RuneFamily strToRuneFamily(String family){
+        if (family.compareToIgnoreCase("precision") == 0)
+            return RuneFamily.PRECISION;
+        if (family.compareToIgnoreCase("domination") == 0)
+            return RuneFamily.DOMINATION;
+        if (family.compareToIgnoreCase( "sorcery") == 0)
+            return RuneFamily.SORCERY;
+        //...
+        return RuneFamily.INVALID;
+    }
+
     public static class Runes {
         public static class Primary {
             public RuneFamily family;
@@ -55,9 +93,7 @@ public class Build {
     }
     public Runes runes;
 
-    enum Summoner {
 
-    }
     public static class Summoners {
         public String summoner1;
         public String summoner2;
@@ -65,9 +101,38 @@ public class Build {
     public Summoners summoners;
 
     public enum Skill {
-        Q, W, E, R
+        INVALID, Q, W, E, R
     }
     List<Skill> skills;
+    public Skill charToSkill(char skill){
+        switch (skill){
+            case 'Q':
+                return Skill.Q;
+            case 'W':
+                return Skill.W;
+            case 'E':
+                return Skill.E;
+            case 'R':
+                return Skill.R;
+            default:
+                return Skill.INVALID;
+        }
+    }
+
+    public Skill charToSkill(char skill){
+        switch (skill){
+            case 'Q':
+                return Skill.Q;
+            case 'W':
+                return Skill.W;
+            case 'E':
+                return Skill.E;
+            case 'R':
+                return Skill.R;
+            default:
+                return Skill.INVALID;
+        }
+    }
 
     public static class ItemGroup {
         String name = "";
@@ -84,7 +149,7 @@ public class Build {
     public static Build testing()
     {
         Build build = new Build();
-        build.name = "A new build";
+//        build.name = "A new build";
         build.characterId = "aatrox";
         build.characterName = "Aatrox";
 
