@@ -8,6 +8,7 @@ import pocketspace.metamanager.R;
 
 public class Build {
 
+
     public enum ROLE {
         TOP,
         JUNGLE,
@@ -32,7 +33,6 @@ public class Build {
         runes.primary = new Runes.Primary();
         runes.secondary = new Runes.Secondary();
         runes.tertiary = new Runes.Tertiary();
-
 
         summoners = new Summoners();
 
@@ -123,54 +123,25 @@ public class Build {
     }
 
     public static class ItemGroup {
-        String name = "";
-        List<String> items;
+        public String name = "";
+        public List<String> items;
+        public List<Integer> itemQuantities;
     }
 
     public static class ItemSection {
-        List<ItemGroup> starting;
-        List<ItemGroup> core;
-        List<ItemGroup> situational;
+        public List<ItemGroup> starting;
+        public List<ItemGroup> core;
+        public List<ItemGroup> situational;
     }
-    ItemSection items;
+    public ItemSection items;
 
     public static Build testing()
     {
         Build build = new Build();
 //        build.name = "A new build";
+
         build.characterId = "aatrox";
         build.characterName = "Aatrox";
-
-        ///RUNES
-        build.runes = new Runes();
-        build.runes.primary = new Runes.Primary();
-        build.runes.primary.family = RuneFamily.PRECISION;
-        build.runes.primary.keystone = 3;//"conqueror";
-        build.runes.primary.row1 = 1;//"triumph";
-        build.runes.primary.row2 = 1;//"tenacity";
-        build.runes.primary.row3 = 2;//"coup_de_grace";
-
-        build.runes.secondary = new Runes.Secondary();
-        build.runes.secondary.family = RuneFamily.DOMINATION;
-        build.runes.secondary.row1 = 0;//"taste_of_blood";
-        build.runes.secondary.row2 = 0;//"ravenous_hunter";
-        build.runes.secondary.row3 = -1;//nothing
-
-        build.runes.tertiary = new Runes.Tertiary();
-        build.runes.tertiary.row1 = 0;
-        build.runes.tertiary.row2 = 0;
-        build.runes.tertiary.row3 = 2;
-
-        build.summoners = new Summoners();
-        build.summoners.summoner1 = "flash";
-        build.summoners.summoner2 = "ignite";
-
-        ///SKILLS
-        build.skills = Arrays.asList(
-            Skill.Q, Skill.E, Skill.W, Skill.Q, Skill.Q, Skill.R,
-            Skill.Q, Skill.E, Skill.Q, Skill.E, Skill.R, Skill.E,
-            Skill.E, Skill.W, Skill.W, Skill.R, Skill.W, Skill.W
-        );
 
         ///ITEMS: STARTING ITEMS
         build.items = new ItemSection();
