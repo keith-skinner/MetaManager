@@ -23,7 +23,7 @@ public class ParseBuildEntry {
     private static final String ns = null;
 
 
-
+    //ParseBuildEntry creates a public build to be ref
     public ParseBuildEntry(InputStream inStream) throws XmlPullParserException, IOException
     {
         try {
@@ -38,6 +38,7 @@ public class ParseBuildEntry {
             inStream.close();
         }
     }
+
 
     // by nested section
     private void readFeed(XmlPullParser parser) throws XmlPullParserException, IOException {
@@ -218,8 +219,13 @@ public class ParseBuildEntry {
         {
             if(parser.getName().equals("item"))
             {
+                String quantity;
+                if(parser.getAttributeCount() > 1){
+                    quantity = parser.getAttributeValue(ns, "quantity");
+                }else {
+                    quantity = "1";
+                }
                 String item = parser.getAttributeValue(ns, "name");
-                String quantity = parser.getAttributeValue(ns, "quantity");
                 build.block.items.add(item);
                 build.block.itemQuantities.add(Integer.parseInt(quantity));
                 parser.nextTag(); // skip endTag
@@ -311,63 +317,6 @@ public class ParseBuildEntry {
         }
         Log.d("clear",":skills END");
     }
-
-
-    private String readText(XmlPullParser parser) throws IOException, XmlPullParserException {
-        String result = "";
-        if (parser.next() == XmlPullParser.TEXT) {
-            result = parser.getText();
-            parser.nextTag();
-        }
-        return result;
-    }
-
-//    private void readPrimary(XmlPullParser parser) throws  IOException, XmlPullParserException
-//    {
-//        parser.require(XmlPullParser.START_TAG, null, "primary");
-//
-//        while (parser.next() != XmlPullParser.END_TAG) {
-//            if (parser.getEventType() != XmlPullParser.START_TAG) {
-//                continue;
-//            }
-//            String name = parser.getName();
-//            //go through nest:
-//            //...
-//        }
-//        return new ParseBuildEntry(title, role);
-//
-//        parser.require(XmlPullParser.END_TAG, null, "primary");
-//    }
-
-
-//      Pulls tags out of XML file
-//    private void readText(XmlPullParser parser) throws IOException, XmlPullParserException
-//    {
-//        String result = "";
-//        if (parser.next() == XmlPullParser.TEXT)
-//         {
-//            result = parser.getText();
-//            parser.nextTag();
-//        }
-//        return result;
-//    }
-
-//    private List<Integer> readSkills(XmlPullParser parser){
-//        List<Integer> list = new ArrayList<>();
-//
-//        parser.require(XmlPullParser.START_TAG, ns, "summary");
-//
-//        while (parser.next() != XmlPullParser.END_TAG){
-//
-//
-//        }
-//
-//
-//        parser.require(XmlPullParser.END_TAG, ns, "summary");
-//
-//        return list;
-//    }
-
 
     private void skip(XmlPullParser parser) throws XmlPullParserException, IOException
     {

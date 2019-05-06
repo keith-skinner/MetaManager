@@ -5,7 +5,9 @@ import com.google.android.material.tabs.TabLayout;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TableLayout;
 
+import pocketspace.metamanager.ParseBuildEntry;
 import pocketspace.metamanager.R;
 import pocketspace.metamanager.data.Build;
 import pocketspace.metamanager.tab.TabAdapter;
@@ -32,8 +34,9 @@ public class BuildScreen extends AppCompatActivity {
         setContentView(R.layout.build_screen);
 
         Intent intent = getIntent();
-        //character = intent.getStringExtra(getResources().getString(R.string.characterName));
-        //role = intent.getStringExtra(getResources().getString(R.string.lolRole));
+
+//        character = intent.getStringExtra(getResources().getString(R.string.characterName));
+//        role = intent.getStringExtra(getResources().getString(R.string.lolRole));
 
         game = "league_of_legends";
         character = "aatrox";
@@ -42,6 +45,17 @@ public class BuildScreen extends AppCompatActivity {
         viewPager = findViewById(R.id.viewPager);
         tabLayout = findViewById(R.id.tabLayout);
         adapter = new TabAdapter(getSupportFragmentManager());
+        adapter = null;
+
+
+        //TODO:read in builds here
+
+//        adapter.addFragment(TabPrimeRuneFragment.newInstance());
+
+//         Get buildStream from intent, to fill out build here.
+//        ParseBuildEntry parseBuildEntry = new ParseBuildEntry(buildStream);
+//        Build build = parseBuildEntry.build;
+
 
         adapter.addFragment(TabPrimeRuneFragment.newInstance(Build.testing().runes.primary), "PRIME");
         adapter.addFragment(new TabSecondaryRuneFragment(), "SECOND");
