@@ -7,6 +7,7 @@ import com.squareup.picasso.Picasso;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -53,7 +54,8 @@ public class BuildScreen extends AppCompatActivity {
         tabLayout = findViewById(R.id.tabLayout);
         adapter = new TabAdapter(getSupportFragmentManager());
 
-        adapter.addFragment(TabPrimeRuneFragment.newInstance(Build.testing().runes.primary), "PRIME");
+        Build build = Build.testing();
+        adapter.addFragment(TabPrimeRuneFragment.newInstance(build.runes.primary), "PRIME");
         adapter.addFragment(new TabSecondaryRuneFragment(), "SECOND");
         adapter.addFragment(new TabSpellFragment(), "SPELL");
         adapter.addFragment(new TabItemFragment(), "ITEM");
@@ -68,7 +70,8 @@ public class BuildScreen extends AppCompatActivity {
     public void setSpellViews()
     {
         ImageView image1 = findViewById(R.id.summoner11);
-        Picasso.get().load("file://asset/summoner/barrier.png").into(image1);
+        Log.i("TAGGY", this.getFilesDir().getAbsolutePath());
+        //Picasso.get().load("file://asset/summoner/barrier.png").into(image1);
 
     }
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<leagueoflegends buildName="dick" character="Aatrox" role="Top">
+<build buildName="dick" character="Aatrox" role="Top">
 
     <primary page="precision">
         <keystone>0</keystone>
@@ -22,8 +22,8 @@
     </tertiary>
 
     <summoners>
-        <spell name="flash"/>
-        <spell name="teleport"/>
+        <spell name="flash"> </spell>
+        <spell name="teleport"> </spell>
     </summoners>
 
     <starting>
@@ -63,4 +63,4 @@
         <skill>W</skill> <!-- level 18 -->
     </skills>
 
-</leagueoflegends>
+</build>

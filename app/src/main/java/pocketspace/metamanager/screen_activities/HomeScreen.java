@@ -24,6 +24,9 @@ public class HomeScreen extends AppCompatActivity {
 
         setContentView(R.layout.home_screen);
 
+        System.out.println(db.getCharacterImageURI("Ashe"));
+        System.out.println("he");
+
 
         CardView cardView = this.findViewById(R.id.view_builds);
         cardView.setOnClickListener(view -> {

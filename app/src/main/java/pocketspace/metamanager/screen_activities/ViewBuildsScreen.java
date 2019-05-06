@@ -20,40 +20,39 @@ import androidx.cardview.widget.CardView;
 import pocketspace.metamanager.R;
 
 import pocketspace.metamanager.ParseBuildEntry;
+import pocketspace.metamanager.database.MetaManagerDatabaseHelper;
 
 
 public class ViewBuildsScreen extends AppCompatActivity {
 
     private static final int REQUEST_WRITE_PERMISSION = 777; //786
-    private String pathToBuilds = Environment.getExternalStorageDirectory() + "/Builds";
+    private String pathToBuilds;
+
+    MetaManagerDatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_builds_screen);
-
+        db = new MetaManagerDatabaseHelper(this);
 
         //START TEST
-
-
 //        grantPower();
         
-        String buildString;
-
-//        ParseBuildEntry parseBuildEntry = new ParseBuildEntry("",);
-        
-        buildString = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" +
+        createFile(getBuildsDir(),
+                "/newBuild.xml",
+                "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" +
                 "\n" +
-                "<leagueoflegends buildName=\"dick\" character=\"Aatrox\" role=\"Top\">\n" +
+                "<build buildName=\"dick\" character=\"Aatrox\" role=\"Top\">\n" +
                 "\n" +
-                "    <primary page=\"precision\">\n" +
+                "    <primary family=\"precision\">\n" +
                 "        <keystone>0</keystone>\n" +
                 "        <rune>1</rune>\n" +
                 "        <rune>2</rune>\n" +
                 "        <rune>0</rune>\n" +
                 "    </primary>\n" +
                 "\n" +
-                "    <secondary page=\"domination\">\n" +
+                "    <secondary family=\"domination\">\n" +
                 "        <rune>1</rune>\n" +
                 "        <rune>2</rune>\n" +
                 "        <rune>-1</rune>\n" +
@@ -71,18 +70,26 @@ public class ViewBuildsScreen extends AppCompatActivity {
                 "    </summoners>\n" +
                 "\n" +
                 "    <starting>\n" +
-                "        <item name=\"dorans_sheild\" quantity=\"3\"/>\n" +
-                "        <item name=\"cloth_armour\"/>\n" +
+                "        <block name=\"OFFENSIVE START\">\n" +
+                "           <item name=\"dorans_sheild\" quantity=\"3\"/>\n" +
+                "           <item name=\"cloth_armour\" quantity=\"1\"/>\n" +
+                "        </block>\n"+
+                "        <block name=\"DEFENSIVE START\">\n" +
+                "           <item name=\"dorans_sheild\" quantity=\"3\"/>\n" +
+                "           <item name=\"cloth_armour\" quantity=\"1\"/>\n" +
+                "        </block>\n"+
                 "    </starting>\n" +
                 "\n" +
                 "    <core>\n" +
-                "        <item name=\"trinity_force\"/>\n" +
+                "       <block name=\"MAIN CORE\">\n" +
+                "           <item name=\"trinity_force\" quantity=\"1\"/>\n" +
+                "       </block>\n" +
                 "    </core>\n" +
                 "\n" +
                 "    <situational>\n" +
                 "        <block name=\"Heavy AP\">\n" +
-                "            <item name=\"spirit_visage\"/>\n" +
-                "            <item name=\"abyssal_mask\"/>\n" +
+                "            <item name=\"spirit_visage\" quantity=\"1\"/>\n" +
+                "            <item name=\"abyssal_mask\" quantity=\"1\"/>\n" +
                 "        </block>\n" +
                 "    </situational>\n" +
                 "\n" +
@@ -107,24 +114,26 @@ public class ViewBuildsScreen extends AppCompatActivity {
                 "        <skill>W</skill> <!-- level 18 -->\n" +
                 "    </skills>\n" +
                 "\n" +
-                "</leagueoflegends>";
+                "</build>");
 
-        Log.d("TAG","test start-to");
-        createFile("newBuild.xml", buildString);
         FileInputStream inputstream = null;
         try {
-            inputstream = new FileInputStream(pathToBuilds + "/newBuild.xml");
+            inputstream = new FileInputStream(getBuildsDir().getAbsolutePath() + "/newBuild.xml");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
 
+        ParseBuildEntry parseBuildEntry = null;
         try {
-            ParseBuildEntry parseBuildEntry = new ParseBuildEntry(inputstream);
+            parseBuildEntry = new ParseBuildEntry(inputstream);
         } catch (XmlPullParserException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        
+        if (parseBuildEntry != null)
+            Log.d("clear", parseBuildEntry.build.runes.primary.family.toString());
 
         //END TEST
 
@@ -134,57 +143,28 @@ public class ViewBuildsScreen extends AppCompatActivity {
             view.getContext().startActivity(intent);
         });
 
+        System.out.println(db.getCharacterImageURI("Ashe"));
+        System.out.println("he");
 
     }
-
-
-
-
-    private File openFile(String filePathString){
-        File f = new File(filePathString);
-
-        if(f.exists() && !f.isDirectory()) {
-            return f;
-        }else {
-            return null;
-        }
-    }
-
-
-    // For creating new folders... if needed ...
-    public void createFolder(String fname) {
-
-        File mediaStorageDir = new File(Environment.getExternalStorageDirectory()+ "/" + fname);
-
-        if (!mediaStorageDir.exists()) {
-            if (!mediaStorageDir.mkdirs()) {
-                Toast.makeText(this,"failed to make directory",Toast.LENGTH_LONG).show();
-            }else {
-                Toast.makeText(this, "created directory", Toast.LENGTH_LONG).show();
-            }
-        }else {
-            Toast.makeText(this,"directory exists", Toast.LENGTH_LONG).show();
-        }
-    }
+    
 
     // For creating a new file...
-    public void createFile(String fname, String buildContent)
+    public void createFile(File dir, String fname, String buildContent)
     {
         String fileContents = buildContent;
 
-        File directory = new File(Environment.getExternalStorageDirectory() + "/Builds");
-        if(!directory.exists()){
-            directory.mkdir();
+        if(!dir.exists() && ! dir.mkdirs()){
+            Log.e("clear","Could not make directory");
         }
 
         try{
-            File textFile = new File(directory, fname);
+            File textFile = new File(dir, fname);
             FileWriter writer = new FileWriter(textFile);
             writer.append(fileContents);
             writer.flush();
             writer.close();
-
-        }catch (Exception e){
+        } catch (Exception e){
             Log.d("createFile","fail:"+e);
             e.printStackTrace();
         }
@@ -201,6 +181,10 @@ public class ViewBuildsScreen extends AppCompatActivity {
         {
             Log.d("t","granted");
         }
+    }
+
+    File getBuildsDir() {
+        return new File( this.getFilesDir(), "/builds" );
     }
 
 }

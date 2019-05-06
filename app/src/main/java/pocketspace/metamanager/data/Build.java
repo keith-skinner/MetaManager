@@ -8,6 +8,7 @@ import pocketspace.metamanager.R;
 
 public class Build {
 
+
     public enum ROLE {
         TOP,
         JUNGLE,
@@ -33,14 +34,12 @@ public class Build {
         runes.secondary = new Runes.Secondary();
         runes.tertiary = new Runes.Tertiary();
 
-
         summoners = new Summoners();
 
         items = new ItemSection();
         items.starting = new ArrayList<>();
         items.core = new ArrayList<>();
         items.situational = new ArrayList<>();
-
 
         skills = new ArrayList<>();
     }
@@ -103,8 +102,8 @@ public class Build {
     public enum Skill {
         INVALID, Q, W, E, R
     }
-    List<Skill> skills;
-    public Skill charToSkill(char skill){
+    //List<Skill> skills;
+    /*public Skill charToSkill(char skill){
         switch (skill){
             case 'Q':
                 return Skill.Q;
@@ -117,7 +116,7 @@ public class Build {
             default:
                 return Skill.INVALID;
         }
-    }
+    }*/
 
     public Skill charToSkill(char skill){
         switch (skill){
@@ -135,21 +134,23 @@ public class Build {
     }
 
     public static class ItemGroup {
-        String name = "";
-        List<String> items;
+        public String name = "";
+        public List<String> items;
+        public List<Integer> itemQuantities;
     }
+    public ItemGroup block;
 
     public static class ItemSection {
-        List<ItemGroup> starting;
-        List<ItemGroup> core;
-        List<ItemGroup> situational;
+        public List<ItemGroup> starting;
+        public List<ItemGroup> core;
+        public List<ItemGroup> situational;
     }
-    ItemSection items;
+    public ItemSection items;
 
     public static Build testing()
     {
         Build build = new Build();
-//        build.name = "A new build";
+        build.buildName = "A new build";
         build.characterId = "aatrox";
         build.characterName = "Aatrox";
 
@@ -179,9 +180,9 @@ public class Build {
 
         ///SKILLS
         build.skills = Arrays.asList(
-            Skill.Q, Skill.E, Skill.W, Skill.Q, Skill.Q, Skill.R,
-            Skill.Q, Skill.E, Skill.Q, Skill.E, Skill.R, Skill.E,
-            Skill.E, Skill.W, Skill.W, Skill.R, Skill.W, Skill.W
+                Skill.Q, Skill.E, Skill.W, Skill.Q, Skill.Q, Skill.R,
+                Skill.Q, Skill.E, Skill.Q, Skill.E, Skill.R, Skill.E,
+                Skill.E, Skill.W, Skill.W, Skill.R, Skill.W, Skill.W
         );
 
         ///ITEMS: STARTING ITEMS
