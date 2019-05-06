@@ -41,7 +41,6 @@ public class Build {
         items.core = new ArrayList<>();
         items.situational = new ArrayList<>();
 
-
         skills = new ArrayList<>();
     }
 
@@ -127,6 +126,7 @@ public class Build {
         public List<String> items;
         public List<Integer> itemQuantities;
     }
+    public ItemGroup block;
 
     public static class ItemSection {
         public List<ItemGroup> starting;

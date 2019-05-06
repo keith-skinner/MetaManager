@@ -78,13 +78,15 @@ public class ViewBuildsScreen extends AppCompatActivity {
                 "    </starting>\n" +
                 "\n" +
                 "    <core>\n" +
-                "        <item name=\"trinity_force\"/>\n" +
+                "       <block name=\"MAIN CORE\">\n" +
+                "           <item name=\"trinity_force\" quantity=\"1\"/>\n" +
+                "       </block>\n" +
                 "    </core>\n" +
                 "\n" +
                 "    <situational>\n" +
                 "        <block name=\"Heavy AP\">\n" +
-                "            <item name=\"spirit_visage\"/>\n" +
-                "            <item name=\"abyssal_mask\"/>\n" +
+                "            <item name=\"spirit_visage\" quantity=\"1\"/>\n" +
+                "            <item name=\"abyssal_mask\" quantity=\"1\"/>\n" +
                 "        </block>\n" +
                 "    </situational>\n" +
                 "\n" +

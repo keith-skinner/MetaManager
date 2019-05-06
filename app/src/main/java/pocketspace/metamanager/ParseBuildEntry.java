@@ -8,7 +8,7 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Arrays;
+import java.util.ArrayList;
 
 
 import pocketspace.metamanager.data.Build;
@@ -63,10 +63,10 @@ public class ParseBuildEntry {
                 readSummoners(parser);
             } else if (name.equals("starting")){
                 readStarting(parser);
-//            } else if (name.equals("core")){
-//                entries.add(readCore(parser));
-//            } else if (name.equals("situational")){
-//                entries.add(readSituational(parser));
+            } else if (name.equals("core")){
+                readCore(parser);
+            } else if (name.equals("situational")){
+                readSituational(parser);
             } else if (name.equals("skills")) {
                 readSkills(parser);
             } else {
@@ -80,10 +80,6 @@ public class ParseBuildEntry {
         parser.require(XmlPullParser.START_TAG, ns, "primary");
 
         Log.d("clear",":primary START");
-//        Log.d("clear", ":  attributes: "+parser.getAttributeCount() );
-//        Log.d("clear", ":  :  Name: " + parser.getAttributeName(0));
-//        Log.d("clear", ":  :  Value: " + parser.getAttributeValue(0));
-//        Log.d("clear", ":  family = " + parser.getAttributeValue(null, "family"));
         build.runes.primary.family = build.strToRuneFamily(parser.getAttributeValue(ns, "family"));
 
         int runeCount = 0;
@@ -207,6 +203,35 @@ public class ParseBuildEntry {
         Log.d("clear",":summoners END");
     }
 
+    private Build.ItemGroup readBlock(XmlPullParser parser) throws IOException, XmlPullParserException
+    {
+        Log.d("clear",":block START");
+
+        build.block = new Build.ItemGroup();
+        build.block.items = new ArrayList<>();
+        build.block.itemQuantities  = new ArrayList<>();
+
+        build.block.name = parser.getAttributeValue(ns, "name");
+        parser.nextTag(); // skip block start.. and go until block
+        String name = parser.getName();
+        while (name.compareTo("block") != 0)
+        {
+            if(parser.getName().equals("item"))
+            {
+                String item = parser.getAttributeValue(ns, "name");
+                String quantity = parser.getAttributeValue(ns, "quantity");
+                build.block.items.add(item);
+                build.block.itemQuantities.add(Integer.parseInt(quantity));
+                parser.nextTag(); // skip endTag
+            }
+            parser.nextTag();
+            name = parser.getName();
+        }
+        Log.d("clear",":block END");
+
+        return build.block;
+    }
+
     private void readStarting(XmlPullParser parser) throws IOException, XmlPullParserException
     {
         Log.d("clear",":starting START");
@@ -215,34 +240,56 @@ public class ParseBuildEntry {
             if (parser.getEventType() != XmlPullParser.START_TAG) {
                 continue;
             }
-
-            if (parser.getName().equals("block"))
-            {
-                build.items = new Build.ItemSection();
-                Build.ItemGroup starting;
-
-                starting = new Build.ItemGroup();
-                starting.name = parser.getAttributeValue(ns, "name");
-
-                parser.nextTag();
-                parser.require(XmlPullParser.START_TAG, ns, "item");
-                //TODO: CRASH HERE -> items.add ... will finnish in morning.
-                starting.items.add(parser.getAttributeValue(ns, "name"));
-                starting.itemQuantities.add(Integer.parseInt(parser.getAttributeValue(ns, "quantity")));
-                Log.i("clear", ":  item: " + starting.items.get(0));
-                parser.nextTag();
-                parser.require(XmlPullParser.END_TAG, ns, "item");
-
-                parser.nextTag();
-                parser.require(XmlPullParser.START_TAG, ns, "item");
-                starting.items.add(parser.getAttributeValue(ns, "name"));
-                starting.itemQuantities.add(Integer.parseInt(parser.getAttributeValue(ns, "quantity")));
-                Log.i("clear", ":  item: " + starting.items.get(1));
-                parser.nextTag();
-                parser.require(XmlPullParser.END_TAG, ns, "item");
+            if (parser.getName().equals("block")) {
+                Build.ItemGroup newBlock;
+                newBlock = readBlock(parser);
+                build.items.starting.add(newBlock);
             }
         }
         Log.d("clear",":starting END");
+    }
+
+    private void readCore(XmlPullParser parser) throws IOException, XmlPullParserException
+    {
+        Log.d("clear",":core START");
+        while (parser.next() != XmlPullParser.END_TAG)
+        {
+            if (parser.getEventType() != XmlPullParser.START_TAG) {
+                continue;
+            }
+            if (parser.getName().equals("block")) {
+                Build.ItemGroup newBlock;
+                newBlock = readBlock(parser);
+                build.items.core.add(newBlock);
+            }
+        }
+        Log.d("clear",":core END");
+    }
+
+    private void readSituational(XmlPullParser parser) throws IOException, XmlPullParserException
+    {
+        Log.d("clear",":situational START");
+        while (parser.next() != XmlPullParser.END_TAG)
+        {
+            if (parser.getEventType() != XmlPullParser.START_TAG) {
+                continue;
+            }
+            if (parser.getName().equals("block")) {
+                Build.ItemGroup newBlock;
+                newBlock = readBlock(parser);
+                build.items.situational.add(newBlock);
+            }
+        }
+        Log.d("clear",":situational END");
+    }
+
+    // for debugging parse.attr
+    private void printParserAttr(XmlPullParser parser, Integer index, String name) throws  IOException, XmlPullParserException
+    {
+        Log.d("clear", ":  attributes: "+parser.getAttributeCount() );
+        Log.d("clear", ":  :  Name: " + parser.getAttributeName(index));
+        Log.d("clear", ":  :  Value: " + parser.getAttributeValue(index));
+        Log.d("clear", ":  "+name+": = " + parser.getAttributeValue(ns, name));
     }
 
     private void readSkills(XmlPullParser parser) throws IOException, XmlPullParserException
