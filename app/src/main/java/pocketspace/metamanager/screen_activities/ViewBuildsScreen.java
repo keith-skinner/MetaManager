@@ -25,18 +25,16 @@ import pocketspace.metamanager.ParseBuildEntry;
 public class ViewBuildsScreen extends AppCompatActivity {
 
     private static final int REQUEST_WRITE_PERMISSION = 777; //786
-    private String pathToBuilds;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_builds_screen);
-        pathToBuilds = this.getFilesDir().getAbsolutePath().concat("/builds");
 
         //START TEST
 //        grantPower();
         
-        createFile(pathToBuilds, 
+        createFile(getBuildsDir(),
                 "/newBuild.xml",
                 "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" +
                 "\n" +
@@ -115,7 +113,7 @@ public class ViewBuildsScreen extends AppCompatActivity {
 
         FileInputStream inputstream = null;
         try {
-            inputstream = new FileInputStream(pathToBuilds + "/newBuild.xml");
+            inputstream = new FileInputStream(getBuildsDir().getAbsolutePath() + "/newBuild.xml");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -143,17 +141,16 @@ public class ViewBuildsScreen extends AppCompatActivity {
     
 
     // For creating a new file...
-    public void createFile(String directory, String fname, String buildContent)
+    public void createFile(File directory, String fname, String buildContent)
     {
         String fileContents = buildContent;
 
-        File dir = new File(directory);
-        if(!dir.exists() && ! dir.mkdirs()){
+        if(!directory.exists() && !directory.mkdirs()){
             Log.e("clear","Could not make directory");
         }
 
-        try{
-            File textFile = new File(dir, fname);
+        try {
+            File textFile = new File(directory, fname);
             FileWriter writer = new FileWriter(textFile);
             writer.append(fileContents);
             writer.flush();
@@ -175,6 +172,10 @@ public class ViewBuildsScreen extends AppCompatActivity {
         {
             Log.d("t","granted");
         }
+    }
+
+    File getBuildsDir() {
+        return new File( this.getFilesDir(), "/builds" );
     }
 
 }
