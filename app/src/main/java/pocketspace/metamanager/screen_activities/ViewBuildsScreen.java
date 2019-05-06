@@ -2,7 +2,9 @@ package pocketspace.metamanager.screen_activities;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
+import android.widget.Toast;
 
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -11,6 +13,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -22,16 +25,16 @@ import pocketspace.metamanager.ParseBuildEntry;
 public class ViewBuildsScreen extends AppCompatActivity {
 
     private static final int REQUEST_WRITE_PERMISSION = 777; //786
-    private String pathToBuilds;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_builds_screen);
 
-        pathToBuilds = this.getFilesDir().getAbsolutePath().concat("/builds");
+        //START TEST
+//        grantPower();
         
-        createFile(pathToBuilds,
+        createFile(getBuildsDir(),
                 "/newBuild.xml",
                 "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" +
                 "\n" +
@@ -63,25 +66,25 @@ public class ViewBuildsScreen extends AppCompatActivity {
                 "\n" +
                 "    <starting>\n" +
                 "        <block name=\"OFFENSIVE START\">\n" +
-                "           <item name=\"dorans_sheild\"/>\n" +
-                "           <item name=\"cloth_armour\"/>\n" +
+                "           <item name=\"dorans_sheild\" quantity=\"3\"/>\n" +
+                "           <item name=\"cloth_armour\" quantity=\"1\"/>\n" +
                 "        </block>\n"+
                 "        <block name=\"DEFENSIVE START\">\n" +
-                "           <item name=\"pot_of_greed\" quantity=\"3\"/>\n" +
-                "           <item name=\"cloth_armour\"/>\n" +
+                "           <item name=\"dorans_sheild\" quantity=\"3\"/>\n" +
+                "           <item name=\"cloth_armour\" quantity=\"1\"/>\n" +
                 "        </block>\n"+
                 "    </starting>\n" +
                 "\n" +
                 "    <core>\n" +
                 "       <block name=\"MAIN CORE\">\n" +
-                "           <item name=\"trinity_force\"/>\n" +
+                "           <item name=\"trinity_force\" quantity=\"1\"/>\n" +
                 "       </block>\n" +
                 "    </core>\n" +
                 "\n" +
                 "    <situational>\n" +
                 "        <block name=\"Heavy AP\">\n" +
-                "            <item name=\"spirit_visage\"/>\n" +
-                "            <item name=\"abyssal_mask\"/>\n" +
+                "            <item name=\"spirit_visage\" quantity=\"1\"/>\n" +
+                "            <item name=\"abyssal_mask\" quantity=\"1\"/>\n" +
                 "        </block>\n" +
                 "    </situational>\n" +
                 "\n" +
@@ -108,16 +111,13 @@ public class ViewBuildsScreen extends AppCompatActivity {
                 "\n" +
                 "</build>");
 
-        //TODO: Cycle through builds folder displaying cards for each build.
-
-        //TODO: Each build card must have bundle feature for passing intents onto later view screens.
-
         FileInputStream inputstream = null;
         try {
-            inputstream = new FileInputStream(pathToBuilds + "/newBuild.xml");
+            inputstream = new FileInputStream(getBuildsDir().getAbsolutePath() + "/newBuild.xml");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+
         ParseBuildEntry parseBuildEntry = null;
         try {
             parseBuildEntry = new ParseBuildEntry(inputstream);
@@ -126,7 +126,11 @@ public class ViewBuildsScreen extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        
+        if (parseBuildEntry != null)
+            Log.d("clear", parseBuildEntry.build.runes.primary.family.toString());
 
+        //END TEST
 
         CardView cardView = this.findViewById(R.id.build_card_0);
         cardView.setOnClickListener(view -> {
@@ -137,17 +141,16 @@ public class ViewBuildsScreen extends AppCompatActivity {
     
 
     // For creating a new file...
-    public void createFile(String directory, String fname, String buildContent)
+    public void createFile(File directory, String fname, String buildContent)
     {
         String fileContents = buildContent;
 
-        File dir = new File(directory);
-        if(!dir.exists() && ! dir.mkdirs()){
+        if(!directory.exists() && !directory.mkdirs()){
             Log.e("clear","Could not make directory");
         }
 
-        try{
-            File textFile = new File(dir, fname);
+        try {
+            File textFile = new File(directory, fname);
             FileWriter writer = new FileWriter(textFile);
             writer.append(fileContents);
             writer.flush();
@@ -169,6 +172,10 @@ public class ViewBuildsScreen extends AppCompatActivity {
         {
             Log.d("t","granted");
         }
+    }
+
+    File getBuildsDir() {
+        return new File( this.getFilesDir(), "/builds" );
     }
 
 }
