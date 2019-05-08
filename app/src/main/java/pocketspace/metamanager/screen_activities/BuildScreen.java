@@ -33,31 +33,24 @@ public class BuildScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.build_screen);
 
-        Intent intent = getIntent();
 
+//        Intent intent = getIntent();
 //        character = intent.getStringExtra(getResources().getString(R.string.characterName));
 //        role = intent.getStringExtra(getResources().getString(R.string.lolRole));
 
-        game = "league_of_legends";
+
         character = "aatrox";
         role = "TOP";
 
         viewPager = findViewById(R.id.viewPager);
         tabLayout = findViewById(R.id.tabLayout);
         adapter = new TabAdapter(getSupportFragmentManager());
-        adapter = null;
-
 
         //TODO:read in builds here
 
-//        adapter.addFragment(TabPrimeRuneFragment.newInstance());
+        TabPrimeRuneFragment tabPrime = TabPrimeRuneFragment.newInstance(Build.testing().runes.primary);
 
-//         Get buildStream from intent, to fill out build here.
-//        ParseBuildEntry parseBuildEntry = new ParseBuildEntry(buildStream);
-//        Build build = parseBuildEntry.build;
-
-
-        adapter.addFragment(TabPrimeRuneFragment.newInstance(Build.testing().runes.primary), "PRIME");
+        adapter.addFragment(tabPrime, "PRIME");
         adapter.addFragment(new TabSecondaryRuneFragment(), "SECOND");
         adapter.addFragment(new TabSpellFragment(), "SPELL");
         adapter.addFragment(new TabItemFragment(), "ITEM");

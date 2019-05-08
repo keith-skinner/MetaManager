@@ -14,7 +14,6 @@ public class HomeScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_screen);
 
-
         CardView cardView = this.findViewById(R.id.view_builds);
         cardView.setOnClickListener(view -> {
             Intent intent = new Intent(this, ViewBuildsScreen.class);
@@ -23,7 +22,7 @@ public class HomeScreen extends AppCompatActivity {
 
         CardView cardView1 = this.findViewById(R.id.create_build);
         cardView1.setOnClickListener(view -> {
-            Intent intent = new Intent(this, CreateScreen.class);
+            Intent intent = new Intent(this, CharacterListScreen.class);
             view.getContext().startActivity(intent);
         });
 
