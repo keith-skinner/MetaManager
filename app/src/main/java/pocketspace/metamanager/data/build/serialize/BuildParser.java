@@ -16,8 +16,6 @@ import pocketspace.metamanager.data.build.Build;
 
 public class BuildParser {
 
-    private static final String BUILD_LOG = "pocketspace.metamanager.build";
-
     public Build build = new Build();
 
     private static final String ns = null;
@@ -84,7 +82,7 @@ public class BuildParser {
         parser.require(XmlPullParser.START_TAG, ns, "primary");
 
         Log.d("clear",":primary START");
-        build.runes.primary.family = build.strToRuneFamily(parser.getAttributeValue(ns, "family"));
+        build.runes.primary.family.setFamily(parser.getAttributeValue(ns, "family"));
 
         int runeCount = 0;
         while (parser.next() != XmlPullParser.END_TAG)
@@ -190,7 +188,7 @@ public class BuildParser {
             if (parser.getName().equals("spell"))
             {
                 parser.require(XmlPullParser.START_TAG, ns, "spell");
-                build.summoners.summoner1 = parser.getAttributeValue(ns, "name");
+                build.summoner1.setSummoner(parser.getAttributeValue(ns, "name"));
                 Log.i("clear", ":  spell: " + build.summoners.summoner1);
                 parser.nextTag();
                 parser.require(XmlPullParser.END_TAG, ns, "spell");

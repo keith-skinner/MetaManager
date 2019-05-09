@@ -28,7 +28,7 @@ public class RuneFamily {
     public void setFamily(int family) {
         this.family = fromInt(family);
     }
-    private void setFamily(String family) {
+    public void setFamily(String family) {
         this.family = fromString(family);
     }
 

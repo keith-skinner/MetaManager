@@ -25,13 +25,13 @@ public class Summoner {
         setSummoner(summoner);
     }
 
-    private int getSummoner() {
+    public int getSummoner() {
         return summoner;
     }
-    private void setSummoner(String summoner) {
+    public void setSummoner(String summoner) {
         this.summoner = fromString(summoner);
     }
-    private void setSummoner(int summoner) {
+    public void setSummoner(int summoner) {
         this.summoner = fromInt(summoner);
     }
 
