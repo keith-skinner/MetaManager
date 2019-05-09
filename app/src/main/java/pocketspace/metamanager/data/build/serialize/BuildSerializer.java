@@ -18,48 +18,48 @@ import pocketspace.metamanager.data.build.summoner.Summoner;
 @SuppressLint("DefaultLocale")
 public class BuildSerializer {
 
-    private static final String XML_DECL = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
+    private static final String XML_DECL = "<?xml version=\"1.0\" encoding=\"utf-8\" ?>";
 
     private static final String BUILD_START_TAG = "<build name=\"%s\" champion=\"%s\" role=\"%s\">\n";
     private static final String BUILD_END_TAG = "</build>\n";
 
-    private static final String RUNE_START_TAG = "<rune>";
+    private static final String RUNE_START_TAG = "    <rune>";
     private static final String RUNE_END_TAG = "</rune>\n";
     private static final String RUNE_TAG_FORMAT = RUNE_START_TAG + "%d" + RUNE_END_TAG;
 
-    private static final String KEYSTONE_START_TAG = "<keystone>";
+    private static final String KEYSTONE_START_TAG = "    <keystone>";
     private static final String KEYSTONE_END_TAG =   "</keystone>\n";
     private static final String KEYSTONE_TAG_FORMAT = KEYSTONE_START_TAG + "%d" + KEYSTONE_END_TAG;
 
-    private static final String PRIMARY_START_TAG =  "<primary family=\"%s\">\n";
-    private static final String PRIMARY_END_TAG =    "</primary>\n";
+    private static final String PRIMARY_START_TAG =  "  <primary family=\"%s\">\n";
+    private static final String PRIMARY_END_TAG =    "  </primary>\n";
     private static final String PRIMARY_TAG_FORMAT = PRIMARY_START_TAG + KEYSTONE_TAG_FORMAT + RUNE_TAG_FORMAT + RUNE_TAG_FORMAT + RUNE_TAG_FORMAT + PRIMARY_END_TAG;
 
-    private static final String SECONDARY_START_TAG = "<secondary family=\"%s\">\n";
-    private static final String SECONDARY_END_TAG = "</secondary>\n";
+    private static final String SECONDARY_START_TAG = "  <secondary family=\"%s\">\n";
+    private static final String SECONDARY_END_TAG = "  </secondary>\n";
     private static final String SECONDARY_TAG_FORMAT = SECONDARY_START_TAG + RUNE_TAG_FORMAT + RUNE_TAG_FORMAT + RUNE_TAG_FORMAT + SECONDARY_END_TAG;
 
-    private static final String TERTIARY_START_TAG = "<tertiary>\n";
-    private static final String TERTIARY_END_TAG = "</tertiary>\n";
+    private static final String TERTIARY_START_TAG = "  <tertiary>\n";
+    private static final String TERTIARY_END_TAG = "  </tertiary>\n";
     private static final String TERTIARY_TAG_FORMAT = TERTIARY_START_TAG + RUNE_TAG_FORMAT + RUNE_TAG_FORMAT + RUNE_TAG_FORMAT + TERTIARY_END_TAG;
 
-    private static final String SUMMONERS_START_TAG = "<summoners>\n";
-    private static final String SUMMONERS_END_TAG = "</summoners>\n";
-    private static final String SUMMONER_TAG_FORMAT = "<spell name=\"%s\"/>\n";
+    private static final String SUMMONERS_START_TAG = "  <summoners>\n";
+    private static final String SUMMONERS_END_TAG = "  </summoners>\n";
+    private static final String SUMMONER_TAG_FORMAT = "    <spell name=\"%s\"/>\n";
     private static final String SUMMONERS_TAG_FORMAT = SUMMONERS_START_TAG + SUMMONER_TAG_FORMAT + SUMMONER_TAG_FORMAT + SUMMONERS_END_TAG;
 
-    private static final String SKILLS_START_TAG = "<skills>\n";
-    private static final String SKILLS_END_TAG = "</skills>\n";
+    private static final String SKILLS_START_TAG = "  <skills>\n";
+    private static final String SKILLS_END_TAG = "  </skills>\n";
 
-    private static final String SKILL_START_TAG = "<skill>";
+    private static final String SKILL_START_TAG = "    <skill>";
     private static final String SKILL_END_TAG = "</skill>\n";
     private static final String SKILL_TAG_FORMAT = SKILL_START_TAG + "%s" + SKILL_END_TAG;
 
-    private static final String ITEMS_START_TAG = "<items>\n";
-    private static final String ITEMS_END_TAG = "</items>\n";
+    private static final String ITEMS_START_TAG = "  <items>\n";
+    private static final String ITEMS_END_TAG = "  </items>\n";
 
-    private static final String BLOCK_START_TAG = "<block name=\"%s\">\n";
-    private static final String BLOCK_END_TAG = "</block>\n";
+    private static final String BLOCK_START_TAG = "    <block name=\"%s\">\n";
+    private static final String BLOCK_END_TAG = "    </block>\n";
 
     public static String serialize(Build build) {
 
@@ -88,11 +88,11 @@ public class BuildSerializer {
     private static String serialize(Item item) {
         String serial;
         if (item.getQuantity() > 1) {
-            String itemFormat = "<item name=\"%s\" quantity=\"%d\"/>\n";
+            String itemFormat = "      <item name=\"%s\" quantity=\"%d\"/>\n";
             serial = String.format(itemFormat, item.getName(), item.getQuantity());
         }
         else {
-            String itemFormat = "<item name\"%s\"/>\n";
+            String itemFormat = "      <item name\"%s\"/>\n";
             serial = String.format(itemFormat, item.getName());
         }
         return serial;

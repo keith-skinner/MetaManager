@@ -45,7 +45,6 @@ public class BuildParser {
         parser.require(XmlPullParser.START_TAG, ns, "build");
         while (parser.next() != XmlPullParser.END_TAG)
         {
-
             if (parser.getEventType() != XmlPullParser.START_TAG) {
                 continue;
             }
