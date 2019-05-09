@@ -59,7 +59,11 @@ public class CharacterListScreen extends AppCompatActivity {
 
     private static List<Character> createCharacterList() {
         List<Character> characters = new ArrayList<>();
-//        characters.add(new Character("Aatrox", R.drawable.aatrox_thumbnail));
+        characters.add(new Character("Aatrox", R.drawable.aatrox_icon));
+        characters.add(new Character("Aatrox", R.drawable.aatrox_icon));
+        characters.add(new Character("Aatrox", R.drawable.aatrox_icon));
+        characters.add(new Character("Aatrox", R.drawable.aatrox_icon));
+
 //        characters.add(new Character("Ahri", R.drawable.ahri_thumbnail));
 //        characters.add(new Character("Akali", R.drawable.akali_thumbnail));
 //        characters.add(new Character("Alistar", R.drawable.alistar_thumbnail));

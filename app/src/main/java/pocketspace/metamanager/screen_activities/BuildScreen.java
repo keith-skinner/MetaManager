@@ -1,13 +1,11 @@
 package pocketspace.metamanager.screen_activities;
 
-import android.content.Intent;
 import com.google.android.material.tabs.TabLayout;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import pocketspace.metamanager.R;
-import pocketspace.metamanager.data.build.Build;
 import pocketspace.metamanager.data.build.MockBuild;
 import pocketspace.metamanager.tab.TabAdapter;
 import pocketspace.metamanager.tab.TabItemFragment;
@@ -32,11 +30,12 @@ public class BuildScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.build_screen);
 
-        Intent intent = getIntent();
-        //character = intent.getStringExtra(getResources().getString(R.string.characterName));
-        //role = intent.getStringExtra(getResources().getString(R.string.lolRole));
 
-        game = "league_of_legends";
+//        Intent intent = getIntent();
+//        character = intent.getStringExtra(getResources().getString(R.string.characterName));
+//        role = intent.getStringExtra(getResources().getString(R.string.lolRole));
+
+
         character = "aatrox";
         role = "TOP";
 

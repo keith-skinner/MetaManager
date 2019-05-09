@@ -56,18 +56,18 @@ public class ViewBuildsScreen extends AppCompatActivity {
     
 
     // For creating a new file...
-    public void createFile(String directory, String fname, String buildContent)
+    public void createFile(File directory, String fname, String buildContent)
     {
+        String fileContents = buildContent;
 
-        File dir = new File(directory);
-        if(!dir.exists() && ! dir.mkdirs()){
+        if(!directory.exists() && !directory.mkdirs()){
             Log.e("clear","Could not make directory");
         }
 
-        try{
-            File textFile = new File(dir, fname);
+        try {
+            File textFile = new File(directory, fname);
             FileWriter writer = new FileWriter(textFile);
-            writer.append(buildContent);
+            writer.append(fileContents);
             writer.flush();
             writer.close();
         } catch (Exception e){
