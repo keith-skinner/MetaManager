@@ -22,23 +22,9 @@
     </tertiary>
 
     <summoners>
-        <spell name="flash"> </spell>
-        <spell name="teleport"> </spell>
+        <spell name="flash"/>
+        <spell name="teleport"/>
     </summoners>
-
-    <items>
-        <block name="Starting">
-            <item name="dorans_sheild" quantity="3"/>
-            <item name="cloth_armour"/>
-        </block>
-        <block name="Core">
-            <item name="trinity_force"/>
-        </block>
-        <block name="Heavy AP">
-            <item name="spirit_visage"/>
-            <item name="abyssal_mask"/>
-        </block>
-    </items>
 
     <skills>
         <skill>Q</skill> <!-- level 1 -->
@@ -60,5 +46,19 @@
         <skill>W</skill> <!-- level 17 -->
         <skill>W</skill> <!-- level 18 -->
     </skills>
+
+    <items>
+        <block name="Starting">
+            <item name="dorans_sheild" quantity="3"/>
+            <item name="cloth_armour"/>
+        </block>
+        <block name="Core">
+            <item name="trinity_force"/>
+        </block>
+        <block name="Heavy AP">
+            <item name="spirit_visage"/>
+            <item name="abyssal_mask"/>
+        </block>
+    </items>
 
 </build>
