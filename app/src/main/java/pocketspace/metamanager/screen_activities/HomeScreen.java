@@ -2,10 +2,14 @@ package pocketspace.metamanager.screen_activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import pocketspace.metamanager.R;
+import pocketspace.metamanager.data.build.MockBuild;
+import pocketspace.metamanager.data.build.serialize.BuildSerializer;
 
 public class HomeScreen extends AppCompatActivity {
 
@@ -32,6 +36,6 @@ public class HomeScreen extends AppCompatActivity {
             view.getContext().startActivity(intent);
         });
 
-
+        Log.i("HELLO", BuildSerializer.serialize(MockBuild.makeBuildObject()));
     }
 }

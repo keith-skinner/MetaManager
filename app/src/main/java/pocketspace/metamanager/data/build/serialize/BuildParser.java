@@ -12,6 +12,7 @@ import java.util.Arrays;
 
 
 import pocketspace.metamanager.data.build.Build;
+import pocketspace.metamanager.data.build.item.ItemBlock;
 
 
 public class BuildParser {
@@ -189,15 +190,15 @@ public class BuildParser {
             {
                 parser.require(XmlPullParser.START_TAG, ns, "spell");
                 build.summoner1.setSummoner(parser.getAttributeValue(ns, "name"));
-                Log.i("clear", ":  spell: " + build.summoners.summoner1);
+                //Log.i("clear", ":  spell: " + build.summoners.summoner1);
                 parser.nextTag();
                 parser.require(XmlPullParser.END_TAG, ns, "spell");
 
                 parser.nextTag();
 
                 parser.require(XmlPullParser.START_TAG, ns, "spell");
-                build.summoners.summoner2 = parser.getAttributeValue(ns, "name");
-                Log.i("clear", ":  spell: " + build.summoners.summoner2);
+                //build.summoners.summoner2 = parser.getAttributeValue(ns, "name");
+                //Log.i("clear", ":  spell: " + build.summoners.summoner2);
                 parser.nextTag();
                 parser.require(XmlPullParser.END_TAG, ns, "spell");
             }
@@ -205,15 +206,15 @@ public class BuildParser {
         Log.d("clear",":summoners END");
     }
 
-    private Build.ItemGroup readBlock(XmlPullParser parser) throws IOException, XmlPullParserException
+    private ItemBlock readBlock(XmlPullParser parser) throws IOException, XmlPullParserException
     {
         Log.d("clear",":block START");
 
-        build.block = new Build.ItemGroup();
-        build.block.items = new ArrayList<>();
-        build.block.itemQuantities  = new ArrayList<>();
+        //build.block = new Build.ItemGroup();
+        //build.block.items = new ArrayList<>();
+        //build.block.itemQuantities  = new ArrayList<>();
 
-        build.block.name = parser.getAttributeValue(ns, "name");
+        //build.block.name = parser.getAttributeValue(ns, "name");
         parser.nextTag(); // skip block start.. and go until block
         String name = parser.getName();
         while (name.compareTo("block") != 0)
@@ -227,8 +228,8 @@ public class BuildParser {
                     quantity = "1";
                 }
                 String item = parser.getAttributeValue(ns, "name");
-                build.block.items.add(item);
-                build.block.itemQuantities.add(Integer.parseInt(quantity));
+                //build.block.items.add(item);
+                //build.block.itemQuantities.add(Integer.parseInt(quantity));
                 parser.nextTag(); // skip endTag
             }
             parser.nextTag();
@@ -236,7 +237,8 @@ public class BuildParser {
         }
         Log.d("clear",":block END");
 
-        return build.block;
+        //return build.block;
+        return null;
     }
 
     private void readStarting(XmlPullParser parser) throws IOException, XmlPullParserException
@@ -248,9 +250,9 @@ public class BuildParser {
                 continue;
             }
             if (parser.getName().equals("block")) {
-                Build.ItemGroup newBlock;
-                newBlock = readBlock(parser);
-                build.items.starting.add(newBlock);
+                //Build.ItemGroup newBlock;
+                //newBlock = readBlock(parser);
+                //build.items.starting.add(newBlock);
             }
         }
         Log.d("clear",":starting END");
@@ -265,9 +267,9 @@ public class BuildParser {
                 continue;
             }
             if (parser.getName().equals("block")) {
-                Build.ItemGroup newBlock;
-                newBlock = readBlock(parser);
-                build.items.core.add(newBlock);
+                //Build.ItemGroup newBlock;
+                //newBlock = readBlock(parser);
+                //build.items.core.add(newBlock);
             }
         }
         Log.d("clear",":core END");
@@ -282,9 +284,9 @@ public class BuildParser {
                 continue;
             }
             if (parser.getName().equals("block")) {
-                Build.ItemGroup newBlock;
-                newBlock = readBlock(parser);
-                build.items.situational.add(newBlock);
+                //Build.ItemGroup newBlock;
+                //newBlock = readBlock(parser);
+                //build.items.situational.add(newBlock);
             }
         }
         Log.d("clear",":situational END");
@@ -311,8 +313,8 @@ public class BuildParser {
             if (parser.getName().equals("skill")) {
                 parser.require(XmlPullParser.START_TAG, ns, "skill");
                 char c = parser.nextText().charAt(0);
-                Build.Skill s = build.charToSkill(c);
-                build.skills.add(s);
+                //Build.Skill s = build.charToSkill(c);
+                //build.skills.add(s);
                 parser.require(XmlPullParser.END_TAG, ns, "skill");
             }
         }
