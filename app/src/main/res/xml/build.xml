@@ -26,21 +26,19 @@
         <spell name="teleport"> </spell>
     </summoners>
 
-    <starting>
-        <item name="dorans_sheild" quantity="3"/>
-        <item name="cloth_armour"/>
-    </starting>
-
-    <core>
-        <item name="trinity_force"/>
-    </core>
-
-    <situational>
+    <items>
+        <block name="Starting">
+            <item name="dorans_sheild" quantity="3"/>
+            <item name="cloth_armour"/>
+        </block>
+        <block name="Core">
+            <item name="trinity_force"/>
+        </block>
         <block name="Heavy AP">
             <item name="spirit_visage"/>
             <item name="abyssal_mask"/>
         </block>
-    </situational>
+    </items>
 
     <skills>
         <skill>Q</skill> <!-- level 1 -->

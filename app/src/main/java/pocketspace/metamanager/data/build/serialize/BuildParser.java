@@ -1,4 +1,4 @@
-package pocketspace.metamanager;
+package pocketspace.metamanager.data.build.serialize;
 
 import android.util.Log;
 import android.util.Xml;
@@ -8,13 +8,12 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Arrays;
 
 
-import pocketspace.metamanager.data.Build;
+import pocketspace.metamanager.data.build.Build;
 
 
-public class ParseBuildEntry {
+public class BuildParser {
 
     private static final String BUILD_LOG = "pocketspace.metamanager.build";
 
@@ -24,7 +23,7 @@ public class ParseBuildEntry {
 
 
 
-    public ParseBuildEntry(InputStream inStream) throws XmlPullParserException, IOException
+    public BuildParser(InputStream inStream) throws XmlPullParserException, IOException
     {
         try {
             XmlPullParser parser = Xml.newPullParser();
@@ -53,24 +52,28 @@ public class ParseBuildEntry {
 
             String name = parser.getName();
 
-            if (name.equals("primary")) {
-                readPrimary(parser);
-            } else if (name.equals("secondary")) {
-                readSecondary(parser);
-            } else if (name.equals("tertiary")){
-                readTertiary(parser);
-            } else if (name.equals("summoners")){
-                readSummoners(parser);
-            } else if (name.equals("starting")){
-                readStarting(parser);
-//            } else if (name.equals("core")){
-//                entries.add(readCore(parser));
-//            } else if (name.equals("situational")){
-//                entries.add(readSituational(parser));
-            } else if (name.equals("skills")) {
-                readSkills(parser);
-            } else {
-                skip(parser);
+            switch (name) {
+                case "primary":
+                    readPrimary(parser);
+                    break;
+                case "secondary":
+                    readSecondary(parser);
+                    break;
+                case "tertiary":
+                    readTertiary(parser);
+                    break;
+                case "summoners":
+                    readSummoners(parser);
+                    break;
+                case "starting":
+                    readStarting(parser);
+                    break;
+                case "skills":
+                    readSkills(parser);
+                    break;
+                default:
+                    skip(parser);
+                    break;
             }
         }
     }
@@ -80,10 +83,6 @@ public class ParseBuildEntry {
         parser.require(XmlPullParser.START_TAG, ns, "primary");
 
         Log.d("clear",":primary START");
-//        Log.d("clear", ":  attributes: "+parser.getAttributeCount() );
-//        Log.d("clear", ":  :  Name: " + parser.getAttributeName(0));
-//        Log.d("clear", ":  :  Value: " + parser.getAttributeValue(0));
-//        Log.d("clear", ":  family = " + parser.getAttributeValue(null, "family"));
         build.runes.primary.family = build.strToRuneFamily(parser.getAttributeValue(ns, "family"));
 
         int runeCount = 0;
@@ -274,52 +273,6 @@ public class ParseBuildEntry {
         }
         return result;
     }
-
-//    private void readPrimary(XmlPullParser parser) throws  IOException, XmlPullParserException
-//    {
-//        parser.require(XmlPullParser.START_TAG, null, "primary");
-//
-//        while (parser.next() != XmlPullParser.END_TAG) {
-//            if (parser.getEventType() != XmlPullParser.START_TAG) {
-//                continue;
-//            }
-//            String name = parser.getName();
-//            //go through nest:
-//            //...
-//        }
-//        return new ParseBuildEntry(title, role);
-//
-//        parser.require(XmlPullParser.END_TAG, null, "primary");
-//    }
-
-
-//      Pulls tags out of XML file
-//    private void readText(XmlPullParser parser) throws IOException, XmlPullParserException
-//    {
-//        String result = "";
-//        if (parser.next() == XmlPullParser.TEXT)
-//         {
-//            result = parser.getText();
-//            parser.nextTag();
-//        }
-//        return result;
-//    }
-
-//    private List<Integer> readSkills(XmlPullParser parser){
-//        List<Integer> list = new ArrayList<>();
-//
-//        parser.require(XmlPullParser.START_TAG, ns, "summary");
-//
-//        while (parser.next() != XmlPullParser.END_TAG){
-//
-//
-//        }
-//
-//
-//        parser.require(XmlPullParser.END_TAG, ns, "summary");
-//
-//        return list;
-//    }
 
 
     private void skip(XmlPullParser parser) throws XmlPullParserException, IOException
