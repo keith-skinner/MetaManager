@@ -7,8 +7,11 @@ import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import java.io.ByteArrayInputStream;
+
 import pocketspace.metamanager.R;
 import pocketspace.metamanager.data.build.MockBuild;
+import pocketspace.metamanager.data.build.serialize.BuildParser;
 import pocketspace.metamanager.data.build.serialize.BuildSerializer;
 
 public class HomeScreen extends AppCompatActivity {
@@ -36,6 +39,13 @@ public class HomeScreen extends AppCompatActivity {
             view.getContext().startActivity(intent);
         });
 
-        Log.i("HELLO", BuildSerializer.serialize(MockBuild.makeBuildObject()));
+        try {
+            BuildParser paresr = new BuildParser(new ByteArrayInputStream(MockBuild.makeBuildXML().getBytes()));
+            Log.i("PROGRESS", "Parser Works");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
     }
 }

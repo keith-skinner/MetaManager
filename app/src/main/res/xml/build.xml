@@ -1,63 +1,48 @@
-<?xml version="1.0" encoding="utf-8"?>
-<build buildName="dick" character="Aatrox" role="Top">
-
-    <primary family="precision">
-        <keystone>0</keystone>
+<?xml version="1.0" encoding="utf-8" ?>
+<build name="A new build" champion="Aatrox" role="null">
+    <primary family="PRECISION">
+        <keystone>1</keystone>
         <rune>1</rune>
-        <rune>2</rune>
         <rune>0</rune>
-    </primary>
-
-    <secondary family="domination">
-        <rune>1</rune>
         <rune>2</rune>
+    </primary>
+    <secondary family="INSPIRATION">
+        <rune>1</rune>
+        <rune>0</rune>
         <rune>-1</rune>
     </secondary>
-
     <tertiary>
         <rune>1</rune>
-        <rune>1</rune>
-        <rune>1</rune>
+        <rune>0</rune>
+        <rune>2</rune>
     </tertiary>
-
     <summoners>
-        <spell name="flash"/>
-        <spell name="teleport"/>
+        <spell name="FLASH"/>
+        <spell name="TELEPORT"/>
     </summoners>
-
     <skills>
-        <skill>Q</skill> <!-- level 1 -->
-        <skill>W</skill> <!-- level 2 -->
-        <skill>E</skill> <!-- level 3 -->
-        <skill>Q</skill> <!-- level 4 -->
-        <skill>Q</skill> <!-- level 5 -->
-        <skill>R</skill> <!-- level 6 -->
-        <skill>E</skill> <!-- level 7 -->
-        <skill>W</skill> <!-- level 8 -->
-        <skill>W</skill> <!-- level 9 -->
-        <skill>W</skill> <!-- level 10 -->
-        <skill>W</skill> <!-- level 11 -->
-        <skill>W</skill> <!-- level 12 -->
-        <skill>W</skill> <!-- level 13 -->
-        <skill>W</skill> <!-- level 14 -->
-        <skill>W</skill> <!-- level 15 -->
-        <skill>W</skill> <!-- level 16 -->
-        <skill>W</skill> <!-- level 17 -->
-        <skill>W</skill> <!-- level 18 -->
+        <skill>Q</skill><skill>W</skill><skill>E</skill>
+        <skill>Q</skill><skill>W</skill><skill>E</skill>
+        <skill>Q</skill><skill>W</skill><skill>E</skill>
+        <skill>Q</skill><skill>W</skill><skill>E</skill>
+        <skill>Q</skill><skill>W</skill><skill>E</skill>
+        <skill>R</skill><skill>R</skill><skill>R</skill>
     </skills>
-
     <items>
-        <block name="Starting">
-            <item name="dorans_sheild" quantity="3"/>
-            <item name="cloth_armour"/>
-        </block>
         <block name="Core">
-            <item name="trinity_force"/>
+            <item name="Big Damage Item 1"/>
+            <item name="Big Damage Item 2"/>
+            <item name="Big Damage Item 3"/>
         </block>
-        <block name="Heavy AP">
-            <item name="spirit_visage"/>
-            <item name="abyssal_mask"/>
+        <block name="Starting">
+            <item name="Starting Item"/>
+            <item name="Health Potion" quantity="2"/>
+            <item name="Trinket"/>
+        </block>
+        <block name="Situational">
+            <item name="Tanky Item 1"/>
+            <item name="Tanky Item 2"/>
+            <item name="Tanky Item 3"/>
         </block>
     </items>
-
 </build>
