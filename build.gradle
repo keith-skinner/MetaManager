@@ -22,8 +22,6 @@ allprojects {
     }
 }
 
-al;sdkflasfdjals;djfasdkfl;as;ldfjal;sdjf;jas;dfjk;
-
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
