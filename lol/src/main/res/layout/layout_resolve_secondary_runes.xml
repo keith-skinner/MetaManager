@@ -16,20 +16,20 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/summoner1"
+            android:id="@+id/resolveSecondary11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/todo"
             android:padding="8dp"
             android:src="@drawable/demolish"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/summoner2"
+            app:layout_constraintEnd_toStartOf="@+id/resolveSecondary12"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/summoner3"
+            android:id="@+id/resolveSecondary12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:adjustViewBounds="false"
@@ -37,22 +37,22 @@
             android:padding="8dp"
             android:src="@drawable/font_of_life"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/resolveSecondary13"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/summoner2"
+            app:layout_constraintStart_toEndOf="@+id/resolveSecondary11"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/summoner2"
+            android:id="@+id/resolveSecondary13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/todo"
             android:padding="8dp"
             android:src="@drawable/shield_bash"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/summoner3"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/summoner1"
+            app:layout_constraintStart_toEndOf="@+id/resolveSecondary12"
             app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -70,33 +70,33 @@
         app:layout_constraintTop_toBottomOf="@+id/row1">
 
         <ImageView
-            android:id="@+id/summoner4"
+            android:id="@+id/resolveSecondary21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/todo"
             android:padding="8dp"
             android:src="@drawable/conditioning"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/summoner5"
+            app:layout_constraintEnd_toStartOf="@+id/resolveSecondary22"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/summoner5"
+            android:id="@+id/resolveSecondary22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/todo"
             android:padding="8dp"
             android:src="@drawable/second_wind"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/summoner6"
+            app:layout_constraintEnd_toStartOf="@+id/resolveSecondary23"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/summoner4"
+            app:layout_constraintStart_toEndOf="@+id/resolveSecondary21"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/summoner6"
+            android:id="@+id/resolveSecondary23"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/todo"
@@ -105,7 +105,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/summoner5"
+            app:layout_constraintStart_toEndOf="@+id/resolveSecondary22"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -122,33 +122,33 @@
         app:layout_constraintTop_toBottomOf="@+id/row2">
 
         <ImageView
-            android:id="@+id/summoner7"
+            android:id="@+id/resolveSecondary31"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/todo"
             android:padding="8dp"
             android:src="@drawable/overgrowth"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/summoner8"
+            app:layout_constraintEnd_toStartOf="@+id/resolveSecondary32"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/summoner8"
+            android:id="@+id/resolveSecondary32"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/todo"
             android:padding="8dp"
             android:src="@drawable/revitalize"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/summoner9"
+            app:layout_constraintEnd_toStartOf="@+id/resolveSecondary33"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/summoner7"
+            app:layout_constraintStart_toEndOf="@+id/resolveSecondary31"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/summoner9"
+            android:id="@+id/resolveSecondary33"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/todo"
@@ -157,7 +157,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/summoner8"
+            app:layout_constraintStart_toEndOf="@+id/resolveSecondary32"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

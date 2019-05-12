@@ -9,7 +9,7 @@
 
     <include
         android:id="@+id/primaryRunes"
-        layout="@layout/layout_primary_runes"
+        layout="@layout/layout_family_runes"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -20,7 +20,7 @@
 
     <include
         android:id="@+id/keyStoneRunes"
-        layout="@layout/domination_primary_runes"
+        layout="@layout/layout_precision_primary_runes"
         android:layout_width="400dp"
         android:layout_height="100dp"
         app:layout_constraintBottom_toTopOf="@id/secondaryRunes"
@@ -30,7 +30,7 @@
 
     <include
         android:id="@+id/secondaryRunes"
-        layout="@layout/domination_secondary_runes"
+        layout="@layout/layout_precision_secondary_runes"
         android:layout_width="256dp"
         android:layout_height="228dp"
         android:layout_margin="0dp"

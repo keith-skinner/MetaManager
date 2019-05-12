@@ -3,4 +3,8 @@
     <color name="darkPurple">#4a148c</color>
     <color name="lightPurple">#7c43bd</color>
     <color name="dBackground">#102027</color>
+
+
+    <color name="domination_selection">@android:color/holo_red_dark</color>
+
 </resources>

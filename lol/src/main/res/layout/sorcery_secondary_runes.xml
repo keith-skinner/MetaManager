@@ -8,7 +8,6 @@
         android:id="@+id/row1"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/row2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -16,20 +15,19 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/summoner1"
+            android:id="@+id/sorcerySecondary11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/todo"
             android:padding="8dp"
             android:src="@drawable/nullifying_orb"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/summoner2"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/sorcerySecondary12"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/summoner3"
+            android:id="@+id/sorcerySecondary12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:adjustViewBounds="false"
@@ -37,22 +35,20 @@
             android:padding="8dp"
             android:src="@drawable/manaflow_band"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/summoner2"
+            app:layout_constraintEnd_toStartOf="@+id/sorcerySecondary13"
+            app:layout_constraintStart_toEndOf="@+id/sorcerySecondary11"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/summoner2"
+            android:id="@+id/sorcerySecondary13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/todo"
             android:padding="8dp"
             android:src="@drawable/nimbus_cloak"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/summoner3"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/summoner1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/sorcerySecondary12"
             app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -62,7 +58,6 @@
         android:id="@+id/row2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/row3"
         app:layout_constraintEnd_toEndOf="@id/row1"
         app:layout_constraintHorizontal_bias="0.5"
@@ -70,33 +65,33 @@
         app:layout_constraintTop_toBottomOf="@+id/row1">
 
         <ImageView
-            android:id="@+id/summoner4"
+            android:id="@+id/sorcerySecondary21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/todo"
             android:padding="8dp"
             android:src="@drawable/transcendence"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/summoner5"
+            app:layout_constraintEnd_toStartOf="@+id/sorcerySecondary22"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/summoner5"
+            android:id="@+id/sorcerySecondary22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/todo"
             android:padding="8dp"
             android:src="@drawable/celerity"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/summoner6"
+            app:layout_constraintEnd_toStartOf="@+id/sorcerySecondary23"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/summoner4"
+            app:layout_constraintStart_toEndOf="@+id/sorcerySecondary21"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/summoner6"
+            android:id="@+id/sorcerySecondary23"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/todo"
@@ -105,7 +100,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/summoner5"
+            app:layout_constraintStart_toEndOf="@+id/sorcerySecondary22"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -114,7 +109,6 @@
         android:id="@+id/row3"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/row2"
         app:layout_constraintHorizontal_bias="0.5"
@@ -122,33 +116,33 @@
         app:layout_constraintTop_toBottomOf="@+id/row2">
 
         <ImageView
-            android:id="@+id/summoner7"
+            android:id="@+id/sorcerySecondary31"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/todo"
             android:padding="8dp"
             android:src="@drawable/scorch"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/summoner8"
+            app:layout_constraintEnd_toStartOf="@+id/sorcerySecondary32"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/summoner8"
+            android:id="@+id/sorcerySecondary32"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/todo"
             android:padding="8dp"
             android:src="@drawable/waterwalking"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/summoner9"
+            app:layout_constraintEnd_toStartOf="@+id/sorcerySecondary33"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/summoner7"
+            app:layout_constraintStart_toEndOf="@+id/sorcerySecondary31"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/summoner9"
+            android:id="@+id/sorcerySecondary33"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/todo"
@@ -157,8 +151,9 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/summoner8"
+            app:layout_constraintStart_toEndOf="@+id/sorcerySecondary32"
             app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

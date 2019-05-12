@@ -9,47 +9,47 @@
     android:visibility="visible">
 
     <ImageView
-        android:id="@+id/primary1"
+        android:id="@+id/precisionKeystone1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:contentDescription="@string/todo"
         android:src="@drawable/press_the_attack"
-        app:layout_constraintEnd_toStartOf="@+id/primary2"
+        app:layout_constraintEnd_toStartOf="@+id/precisionKeystone2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/primary2"
+        android:id="@+id/precisionKeystone2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:contentDescription="@string/todo"
         android:src="@drawable/lethal_tempo"
-        app:layout_constraintEnd_toStartOf="@+id/primary3"
+        app:layout_constraintEnd_toStartOf="@+id/family3"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/primary1"
-        app:layout_constraintTop_toTopOf="@+id/primary1" />
+        app:layout_constraintStart_toEndOf="@+id/precisionKeystone1"
+        app:layout_constraintTop_toTopOf="@+id/precisionKeystone1" />
 
     <ImageView
-        android:id="@+id/primary3"
+        android:id="@+id/precisionKeystone3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:contentDescription="@string/todo"
         android:src="@drawable/fleet_footwork"
-        app:layout_constraintEnd_toStartOf="@+id/primary4"
+        app:layout_constraintEnd_toStartOf="@+id/family4"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/primary2"
-        app:layout_constraintTop_toTopOf="@+id/primary1" />
+        app:layout_constraintStart_toEndOf="@+id/precisionKeystone2"
+        app:layout_constraintTop_toTopOf="@+id/precisionKeystone1" />
 
     <ImageView
-        android:id="@+id/primary4"
+        android:id="@+id/precisionKeystone4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:contentDescription="@string/todo"
         android:src="@drawable/conqueror"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/primary3"
-        app:layout_constraintTop_toTopOf="@+id/primary1" />
+        app:layout_constraintStart_toEndOf="@+id/precisionKeystone3"
+        app:layout_constraintTop_toTopOf="@+id/precisionKeystone1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

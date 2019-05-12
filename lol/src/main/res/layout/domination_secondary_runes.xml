@@ -17,40 +17,40 @@
         >
 
         <ImageView
-            android:id="@+id/summoner1"
+            android:id="@+id/dominationSecondary11"
             style="@style/PrimaryRuneTab"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/cheap_shot"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/summoner2"
+            app:layout_constraintEnd_toStartOf="@+id/dominationSecondary12"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             />
 
         <ImageView
-            android:id="@+id/summoner2"
+            android:id="@+id/dominationSecondary12"
             style="@style/PrimaryRuneTab"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/taste_of_blood"
-            app:layout_constraintStart_toEndOf="@+id/summoner1"
-            app:layout_constraintEnd_toStartOf="@+id/summoner3"
+            app:layout_constraintStart_toEndOf="@+id/dominationSecondary11"
+            app:layout_constraintEnd_toStartOf="@+id/dominationSecondary13"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             />
 
         <ImageView
-            android:id="@+id/summoner3"
+            android:id="@+id/dominationSecondary13"
             style="@style/PrimaryRuneTab"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:adjustViewBounds="false"
             android:contentDescription="@string/todo"
             android:src="@drawable/sudden_impact"
-            app:layout_constraintStart_toEndOf="@+id/summoner2"
+            app:layout_constraintStart_toEndOf="@+id/dominationSecondary12"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -69,39 +69,39 @@
         app:layout_constraintBottom_toTopOf="@+id/row3">
 
         <ImageView
-            android:id="@+id/summoner4"
+            android:id="@+id/dominationSecondary21"
             style="@style/PrimaryRuneTab"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/zombie_ward"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/summoner5"
+            app:layout_constraintEnd_toStartOf="@+id/dominationSecondary22"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             />
 
         <ImageView
-            android:id="@+id/summoner5"
+            android:id="@+id/dominationSecondary22"
             style="@style/PrimaryRuneTab"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/ghost_poro"
-            app:layout_constraintStart_toEndOf="@+id/summoner4"
-            app:layout_constraintEnd_toStartOf="@+id/summoner6"
+            app:layout_constraintStart_toEndOf="@+id/dominationSecondary21"
+            app:layout_constraintEnd_toStartOf="@+id/dominationSecondary23"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             />
 
         <ImageView
-            android:id="@+id/summoner6"
+            android:id="@+id/dominationSecondary23"
             style="@style/PrimaryRuneTab"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/eyeball_collection"
-            app:layout_constraintStart_toEndOf="@+id/summoner5"
+            app:layout_constraintStart_toEndOf="@+id/dominationSecondary22"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -120,52 +120,52 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageView
-            android:id="@+id/summoner7"
+            android:id="@+id/dominationSecondary31"
             style="@style/PrimaryRuneTab"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/ravenous_hunter"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/summoner8"
+            app:layout_constraintEnd_toStartOf="@+id/dominationSecondary32"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             />
 
         <ImageView
-            android:id="@+id/summoner8"
+            android:id="@+id/dominationSecondary32"
             style="@style/PrimaryRuneTab"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/ingenious_hunter"
-            app:layout_constraintStart_toEndOf="@+id/summoner7"
-            app:layout_constraintEnd_toStartOf="@+id/summoner9"
+            app:layout_constraintStart_toEndOf="@+id/dominationSecondary31"
+            app:layout_constraintEnd_toStartOf="@+id/dominationSecondary33"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             />
 
         <ImageView
-            android:id="@+id/summoner9"
+            android:id="@+id/dominationSecondary33"
             style="@style/PrimaryRuneTab"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/relentless_hunter"
-            app:layout_constraintStart_toEndOf="@+id/summoner8"
-            app:layout_constraintEnd_toStartOf="@+id/imageView2"
+            app:layout_constraintStart_toEndOf="@+id/dominationSecondary32"
+            app:layout_constraintEnd_toStartOf="@+id/dominationSecondary34"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/dominationSecondary34"
             style="@style/PrimaryRuneTab"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/ultimate_hunter"
-            app:layout_constraintStart_toEndOf="@+id/summoner9"
+            app:layout_constraintStart_toEndOf="@+id/dominationSecondary33"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"

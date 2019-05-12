@@ -57,7 +57,7 @@
     </style>
 
 
-    <!-- Character Build Specific -->
+    <!-- Character build Specific -->
     <style name="CharacterBuild" parent="AppTheme"/>
     <style name="PrimaryRuneTab" parent="CharacterBuild"/>
     <style name="PrimaryRuneTab.PrimaryRunes" parent="PrimaryRuneTab"/>

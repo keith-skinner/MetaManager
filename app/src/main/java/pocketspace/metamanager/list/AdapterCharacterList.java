@@ -13,8 +13,8 @@ import android.widget.TextView;
 import java.util.List;
 
 import pocketspace.metamanager.R;
-import pocketspace.metamanager.screen_activities.ActivityCharacterList;
-import pocketspace.metamanager.screen_activities.ActivityRole;
+import pocketspace.metamanager.screen_activities.CharacterListScreen;
+import pocketspace.metamanager.screen_activities.RoleScreen;
 
 public class AdapterCharacterList extends RecyclerView.Adapter<AdapterCharacterList.ViewHolder>
 {
@@ -32,9 +32,9 @@ public class AdapterCharacterList extends RecyclerView.Adapter<AdapterCharacterL
         }
     }
 
-    private List<ActivityCharacterList.Character> characters;
+    private List<CharacterListScreen.Character> characters;
 
-    public AdapterCharacterList(List<ActivityCharacterList.Character> characters) {
+    public AdapterCharacterList(List<CharacterListScreen.Character> characters) {
         this.characters = characters;
     }
 
@@ -48,7 +48,7 @@ public class AdapterCharacterList extends RecyclerView.Adapter<AdapterCharacterL
 
     @Override
     public void onBindViewHolder(@NonNull AdapterCharacterList.ViewHolder viewHolder, int position) {
-        final ActivityCharacterList.Character character = this.characters.get(position);
+        final CharacterListScreen.Character character = this.characters.get(position);
 
         TextView characterName = viewHolder.characterName;
         characterName.setText(character.name);
@@ -58,7 +58,7 @@ public class AdapterCharacterList extends RecyclerView.Adapter<AdapterCharacterL
 
         LinearLayoutCompat characterLayout = viewHolder.characterLayout;
         characterLayout.setOnClickListener((View view)->{
-            Intent intent = new Intent(view.getContext(), ActivityRole.class);
+            Intent intent = new Intent(view.getContext(), RoleScreen.class);
             intent.putExtra(view.getResources().getString(R.string.characterName), character.name);
             view.getContext().startActivity(intent);
         });

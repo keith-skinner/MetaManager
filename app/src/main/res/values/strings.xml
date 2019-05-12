@@ -1,6 +1,7 @@
 <resources>
 
     <string name="app_name">MetaManager</string>
+    <string name="directory">Environment.getExternalStorageDirectory() + "/" + "Builds"</string>
 
     <!-- ACTION BAR TITLES -->
     <string name="actionbar_game_list">Games</string>
@@ -49,5 +50,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="keystone_description">An image of a keystone</string>
     <string name="todo">TODO</string>
+    <string name="view">View</string>
+    <string name="import_stmt">Import</string>
+    <string name="create">Create</string>
 
 </resources>

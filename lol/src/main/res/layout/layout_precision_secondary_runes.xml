@@ -15,37 +15,37 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <ImageView
-            android:id="@+id/summoner1"
+            android:id="@+id/precisionSecondary11"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:contentDescription="@string/todo"
             android:src="@drawable/overheal"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/summoner2"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/precisionSecondary12"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/summoner3"
+            android:id="@+id/precisionSecondary12"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/triumph"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/precisionSecondary11"
+            app:layout_constraintEnd_toStartOf="@+id/precisionSecondary13"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/precisionSecondary13"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:adjustViewBounds="false"
             android:contentDescription="@string/todo"
             android:src="@drawable/presence_of_mind"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/precisionSecondary12"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/summoner2"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/summoner2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/todo"
-            android:src="@drawable/triumph"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/summoner3"
-            app:layout_constraintStart_toEndOf="@+id/summoner1"
             app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -56,42 +56,44 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/row3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/row1"
-        app:layout_constraintBottom_toTopOf="@+id/row3">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/row1">
 
         <ImageView
-            android:id="@+id/summoner4"
+            android:id="@+id/precisionSecondary21"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:contentDescription="@string/todo"
             android:src="@drawable/legend_alacrity"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/summoner5"
+            app:layout_constraintEnd_toStartOf="@+id/precisionSecondary22"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/summoner5"
+            android:id="@+id/precisionSecondary22"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:contentDescription="@string/todo"
             android:src="@drawable/legend_tenacity"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/summoner6"
-            app:layout_constraintStart_toEndOf="@+id/summoner4"
+            app:layout_constraintStart_toEndOf="@+id/precisionSecondary21"
+            app:layout_constraintEnd_toStartOf="@+id/precisionSecondary23"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/summoner6"
+            android:id="@+id/precisionSecondary23"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:contentDescription="@string/todo"
             android:src="@drawable/legend_bloodline"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/summoner5"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/precisionSecondary22"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -107,36 +109,36 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageView
-            android:id="@+id/summoner7"
+            android:id="@+id/precisionSecondary31"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:contentDescription="@string/todo"
             android:src="@drawable/coup_de_grace"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/summoner8"
+            app:layout_constraintEnd_toStartOf="@+id/precisionSecondary32"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/summoner8"
+            android:id="@+id/precisionSecondary32"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:contentDescription="@string/todo"
             android:src="@drawable/cut_down"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/summoner9"
-            app:layout_constraintStart_toEndOf="@+id/summoner7"
+            app:layout_constraintEnd_toStartOf="@+id/precisionSecondary33"
+            app:layout_constraintStart_toEndOf="@+id/precisionSecondary31"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/summoner9"
+            android:id="@+id/precisionSecondary33"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:contentDescription="@string/todo"
             android:src="@drawable/last_stand"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/summoner8"
+            app:layout_constraintStart_toEndOf="@+id/precisionSecondary32"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

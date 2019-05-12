@@ -16,31 +16,31 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/summoner1"
+            android:id="@+id/summoner11"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/todo"
             android:padding="16dp"
             android:src="@drawable/cleanse"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/summoner2"
+            app:layout_constraintEnd_toStartOf="@+id/summoner12"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/summoner2"
+            android:id="@+id/summoner12"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/todo"
             android:padding="16dp"
             android:src="@drawable/exhaust"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/summoner3"
-            app:layout_constraintStart_toEndOf="@+id/summoner1"
+            app:layout_constraintEnd_toStartOf="@+id/summoner13"
+            app:layout_constraintStart_toEndOf="@+id/summoner11"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/summoner3"
+            android:id="@+id/summoner13"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:adjustViewBounds="false"
@@ -49,7 +49,7 @@
             android:src="@drawable/flash"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/summoner2"
+            app:layout_constraintStart_toEndOf="@+id/summoner12"
             app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -66,31 +66,31 @@
         app:layout_constraintTop_toBottomOf="@+id/row1">
 
         <ImageView
-            android:id="@+id/summoner4"
+            android:id="@+id/summoner21"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/todo"
             android:padding="16dp"
             android:src="@drawable/ghost"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/summoner5"
+            app:layout_constraintEnd_toStartOf="@+id/summoner22"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/summoner5"
+            android:id="@+id/summoner22"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/todo"
             android:padding="16dp"
             android:src="@drawable/heal"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/summoner6"
-            app:layout_constraintStart_toEndOf="@+id/summoner4"
+            app:layout_constraintEnd_toStartOf="@+id/summoner23"
+            app:layout_constraintStart_toEndOf="@+id/summoner21"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/summoner6"
+            android:id="@+id/summoner23"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/todo"
@@ -98,7 +98,7 @@
             android:src="@drawable/smite"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/summoner5"
+            app:layout_constraintStart_toEndOf="@+id/summoner22"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -114,31 +114,31 @@
         app:layout_constraintTop_toBottomOf="@+id/row2">
 
         <ImageView
-            android:id="@+id/summoner7"
+            android:id="@+id/summoner31"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/todo"
             android:padding="16dp"
             android:src="@drawable/teleport"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/summoner8"
+            app:layout_constraintEnd_toStartOf="@+id/summoner32"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/summoner8"
+            android:id="@+id/summoner32"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/todo"
             android:padding="16dp"
             android:src="@drawable/ignite"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/summoner9"
-            app:layout_constraintStart_toEndOf="@+id/summoner7"
+            app:layout_constraintEnd_toStartOf="@+id/summoner33"
+            app:layout_constraintStart_toEndOf="@+id/summoner31"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/summoner9"
+            android:id="@+id/summoner33"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/todo"
@@ -146,7 +146,7 @@
             android:src="@drawable/barrier"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/summoner8"
+            app:layout_constraintStart_toEndOf="@+id/summoner32"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

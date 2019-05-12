@@ -13,7 +13,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import pocketspace.metamanager.R;
-import pocketspace.metamanager.screen_activities.ActivityGameList;
+import pocketspace.metamanager.screen_activities.GameListScreen;
 
 public class AdapterGameList extends RecyclerView.Adapter<AdapterGameList.ViewHolder>
 {
@@ -31,9 +31,9 @@ public class AdapterGameList extends RecyclerView.Adapter<AdapterGameList.ViewHo
         }
     }
 
-    private List<ActivityGameList.Game> games;
+    private List<GameListScreen.Game> games;
 
-    public AdapterGameList(List<ActivityGameList.Game> games) {
+    public AdapterGameList(List<GameListScreen.Game> games) {
         super();
         this.games = games;
     }
@@ -50,7 +50,7 @@ public class AdapterGameList extends RecyclerView.Adapter<AdapterGameList.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull AdapterGameList.ViewHolder viewHolder, int position) {
-        final ActivityGameList.Game game = this.games.get(position);
+        final GameListScreen.Game game = this.games.get(position);
 
         TextView gameName = viewHolder.gameName;
         gameName.setText(game.gameName);

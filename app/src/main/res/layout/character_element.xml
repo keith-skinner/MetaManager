@@ -14,8 +14,7 @@
         style="@style/CharacterList.Row.Image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="@drawable/aatrox_thumbnail"/>
+        android:layout_gravity="center" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/characterName"

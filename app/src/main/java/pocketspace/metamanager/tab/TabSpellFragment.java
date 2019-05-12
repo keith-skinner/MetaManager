@@ -38,19 +38,18 @@ public class TabSpellFragment extends Fragment {
         }
     }
 
-
     List<ImageView> getSpells(View view)
     {
         List<ImageView> spells = new ArrayList<>();
-        spells.add(view.findViewById(R.id.summoner1));
-        spells.add(view.findViewById(R.id.summoner2));
-        spells.add(view.findViewById(R.id.summoner3));
-        spells.add(view.findViewById(R.id.summoner4));
-        spells.add(view.findViewById(R.id.summoner5));
-        spells.add(view.findViewById(R.id.summoner6));
-        spells.add(view.findViewById(R.id.summoner7));
-        spells.add(view.findViewById(R.id.summoner8));
-        spells.add(view.findViewById(R.id.summoner9));
+        spells.add(view.findViewById(R.id.summoner11));
+        spells.add(view.findViewById(R.id.summoner12));
+        spells.add(view.findViewById(R.id.summoner13));
+        spells.add(view.findViewById(R.id.summoner21));
+        spells.add(view.findViewById(R.id.summoner22));
+        spells.add(view.findViewById(R.id.summoner23));
+        spells.add(view.findViewById(R.id.summoner31));
+        spells.add(view.findViewById(R.id.summoner32));
+        spells.add(view.findViewById(R.id.summoner33));
         return spells;
     }
 

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<build name="A new build" champion="Aatrox" role="null">
+    <primary family="PRECISION">
+        <keystone>1</keystone>
+        <rune>1</rune>
+        <rune>0</rune>
+        <rune>2</rune>
+    </primary>
+    <secondary family="INSPIRATION">
+        <rune>1</rune>
+        <rune>0</rune>
+        <rune>-1</rune>
+    </secondary>
+    <tertiary>
+        <rune>1</rune>
+        <rune>0</rune>
+        <rune>2</rune>
+    </tertiary>
+    <summoners>
+        <spell name="FLASH"/>
+        <spell name="TELEPORT"/>
+    </summoners>
+    <skills>
+        <skill>Q</skill><skill>W</skill><skill>E</skill>
+        <skill>Q</skill><skill>W</skill><skill>E</skill>
+        <skill>Q</skill><skill>W</skill><skill>E</skill>
+        <skill>Q</skill><skill>W</skill><skill>E</skill>
+        <skill>Q</skill><skill>W</skill><skill>E</skill>
+        <skill>R</skill><skill>R</skill><skill>R</skill>
+    </skills>
+    <items>
+        <block name="Core">
+            <item name="Big Damage Item 1"/>
+            <item name="Big Damage Item 2"/>
+            <item name="Big Damage Item 3"/>
+        </block>
+        <block name="Starting">
+            <item name="Starting Item"/>
+            <item name="Health Potion" quantity="2"/>
+            <item name="Trinket"/>
+        </block>
+        <block name="Situational">
+            <item name="Tanky Item 1"/>
+            <item name="Tanky Item 2"/>
+            <item name="Tanky Item 3"/>
+        </block>
+    </items>
+</build>
