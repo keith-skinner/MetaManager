@@ -9,7 +9,7 @@
 
     <include
         android:id="@+id/primaryRunes"
-        layout="@layout/primary_runes"
+        layout="@layout/layout_primary_runes"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"

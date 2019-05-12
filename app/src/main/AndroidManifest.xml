@@ -11,9 +11,9 @@
         android:roundIcon="@mipmap/hat_ic_launcher_round"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-
+        
         <activity
-            android:name=".ActivityGameList"
+            android:name=".screen_activities.ActivityGameList"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,20 +21,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".ActivityAboutPage"
+            android:name=".screen_activities.ActivityCharacterList"
             android:theme="@style/AppTheme" />
+
         <activity
-            android:name=".ActivityCharacterList"
+            android:name=".screen_activities.ActivityRole"
             android:theme="@style/AppTheme" />
+
         <activity
-            android:name=".ActivityRole"
+            android:name=".screen_activities.ActivityBuildView"
             android:theme="@style/AppTheme" />
+
         <activity
-            android:name=".ActivityCharacter"
+            android:name=".screen_activities.ActivityAboutScreen"
             android:theme="@style/AppTheme" />
-        <activity
-            android:name=".ActivityBuildView"/>
+        
+        <activity android:name=".screen_activities.ActivityHomeScreen" />
     </application>
 
 </manifest>
