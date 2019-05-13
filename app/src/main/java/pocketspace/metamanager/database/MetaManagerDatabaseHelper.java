@@ -1,31 +1,33 @@
 package pocketspace.metamanager.database;
+
 import pocketspace.metamanager.database.MetaManagerDatabaseSchema.*;
+import pocketspace.metamanager.model.Champion;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
+import java.util.ArrayList;
 
 
-public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
-{
+public class MetaManagerDatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "LOL.db";
     //if rebuilding/adding stuff to db, you must increment the db version number or wipe phone data
-    private static final int VERSION = 7;
+    private static final int VERSION = 1;
 
-    public MetaManagerDatabaseHelper(Context context)
-    {
+    public MetaManagerDatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, VERSION);
     }
 
     @Override
-    public void onCreate(SQLiteDatabase db)
-    {
-        db.execSQL("create table " + CharacterTable.NAME + "("
-                + CharacterTable.Cols.NAME + " TEXT primary key, "
-                + CharacterTable.Cols.DESCRIPTION + ", "
-                + CharacterTable.Cols.THUMBNAIL + ")");
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL("create table " + ChampionTable.NAME + "("
+                + ChampionTable.Cols.NAME + " TEXT primary key, "
+                + ChampionTable.Cols.DESCRIPTION + ", "
+                + ChampionTable.Cols.THUMBNAIL + ")");
 
         db.execSQL("create table " + SkillTable.NAME + "("
                 + SkillTable.Cols.NAME + " TEXT primary key, "
@@ -51,7 +53,7 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
                 + ItemTable.Cols.DESCRIPTION + ", "
                 + ItemTable.Cols.IMAGE + ")");
 
-        /*hardCodeCharacterTable();
+        /*hardCodeChampionTable();
         hardCodeSkillTable();
         hardCodeRuneTable();
         hardCodeSummonerTable();*/
@@ -59,9 +61,8 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
-    {
-        db.execSQL("DROP TABLE IF EXISTS " + CharacterTable.NAME);
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        db.execSQL("DROP TABLE IF EXISTS " + ChampionTable.NAME);
         db.execSQL("DROP TABLE IF EXISTS " + SkillTable.NAME);
         db.execSQL("DROP TABLE IF EXISTS " + SummonerTable.NAME);
         db.execSQL("DROP TABLE IF EXISTS " + RuneTable.NAME);
@@ -70,22 +71,20 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
         onCreate(db);
     }
 
-    public void insertCharacterData(String name, String thumbnail, String description)
-    {
+    public void insertChampionData(String name, String thumbnail, String description) {
         SQLiteDatabase writeableDB = getWritableDatabase();
 
         ContentValues cv = new ContentValues();
-        cv.put(CharacterTable.Cols.NAME, name);
-        cv.put(CharacterTable.Cols.THUMBNAIL, thumbnail);
-        cv.put(CharacterTable.Cols.DESCRIPTION, description);
+        cv.put(ChampionTable.Cols.NAME, name);
+        cv.put(ChampionTable.Cols.THUMBNAIL, thumbnail);
+        cv.put(ChampionTable.Cols.DESCRIPTION, description);
 
-        writeableDB.insert(CharacterTable.NAME, null, cv);
+        writeableDB.insert(ChampionTable.NAME, null, cv);
     }
 
     //insert methods for tables:
 
-    public void insertSkillData(String name, String q, String w, String e, String r, String passive, String description)
-    {
+    public void insertSkillData(String name, String q, String w, String e, String r, String passive, String description) {
         SQLiteDatabase writeableDB = getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(SkillTable.Cols.NAME, name);
@@ -98,8 +97,7 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
         writeableDB.insert(SkillTable.NAME, null, cv);
     }
 
-    public void insertSummonerData(String name, String image, String description)
-    {
+    public void insertSummonerData(String name, String image, String description) {
         SQLiteDatabase writeableDB = getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(SummonerTable.Cols.NAME, name);
@@ -108,8 +106,7 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
         writeableDB.insert(SummonerTable.NAME, null, cv);
     }
 
-    public void insertRuneData(String name, String image, String description)
-    {
+    public void insertRuneData(String name, String image, String description) {
         SQLiteDatabase writeableDB = getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(RuneTable.Cols.NAME, name);
@@ -118,8 +115,7 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
         writeableDB.insert(RuneTable.NAME, null, cv);
     }
 
-    public void insertItemData(String name, String image, String description)
-    {
+    public void insertItemData(String name, String image, String description) {
         SQLiteDatabase writeableDB = getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(ItemTable.Cols.NAME, name);
@@ -130,52 +126,64 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
 
     //methods that return a cursor to entire tables
 
-    public Cursor getAllDataFromCharacterTable()
-    {
+    public Cursor getAllDataFromCharacterTable() {
         SQLiteDatabase writeableDB = getWritableDatabase();
-        Cursor result = writeableDB.rawQuery("select * from " + CharacterTable.NAME, null);
+        Cursor result = writeableDB.rawQuery("select * from " + ChampionTable.NAME, null);
         return result;
     }
 
-    public Cursor getAllDataFromRuneTable()
-    {
+    public Cursor getAllDataFromRuneTable() {
         SQLiteDatabase writeableDB = getWritableDatabase();
         Cursor result = writeableDB.rawQuery("select * from " + RuneTable.NAME, null);
         return result;
     }
 
-    public Cursor getAllDataFromItemTable()
-    {
+    public Cursor getAllDataFromItemTable() {
         SQLiteDatabase writeableDB = getWritableDatabase();
         Cursor result = writeableDB.rawQuery("select * from " + ItemTable.NAME, null);
         return result;
     }
 
-    public Cursor getAllDataFromSkillTable()
-    {
+    public Cursor getAllDataFromSkillTable() {
         SQLiteDatabase writeableDB = getWritableDatabase();
-        Cursor result = writeableDB.rawQuery("select * from " + SkillTable.NAME, null);
-        return result;
+        return writeableDB.rawQuery("select * from " + SkillTable.NAME, null); // fix rest later
     }
 
-    public Cursor getAllDataFromSummonerTable()
-    {
+    public Cursor getAllDataFromSummonerTable() {
         SQLiteDatabase writeableDB = getWritableDatabase();
         Cursor result = writeableDB.rawQuery("select * from " + SummonerTable.NAME, null);
         return result;
     }
 
+    public ArrayList<Champion> getAllFromChampionTable() {
+        ArrayList<Champion> finalListData = new ArrayList<>();
+        SQLiteDatabase writeableDB = getWritableDatabase();
+        Cursor result = writeableDB.rawQuery("select * from " + ChampionTable.NAME, null);
+
+        Log.e("resultCount==", "===" + result.getCount());
+
+        if (result.getCount() > 0) {
+            while (result.moveToNext()) {
+                finalListData.add(new Champion(
+                        result.getString(result.getColumnIndex(ChampionTable.Cols.NAME)),
+                        result.getString(result.getColumnIndex(ChampionTable.Cols.DESCRIPTION)),
+                        result.getString(result.getColumnIndex(ChampionTable.Cols.THUMBNAIL))));
+            }
+        }
+
+        Log.e("finalListData==", "===" + finalListData.size());
+
+        return finalListData;
+    }
+
     //methods to grab image uri's:
 
     //character table:
-    public String getCharacterImageURI(String character_name)
-    {
+    public String getCharacterImageURI(String character_name) {
         Cursor cursor = getAllDataFromCharacterTable();
-        while (cursor.moveToNext())
-        {
-            if (cursor.getString(cursor.getColumnIndex(CharacterTable.Cols.NAME)).equals(character_name))
-            {
-                String uri = cursor.getString(cursor.getColumnIndex(CharacterTable.Cols.THUMBNAIL));
+        while (cursor.moveToNext()) {
+            if (cursor.getString(cursor.getColumnIndex(ChampionTable.Cols.NAME)).equals(character_name)) {
+                String uri = cursor.getString(cursor.getColumnIndex(ChampionTable.Cols.THUMBNAIL));
                 cursor.close();
                 return uri;
             }
@@ -184,13 +192,10 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
     }
 
     //Skill table:
-    public String getQSkillURI(String character_name)
-    {
+    public String getQSkillURI(String character_name) {
         Cursor cursor = getAllDataFromSkillTable();
-        while (cursor.moveToNext())
-        {
-            if (cursor.getString(cursor.getColumnIndex(SkillTable.Cols.NAME)).equals(character_name))
-            {
+        while (cursor.moveToNext()) {
+            if (cursor.getString(cursor.getColumnIndex(SkillTable.Cols.NAME)).equals(character_name)) {
                 String uri = cursor.getString(cursor.getColumnIndex(SkillTable.Cols.SKILL_Q));
                 cursor.close();
                 return uri;
@@ -199,13 +204,10 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
         return "uri not found";
     }
 
-    public String getWSkillURI(String character_name)
-    {
+    public String getWSkillURI(String character_name) {
         Cursor cursor = getAllDataFromSkillTable();
-        while (cursor.moveToNext())
-        {
-            if (cursor.getString(cursor.getColumnIndex(SkillTable.Cols.NAME)).equals(character_name))
-            {
+        while (cursor.moveToNext()) {
+            if (cursor.getString(cursor.getColumnIndex(SkillTable.Cols.NAME)).equals(character_name)) {
                 String uri = cursor.getString(cursor.getColumnIndex(SkillTable.Cols.SKILL_W));
                 cursor.close();
                 return uri;
@@ -214,13 +216,10 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
         return "uri not found";
     }
 
-    public String getESkillURI(String character_name)
-    {
+    public String getESkillURI(String character_name) {
         Cursor cursor = getAllDataFromSkillTable();
-        while (cursor.moveToNext())
-        {
-            if (cursor.getString(cursor.getColumnIndex(SkillTable.Cols.NAME)).equals(character_name))
-            {
+        while (cursor.moveToNext()) {
+            if (cursor.getString(cursor.getColumnIndex(SkillTable.Cols.NAME)).equals(character_name)) {
                 String uri = cursor.getString(cursor.getColumnIndex(SkillTable.Cols.SKILL_E));
                 cursor.close();
                 return uri;
@@ -229,13 +228,10 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
         return "placeholder.png";
     }
 
-    public String getRSkillURI(String character_name)
-    {
+    public String getRSkillURI(String character_name) {
         Cursor cursor = getAllDataFromSkillTable();
-        while (cursor.moveToNext())
-        {
-            if (cursor.getString(cursor.getColumnIndex(SkillTable.Cols.NAME)).equals(character_name))
-            {
+        while (cursor.moveToNext()) {
+            if (cursor.getString(cursor.getColumnIndex(SkillTable.Cols.NAME)).equals(character_name)) {
                 String uri = cursor.getString(cursor.getColumnIndex(SkillTable.Cols.SKILL_R));
                 cursor.close();
                 return uri;
@@ -245,13 +241,10 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
     }
 
     //Rune table:
-    public String getRuneURI(String rune_name)
-    {
+    public String getRuneURI(String rune_name) {
         Cursor cursor = getAllDataFromRuneTable();
-        while (cursor.moveToNext())
-        {
-            if (cursor.getString(cursor.getColumnIndex(RuneTable.Cols.NAME)).equals(rune_name))
-            {
+        while (cursor.moveToNext()) {
+            if (cursor.getString(cursor.getColumnIndex(RuneTable.Cols.NAME)).equals(rune_name)) {
                 String uri = cursor.getString(cursor.getColumnIndex(RuneTable.Cols.IMAGE));
                 cursor.close();
                 return uri;
@@ -261,13 +254,10 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
     }
 
     //Summoner table:
-    public String getSummonerURI(String summoner_name)
-    {
+    public String getSummonerURI(String summoner_name) {
         Cursor cursor = getAllDataFromSummonerTable();
-        while (cursor.moveToNext())
-        {
-            if (cursor.getString(cursor.getColumnIndex(SummonerTable.Cols.NAME)).equals(summoner_name))
-            {
+        while (cursor.moveToNext()) {
+            if (cursor.getString(cursor.getColumnIndex(SummonerTable.Cols.NAME)).equals(summoner_name)) {
                 String uri = cursor.getString(cursor.getColumnIndex(SummonerTable.Cols.IMAGE));
                 cursor.close();
                 return uri;
@@ -277,12 +267,10 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
     }
 
     //Item table:
-    public String getItemURI(String item_name)
-    {
+    public String getItemURI(String item_name) {
         Cursor cursor = getAllDataFromItemTable();
-        while (cursor.moveToNext())
-        {
-            if (cursor.getString(cursor.getColumnIndex(ItemTable.Cols.NAME)).equals(item_name));
+        while (cursor.moveToNext()) {
+            if (cursor.getString(cursor.getColumnIndex(ItemTable.Cols.NAME)).equals(item_name)) ;
             {
                 String uri = cursor.getString(cursor.getColumnIndex(ItemTable.Cols.IMAGE));
                 cursor.close();
@@ -294,22 +282,20 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
 
     //methods to hardcode populate tables:
 
-    public void hardCodeCharacterTable()
-    {
-        insertCharacterData("Aatrox", "character_thumbnail/aatrox_thumbnail.png", "");
-        insertCharacterData("Ahri", "character_thumbnail/ahri_thumbnail.png", "");
-        insertCharacterData("Akali", "character_thumbnail/akali_thumbnail.png", "");
-        insertCharacterData("Alistar", "character_thumbnail/alistar_thumbnail.png", "");
-        insertCharacterData("Amumu", "character_thumbnail/amumu_thumbnail.png", "");
-        insertCharacterData("Anivia", "character_thumbnail/anivia_thumbnail.png", "");
-        insertCharacterData("Annie", "character_thumbnail/annie_thumbnail.png", "");
-        insertCharacterData("Ashe", "character_thumbnail/ashe_thumbnail.png", "");
-        insertCharacterData("Aurelion_Sol", "character_thumbnail/aurelion_sol_thumbnail.png", "");
-        insertCharacterData("Azir", "character_thumbnail/azir_thumbnail.png", "");
+    public void hardCodeChampionTable() {
+        insertChampionData("Aatrox", "champion_thumbnail/aatrox_thumbnail.png", "");
+        insertChampionData("Ahri", "champion_thumbnail/ahri_thumbnail.png", "");
+        insertChampionData("Akali", "champion_thumbnail/akali_thumbnail.png", "");
+        insertChampionData("Alistar", "champion_thumbnail/alistar_thumbnail.png", "");
+        insertChampionData("Amumu", "champion_thumbnail/amumu_thumbnail.png", "");
+        insertChampionData("Anivia", "champion_thumbnail/anivia_thumbnail.png", "");
+        insertChampionData("Annie", "champion_thumbnail/annie_thumbnail.png", "");
+        insertChampionData("Ashe", "champion_thumbnail/ashe_thumbnail.png", "");
+        insertChampionData("Aurelion_Sol", "champion_thumbnail/aurelion_sol_thumbnail.png", "");
+        insertChampionData("Azir", "champion_thumbnail/azir_thumbnail.png", "");
     }
 
-    public void hardCodeSkillTable()
-    {
+    public void hardCodeSkillTable() {
         insertSkillData("Aatrox", "character_skill/aatrox_q.png", "character_skill/aatrox_w.png", "character_skill/aatrox_e.png", "character_skill/aatrox_r.png", "character_skill/aatrox_passive.png", "");
         insertSkillData("Ahri", "character_skill/ahri_q.png", "character_skill/ahri_w.png", "character_skill/ahri_e.png", "character_skill/ahri_r.png", "character_skill/ahri_passive.png", "");
         insertSkillData("Akali", "character_skill/akali_q.png", "character_skill/ahri_w.png", "character_skill/akali_e.png", "character_skill/akali_r.png", "character_skill/akali_passive.png", "");
@@ -322,8 +308,7 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
         insertSkillData("Azir", "character_skill/azir_q.png", "character_skill/azir_w.png", "character_skill/azir_e.png", "character_skill/azir_r.png", "character_skill/azir_passive.png", "");
     }
 
-    public void hardCodeRuneTable()
-    {
+    public void hardCodeRuneTable() {
         //precision
         insertRuneData("Precision", "rune/precision.png", "");
         insertRuneData("Press_The_Attack", "rune/press_the_attack.png", "");
@@ -412,13 +397,11 @@ public class MetaManagerDatabaseHelper extends SQLiteOpenHelper
     }
 
     //todo later sprint 3
-    public void hardCodeItemTable()
-    {
+    public void hardCodeItemTable() {
         // :(
     }
 
-    public void hardCodeSummonerTable()
-    {
+    public void hardCodeSummonerTable() {
         insertSummonerData("Barrier", "summoner/barrier.png", "");
         insertSummonerData("Cleanse", "summoner/cleanse.png", "");
         insertSummonerData("Exhaust", "summoner/exhaust.png", "");

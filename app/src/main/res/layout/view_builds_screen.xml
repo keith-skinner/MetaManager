@@ -132,15 +132,13 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_margin="5dp"
-                        android:background="@drawable/magical_footwear"
-                        android:visibility="invisible" />
+                        android:background="@drawable/magical_footwear" />// replace image later
 
                     <ImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_margin="5dp"
-                        android:background="@drawable/magical_footwear"
-                        android:visibility="invisible" />
+                        android:background="@drawable/fire_at_will" /> // replace image later
 
                     <ImageView
                         android:layout_width="40dp"

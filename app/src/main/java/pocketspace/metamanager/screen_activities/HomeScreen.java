@@ -21,16 +21,24 @@ import pocketspace.metamanager.R;
 import pocketspace.metamanager.data.build.Build;
 import pocketspace.metamanager.data.build.serialize.BuildParser;
 import pocketspace.metamanager.data.build.serialize.BuildSerializer;
+import pocketspace.metamanager.database.MetaManagerDatabaseHelper;
 
 public class HomeScreen extends AppCompatActivity {
 
     private static final int READ_REQUEST_CODE = 42;
     public static final String BUILDS_DIR = "/builds";
+    MetaManagerDatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_screen);
+
+        db = new MetaManagerDatabaseHelper(this);
+        db.hardCodeChampionTable();
+        db.hardCodeSkillTable();
+        db.hardCodeRuneTable();
+        db.hardCodeSummonerTable();
 
         CardView cardView = this.findViewById(R.id.view_builds);
         cardView.setOnClickListener(view -> {

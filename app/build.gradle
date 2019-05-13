@@ -39,4 +39,8 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0-beta01'
     implementation project(':lol')
     implementation project(':common')
+
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+
+
 }
