@@ -16,9 +16,12 @@
     <color name="lightPurple">#7b8bbb</color>
     <!--<color name="lightPurple">#7c43bd</color>-->
 
-
     <color name="splashBackgroundColor">#7b8bbb </color>
     <color name="box">#21343b</color>
+    <color name="white">#ffffff</color>
+    <color name="searchHintColor">#f2f2f9</color>
+    <color name="black">#000000</color>
+    Extract color resource
     <drawable name="icon" />
 
 </resources>
