@@ -128,12 +128,18 @@
         />
 
     <!--to tack onto end of list-->
-    <Button
-        android:id="@+id/add_bttn"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_margin="20dp"
-        android:background="@android:drawable/ic_menu_add"
-        android:padding="20dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:paddingRight="20dp"
+        android:gravity="right">
+
+        <Button
+            android:id="@+id/add_bttn"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:background="@android:drawable/ic_menu_add"
+            />
+    </LinearLayout>
 
 </LinearLayout>
