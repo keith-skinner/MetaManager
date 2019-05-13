@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/build_card_0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardCornerRadius="5dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/summaryChampionSelection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical"
+                android:padding="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/summaryChampionImage"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/summaryChampionName"
+                    android:src="@drawable/aatrox_icon"
+                    android:background="@android:color/darker_gray"
+                    android:contentDescription="@string/championThumbnailDescription" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/summaryPosition"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    app:layout_constraintEnd_toEndOf="@id/summaryChampionImage"
+                    app:layout_constraintBottom_toBottomOf="@+id/summaryChampionImage"
+                    android:src="@drawable/icon_top"
+                    android:background="@android:color/black"/>
+
+                <TextView
+                    android:id="@+id/summaryChampionName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/summaryChampionImage"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:fontFamily="@font/friz"
+                    android:text="@string/summaryDefaultChampionName"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/summaryBuildName"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="8dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/friz"
+                android:lines="1"
+                android:text="@string/summaryDefaultBuildName"
+                android:gravity="center_vertical"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/summaryItemsList"
+                app:layout_constraintStart_toEndOf="@+id/summaryChampionSelection"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/summaryKeystone"
+                android:layout_width="40dp"
+                android:layout_height="0dp"
+                app:layout_constraintStart_toEndOf="@id/summaryChampionSelection"
+                app:layout_constraintEnd_toStartOf="@id/summaryItemsList"
+                app:layout_constraintTop_toBottomOf="@id/summaryBuildName"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:src="@drawable/summon_aery"
+                />
+
+            <fragment
+                android:id="@+id/summaryItemsList"
+                android:layout_height="0dp"
+                android:layout_width="0dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/summaryKeystone"
+                app:layout_constraintTop_toBottomOf="@id/summaryBuildName"
+                tools:layout="@layout/item_list"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

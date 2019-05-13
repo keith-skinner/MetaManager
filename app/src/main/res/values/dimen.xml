@@ -4,4 +4,8 @@
     <dimen name="mediumTextSize">20sp</dimen>
     <dimen name="smallTextSize">16sp</dimen>
     <dimen name="runeSize">80dp</dimen>
+
+    <dimen name="itemListItemWidth">36dp</dimen>
+    <dimen name="itemListItemHeight">36dp</dimen>
+    <dimen name="itemListItemMargin">4dp</dimen>
 </resources>

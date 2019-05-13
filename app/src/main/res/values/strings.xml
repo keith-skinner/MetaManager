@@ -53,5 +53,10 @@
     <string name="view">View</string>
     <string name="import_stmt">Import</string>
     <string name="create">Create</string>
+    <string name="championThumbnailDescription">Thumbnail of Champion</string>
+    <string name="summaryDefaultChampionName">Champion</string>
+    <string name="summaryDefaultBuildName">My Awesome Build Name That Is Too Long</string>
+    <string name="itemListItemDescription">One of 6 items in a build</string>
+    <string name="addButtonDescription">Button to add a new build</string>
 
 </resources>

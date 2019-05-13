@@ -25,7 +25,7 @@
         <item name="android:background">@color/defaultBackground</item>
     </style>
     <style name="RoleSelection.Role" parent="RoleSelection">
-        <item name="android:onClick"></item>
+        <item name="android:onClick"/>
         <item name="android:clickable">true</item>
         <item name="android:selectable">true</item>
     </style>
@@ -68,8 +68,11 @@
         <item name="android:layout_margin">8dp</item>
     </style>
 
-
-
+    <style name="itemListItem" parent="AppTheme">
+        <item name="android:layout_width">@dimen/itemListItemWidth</item>
+        <item name="android:layout_height">@dimen/itemListItemHeight</item>
+        <item name="android:layout_marginHorizontal">@dimen/itemListItemMargin</item>
+    </style>
 
     <!-- Horizontal Rule -->
     <style name="HorizontalRule" parent="AppTheme">

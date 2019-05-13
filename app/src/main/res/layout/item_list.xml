@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/summaryItemsList"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/itemListItem1"
+        style="@style/itemListItem"
+        android:contentDescription="@string/itemListItemDescription"
+        android:background="@drawable/a2003"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/itemListItem2"
+        style="@style/itemListItem"
+        android:contentDescription="@string/itemListItemDescription"
+        android:background="@drawable/a3026"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/itemListItem3"
+        style="@style/itemListItem"
+        android:contentDescription="@string/itemListItemDescription"
+
+        android:background="@drawable/a3111" />
+
+    <ImageView
+        android:id="@+id/itemListItem4"
+        style="@style/itemListItem"
+        android:contentDescription="@string/itemListItemDescription"
+        android:background="@drawable/a3071" />
+
+    <ImageView
+        android:id="@+id/itemListItem5"
+        style="@style/itemListItem"
+        android:contentDescription="@string/itemListItemDescription"
+        android:background="@drawable/a3812" />
+
+    <ImageView
+        android:id="@+id/itemListItem6"
+        style="@style/itemListItem"
+        android:contentDescription="@string/itemListItemDescription"
+        android:background="@drawable/a3053" />
+</LinearLayout>
