@@ -7,10 +7,9 @@
     android:background="@color/dBackground">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/levelRecyclerView"
+        android:id="@+id/buildsRecylerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginVertical="8dp"
         android:layout_marginHorizontal="16dp"
         android:scrollbars="vertical"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,14 +19,13 @@
         />
 
     <!--to tack onto end of list-->
-    <ImageButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:id="@+id/add_bttn"
+        android:id="@+id/buildsAddButton"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_margin="20dp"
-        android:scaleType="center"
         android:background="@android:color/transparent"
         android:contentDescription="@string/addButtonDescription"
         android:src="@drawable/ic_add_circle_80dp"/>
