@@ -4,6 +4,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import org.xmlpull.v1.XmlPullParserException;
@@ -17,7 +18,13 @@ import java.io.InputStream;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import pocketspace.metamanager.R;
+import pocketspace.metamanager.data.build.room.BuildListAdapter;
 import pocketspace.metamanager.data.build.serialize.BuildParser;
 
 
@@ -28,28 +35,13 @@ public class ViewBuildsScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_builds_screen);
 
-        //START_TEST
-//        FileInputStream inputstream = null;
-//        try {
-//            inputstream = new FileInputStream(getBuildsDir().getAbsolutePath() + "/newBuild.xml");
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        }
+        RecyclerView recyclerView = findViewById(R.id.buildsRecylerView);
+        final BuildListAdapter adapter = new BuildListAdapter(this);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-//        BuildParser parser = null;
-//        try {
-//            parser = new BuildParser(inputstream);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-
-        //END TEST
-
-        CardView cardView = this.findViewById(R.id.build_card_0);
-        cardView.setOnClickListener(view -> {
-            Intent intent = new Intent(this, BuildScreen.class);
-            view.getContext().startActivity(intent);
-        });
+        FloatingActionButton button = findViewById(R.id.buildsAddButton);
+        button.setOnClickListener((View v) -> Toast.makeText(this, "Add Build Button Clicked", Toast.LENGTH_SHORT).show());
     }
     
 

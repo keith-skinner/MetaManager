@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.ParcelFileDescriptor;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -32,20 +33,20 @@ public class HomeScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_screen);
 
-        CardView cardView = this.findViewById(R.id.view_builds);
-        cardView.setOnClickListener(view -> {
+        CardView homeViewBuilds = this.findViewById(R.id.homeViewBuilds);
+        homeViewBuilds.setOnClickListener(view -> {
             Intent intent = new Intent(this, ViewBuildsScreen.class);
             view.getContext().startActivity(intent);
         });
 
-        CardView cardView1 = this.findViewById(R.id.create_build);
-        cardView1.setOnClickListener(view -> {
-            Intent intent = new Intent(this, CharacterListScreen.class);
-            view.getContext().startActivity(intent);
+        CardView homeCreateBuild = this.findViewById(R.id.homeCreateBuild);
+        homeCreateBuild.setOnClickListener(view -> {
+            //TODO Change this to the appropriate page.
+            Toast.makeText(this, "Create Build Button Pressed", Toast.LENGTH_SHORT).show();
         });
 
-        CardView cardView2 = this.findViewById(R.id.importt);
-        cardView2.setOnClickListener(view -> {
+        CardView homeImportBuild = this.findViewById(R.id.homeImportBuild);
+        homeImportBuild.setOnClickListener(view -> {
             Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
             intent.addCategory(Intent.CATEGORY_OPENABLE);
             intent.setType("*/*");
