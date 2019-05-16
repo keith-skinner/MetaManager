@@ -1,5 +1,6 @@
 package pocketspace.metamanager.tab.prime_tab;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,8 @@ public class ChildFragmentKeystone extends Fragment implements View.OnClickListe
 
     Fragment fragmentTwo, frag2;
     ChildFragmentSecondary secondaryFragment;
+
+    private OnChildFragmentToActivityInteractionListener mActivityListener;
 
     //TODO: for altering the build Obj.
 //    BuildScreen buildScreen = (BuildScreen) this.getActivity();
@@ -63,6 +66,7 @@ public class ChildFragmentKeystone extends Fragment implements View.OnClickListe
                 case R.id.family1:
                     fragmentTwo = new ChildChildFPrimaryAss();
                     fragmentTransaction.replace(R.id.child_fragment_container_secondary, fragmentTwo);
+                    mActivityListener.messageFromChildFragmentToActivity("Hello, Activity. I am the child fragment.");
 
 //              TODO: when a keystone is selected, update family:
 
@@ -79,6 +83,28 @@ public class ChildFragmentKeystone extends Fragment implements View.OnClickListe
         fragmentTransaction.commit();
 
 
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+
+        // check if Activity implements listener
+        if (context instanceof OnChildFragmentToActivityInteractionListener) {
+            mActivityListener = (OnChildFragmentToActivityInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnChildFragmentToActivityInteractionListener");
+        }
+    }
+
+
+    public interface OnChildFragmentToActivityInteractionListener {
+        void messageFromChildFragmentToActivity(String myString);
+    }
+
+    public interface OnChildFragmentInteractionListener {
+        void messageFromChildToParent(String myString);
     }
 
 

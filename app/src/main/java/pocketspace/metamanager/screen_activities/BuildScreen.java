@@ -4,18 +4,22 @@ import com.google.android.material.tabs.TabLayout;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import pocketspace.metamanager.R;
 import pocketspace.metamanager.data.build.Build;
 import pocketspace.metamanager.data.build.MockBuild;
 import pocketspace.metamanager.tab.TabAdapter;
 import pocketspace.metamanager.tab.TabItemFragment;
+import pocketspace.metamanager.tab.prime_tab.ChildFragmentKeystone;
 import pocketspace.metamanager.tab.prime_tab.TabPrimeFragment;
 import pocketspace.metamanager.tab.TabSecondaryRuneFragment;
 import pocketspace.metamanager.tab.TabSkillFragment;
 import pocketspace.metamanager.tab.TabSpellFragment;
 
-public class BuildScreen extends AppCompatActivity {
+
+
+public class BuildScreen extends AppCompatActivity implements ChildFragmentKeystone.OnChildFragmentToActivityInteractionListener {
 
     String game;
     String character;
@@ -54,6 +58,11 @@ public class BuildScreen extends AppCompatActivity {
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
+    }
+
+    public void messageFromChildFragmentToActivity(String myString)
+    {
+        Log.i("TAG", myString);
     }
 
 }
