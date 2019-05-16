@@ -8,7 +8,7 @@
 
     <include
         android:id="@+id/primaryRunes"
-        layout="@layout/layout_family_runes"
+        layout="@layout/layout_family_runes_static"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"

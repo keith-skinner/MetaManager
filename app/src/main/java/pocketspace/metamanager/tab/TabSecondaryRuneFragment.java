@@ -19,15 +19,15 @@ public class TabSecondaryRuneFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_secondary_rune, container, false);
     }
 
-    private void makeRuneUnselected(View view)
-    {
-        //make opaque
-        ImageView myImage = view.findViewById(R.id.botRoleButton);
-        myImage.setImageAlpha(127);
-        ColorMatrix matrix = new ColorMatrix();
-        matrix.setSaturation(0);
-
-        ColorMatrixColorFilter filter = new ColorMatrixColorFilter(matrix);
-        myImage.setColorFilter(filter);
-    }
+//    private void makeRuneUnselected(View view)
+//    {
+//        //make opaque
+//        ImageView myImage = view.findViewById(R.id.botRoleButton);
+//        myImage.setImageAlpha(127);
+//        ColorMatrix matrix = new ColorMatrix();
+//        matrix.setSaturation(0);
+//
+//        ColorMatrixColorFilter filter = new ColorMatrixColorFilter(matrix);
+//        myImage.setColorFilter(filter);
+//    }
 }

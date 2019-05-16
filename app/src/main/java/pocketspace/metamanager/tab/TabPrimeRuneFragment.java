@@ -6,8 +6,13 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
+import pocketspace.metamanager.R;
 import pocketspace.metamanager.data.build.Build;
 import pocketspace.metamanager.data.build.runes.PrimaryRunes;
+import pocketspace.metamanager.screen_activities.BuildScreen;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,27 +30,45 @@ public class TabPrimeRuneFragment extends Fragment {
     private static final String BUNDLE_PRIMARY_RUNE_ROW3 = "BUNDLE_PRIMARY_RUNE_ROW3";
 
 
-    public static TabPrimeRuneFragment newInstance(PrimaryRunes runes) {
-
+    public static TabPrimeRuneFragment newInstance(PrimaryRunes runes)
+    {
         TabPrimeRuneFragment fragment = new TabPrimeRuneFragment();
         Bundle args = new Bundle();
+
+
+        args.putInt(BUNDLE_PRIMARY_RUNE_FAMILY, runes.family.getFamily()); //this is going to be a fragment...
         args.putInt(BUNDLE_PRIMARY_RUNE_FAMILY, runes.family.getFamily());
         args.putInt(BUNDLE_PRIMARY_RUNE_KEY_STONE, runes.keystone);
         args.putInt(BUNDLE_PRIMARY_RUNE_ROW1, runes.row1);
         args.putInt(BUNDLE_PRIMARY_RUNE_ROW2, runes.row2);
         args.putInt(BUNDLE_PRIMARY_RUNE_ROW3, runes.row3);
 
+//        TODO: not sure...
+//        FragmentManager fragManager = (FragmentManager) getFragmentManager();
+//        FragmentTransaction fragmentTransaction = fragManager.beginTransaction();
+
+//        FragmentRune nestedFrag = new FragmentRune();
+//        fragmentTransaction.add(R.id., nestedFrag);
+//        fragmentTransaction.commit();
+
+
         fragment.setArguments(args);
         return fragment;
     }
 
 
+
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
         int layout = pocketspace.metamanager.lol.R.layout.fragment_primary_rune;
         View view = inflater.inflate(layout, container, false);
 
-        if (getArguments() != null) {
+        BuildScreen buildScreen = (BuildScreen) this.getActivity();
+        Build build = buildScreen.build;
+
+        if (getArguments() != null)
+        {
             makeFamiliesInactive(view);
             makeKeystonesInactive(view);
             makePrimaryRunesInactive(view);
@@ -53,6 +76,7 @@ public class TabPrimeRuneFragment extends Fragment {
 
         return view;
     }
+
 
     private void makeFamiliesInactive(View view) {
         List<ImageView> families = new ArrayList<>();

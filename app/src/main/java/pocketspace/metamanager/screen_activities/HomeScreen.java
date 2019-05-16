@@ -11,8 +11,8 @@ import pocketspace.metamanager.R;
 import pocketspace.metamanager.data.build.MockBuild;
 import pocketspace.metamanager.data.build.serialize.BuildSerializer;
 
-public class HomeScreen extends AppCompatActivity {
-
+public class HomeScreen extends AppCompatActivity
+{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -6,10 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import pocketspace.metamanager.R;
+import pocketspace.metamanager.data.build.Build;
 import pocketspace.metamanager.data.build.MockBuild;
 import pocketspace.metamanager.tab.TabAdapter;
 import pocketspace.metamanager.tab.TabItemFragment;
-import pocketspace.metamanager.tab.TabPrimeRuneFragment;
+import pocketspace.metamanager.tab.prime_tab.TabPrimeFragment;
 import pocketspace.metamanager.tab.TabSecondaryRuneFragment;
 import pocketspace.metamanager.tab.TabSkillFragment;
 import pocketspace.metamanager.tab.TabSpellFragment;
@@ -23,6 +24,8 @@ public class BuildScreen extends AppCompatActivity {
     private TabAdapter adapter;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+
+    public Build build;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,12 +45,12 @@ public class BuildScreen extends AppCompatActivity {
         viewPager = findViewById(R.id.viewPager);
         tabLayout = findViewById(R.id.tabLayout);
         adapter = new TabAdapter(getSupportFragmentManager());
-
-        adapter.addFragment(TabPrimeRuneFragment.newInstance(MockBuild.makeBuildObject().runes.primary), "PRIME");
+//        adapter.addFragment(TabPrimeRuneFragment.newInstance(MockBuild.makeBuildObject().runes.primary), "PRIME");
+        adapter.addFragment(new TabPrimeFragment(),"PRIME");
         adapter.addFragment(new TabSecondaryRuneFragment(), "SECOND");
-        adapter.addFragment(new TabSpellFragment(), "SPELL");
-        adapter.addFragment(new TabItemFragment(), "ITEM");
-        adapter.addFragment(new TabSkillFragment(), "SKILL");
+//        adapter.addFragment(new TabSpellFragment(), "SPELL");
+//        adapter.addFragment(new TabItemFragment(), "ITEM");
+//        adapter.addFragment(new TabSkillFragment(), "SKILL");
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
