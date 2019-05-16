@@ -1,5 +1,7 @@
 package pocketspace.metamanager.data.build.runes;
 
+import androidx.annotation.NonNull;
+
 public class RuneFamily {
 
     private static final int INVALID = -1;
@@ -38,20 +40,23 @@ public class RuneFamily {
         return INVALID;
     }
     private static int fromString(String family) {
-        if (family.equals("PRECISION"))
-            return PRECISION;
-        if (family.equals("DOMINATION"))
-            return DOMINATION;
-        if (family.equals("SORCERY"))
-            return SORCERY;
-        if (family.equals("RESOLVE"))
-            return RESOLVE;
-        if (family.equals("INSPIRATION"))
-            return INSPIRATION;
-
-        return INVALID;
+        switch (family) {
+            case "PRECISION":
+                return PRECISION;
+            case "DOMINATION":
+                return DOMINATION;
+            case "SORCERY":
+                return SORCERY;
+            case "RESOLVE":
+                return RESOLVE;
+            case "INSPIRATION":
+                return INSPIRATION;
+            default:
+                return INVALID;
+        }
     }
 
+    @NonNull
     @Override
     public String toString(){
         switch(family) {

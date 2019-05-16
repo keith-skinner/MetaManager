@@ -29,21 +29,19 @@ public class ViewBuildsScreen extends AppCompatActivity {
         setContentView(R.layout.view_builds_screen);
 
         //START_TEST
-        FileInputStream inputstream = null;
-        try {
-            inputstream = new FileInputStream(getBuildsDir().getAbsolutePath() + "/newBuild.xml");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+//        FileInputStream inputstream = null;
+//        try {
+//            inputstream = new FileInputStream(getBuildsDir().getAbsolutePath() + "/newBuild.xml");
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
 
-        BuildParser parser = null;
-        try {
-            parser = new BuildParser(inputstream);
-        } catch (XmlPullParserException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        BuildParser parser = null;
+//        try {
+//            parser = new BuildParser(inputstream);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
         //END TEST
 
@@ -58,7 +56,6 @@ public class ViewBuildsScreen extends AppCompatActivity {
     // For creating a new file...
     public void createFile(File directory, String fname, String buildContent)
     {
-        String fileContents = buildContent;
 
         if(!directory.exists() && !directory.mkdirs()){
             Log.e("clear","Could not make directory");
@@ -67,7 +64,7 @@ public class ViewBuildsScreen extends AppCompatActivity {
         try {
             File textFile = new File(directory, fname);
             FileWriter writer = new FileWriter(textFile);
-            writer.append(fileContents);
+            writer.append(buildContent);
             writer.flush();
             writer.close();
         } catch (Exception e){
