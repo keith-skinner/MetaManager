@@ -3,6 +3,7 @@ package pocketspace.metamanager.tab.prime_tab;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +35,9 @@ public class TabPrimeFragment extends Fragment {
     private static final String BUNDLE_PRIMARY_RUNE_ROW3 = "BUNDLE_PRIMARY_RUNE_ROW3";
 
     TabPrimeFragment fragment;
+//    BuildScreen buildScreen = (BuildScreen) this.getActivity();
+    Build build;
+
 
     // CUSTOM FUNCTION: Creats a new instance of this fragment and passes it to the TabLayout (with args)
     public Fragment newInstance(PrimaryRunes runes)
@@ -47,6 +51,8 @@ public class TabPrimeFragment extends Fragment {
 //        args.putInt(BUNDLE_PRIMARY_RUNE_ROW3, runes.row3);
 
 //        fragment.setArguments(args); TODO: sending selection of Runes to Obj Build
+
+
         return fragment;
     }
 
@@ -59,7 +65,11 @@ public class TabPrimeFragment extends Fragment {
 //        BuildScreen buildScreen = (BuildScreen) this.getActivity();
 //        Build build = buildScreen.build;
 
-////
+        build = ((BuildScreen)this.getActivity()).getBuild();
+        build.champion = "Maggie";
+        Log.d("clear","" + build.name);
+
+
 //        if (getArguments() != null)
 //        {
 //            makeFamiliesInactive(view);

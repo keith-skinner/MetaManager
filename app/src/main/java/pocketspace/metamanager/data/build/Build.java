@@ -23,6 +23,7 @@ public class Build {
 
     public Build() {
     }
+
     public Build(String name, String champion,
                  Runes runes, Summoner summoner1, Summoner summoner2,
                  List<ItemBlock> items, List<Skill> skills)

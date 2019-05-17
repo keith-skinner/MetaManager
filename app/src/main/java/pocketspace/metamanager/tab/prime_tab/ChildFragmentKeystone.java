@@ -1,6 +1,7 @@
 package pocketspace.metamanager.tab.prime_tab;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,12 +11,16 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import pocketspace.metamanager.R;
+import pocketspace.metamanager.data.build.Build;
+import pocketspace.metamanager.screen_activities.BuildScreen;
 
 public class ChildFragmentKeystone extends Fragment implements View.OnClickListener {
 
 
     Fragment fragmentTwo, frag2;
     ChildFragmentSecondary secondaryFragment;
+    Build build;
+
 
     //TODO: for altering the build Obj.
 //    BuildScreen buildScreen = (BuildScreen) this.getActivity();
@@ -33,6 +38,12 @@ public class ChildFragmentKeystone extends Fragment implements View.OnClickListe
 
         ImageButton key2 = v.findViewById(R.id.family2);
         key2.setOnClickListener(this);
+
+        build = ((BuildScreen)this.getActivity()).getBuild();
+        Log.d("clear","Build Name:" + build.name);
+        Log.d("clear","Build Chapion:" + build.champion);
+
+
 
         return v;
     }

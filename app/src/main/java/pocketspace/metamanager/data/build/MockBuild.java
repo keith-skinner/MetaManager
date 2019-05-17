@@ -29,6 +29,7 @@ public class MockBuild {
             build.runes.tertiary.row2 = 0;
             build.runes.tertiary.row3 = 2;
 
+
             //SUMMONERS
             build.summoner1 = new Summoner(Summoner.FLASH);
             build.summoner2 = new Summoner(Summoner.TELEPORT);

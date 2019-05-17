@@ -33,11 +33,13 @@ public class BuildScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.build_screen);
 
+        build = new Build();
+        build.name = "Dogo";
 
 //        Intent intent = getIntent();
 //        character = intent.getStringExtra(getResources().getString(R.string.characterName));
-//        role = intent.getStringExtra(getResources().getString(R.string.lolRole));
-
+//        role = intent.getSt
+//        ringExtra(getResources().getString(R.string.lolRole));
 
         character = "aatrox";
         role = "TOP";
@@ -54,6 +56,10 @@ public class BuildScreen extends AppCompatActivity {
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
+    }
+
+    public Build getBuild(){
+        return this.build;
     }
 
 }
