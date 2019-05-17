@@ -13,7 +13,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import pocketspace.metamanager.R;
-import pocketspace.metamanager.screen_activities.GameListScreen;
+import pocketspace.metamanager.screens.GameListScreen;
 
 public class AdapterGameList extends RecyclerView.Adapter<AdapterGameList.ViewHolder>
 {

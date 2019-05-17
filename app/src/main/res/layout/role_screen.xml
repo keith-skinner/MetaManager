@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="10dp"
     android:theme="@style/RoleSelection"
-    tools:context=".screen_activities.RoleScreen">
+    tools:context=".screens.RoleScreen">
 
     <!-- TODO: Make a weighted layout so things don't get squished. -->
 

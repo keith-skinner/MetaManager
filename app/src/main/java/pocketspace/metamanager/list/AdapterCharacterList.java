@@ -13,8 +13,8 @@ import android.widget.TextView;
 import java.util.List;
 
 import pocketspace.metamanager.R;
-import pocketspace.metamanager.screen_activities.CharacterListScreen;
-import pocketspace.metamanager.screen_activities.RoleScreen;
+import pocketspace.metamanager.screens.CharacterListScreen;
+import pocketspace.metamanager.screens.RoleScreen;
 
 public class AdapterCharacterList extends RecyclerView.Adapter<AdapterCharacterList.ViewHolder>
 {

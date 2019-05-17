@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/precisionPrimaryRunes"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:visibility="visible">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/dominationKeystone1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/electrocute"
+        app:layout_constraintEnd_toStartOf="@+id/dominationKeystone2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/dominationKeystone2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/predator"
+        app:layout_constraintEnd_toStartOf="@+id/dominationKeystone3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/dominationKeystone1"
+        app:layout_constraintTop_toTopOf="@+id/dominationKeystone3" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/dominationKeystone3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/dark_harvest"
+        app:layout_constraintEnd_toStartOf="@+id/dominationKeystone4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/dominationKeystone2"
+        app:layout_constraintTop_toTopOf="@+id/dominationKeystone1"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/dominationKeystone4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/hail_of_blades"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/dominationKeystone3"
+        app:layout_constraintTop_toTopOf="@+id/dominationKeystone1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

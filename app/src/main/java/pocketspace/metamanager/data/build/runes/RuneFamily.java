@@ -4,12 +4,14 @@ import androidx.annotation.NonNull;
 
 public class RuneFamily {
 
-    private static final int INVALID = -1;
+    public static final int INVALID = -1;
     public static final int PRECISION = 0;
-    private static final int DOMINATION = 1;
-    private static final int SORCERY = 2;
-    private static final int RESOLVE = 3;
+    public static final int DOMINATION = 1;
+    public static final int SORCERY = 2;
+    public static final int RESOLVE = 3;
     public static final int INSPIRATION = 4;
+
+
 
     private int family = INVALID;
 

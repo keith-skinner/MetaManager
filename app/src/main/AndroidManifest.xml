@@ -2,9 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="pocketspace.metamanager">
-
     <!-- TODO: Make the onclick actually work -->
-
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
 
@@ -14,45 +12,37 @@
         android:roundIcon="@mipmap/hat_ic_launcher_round"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-
+        <activity android:name=".screens.EditBuildScreen"></activity>
         <activity
-            android:name=".screen_activities.HomeScreen"
+            android:name=".screens.HomeScreen"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
         <activity
-            android:name=".screen_activities.GameListScreen"
+            android:name=".screens.GameListScreen"
             android:theme="@style/AppTheme" />
-
         <activity
-            android:name=".screen_activities.CharacterListScreen"
+            android:name=".screens.CharacterListScreen"
             android:theme="@style/AppTheme" />
-
         <activity
-            android:name=".screen_activities.RoleScreen"
+            android:name=".screens.RoleScreen"
             android:theme="@style/AppTheme" />
-
         <activity
-            android:name=".screen_activities.BuildScreen"
+            android:name=".screens.ViewBuildScreen"
             android:theme="@style/AppTheme" />
-
         <activity
-            android:name=".screen_activities.AboutScreen"
+            android:name=".screens.AboutScreen"
             android:theme="@style/AppTheme" />
-
         <activity
-            android:name=".screen_activities.ViewBuildsScreen"
+            android:name=".screens.ViewBuildListScreen"
             android:theme="@style/AppTheme" />
-
         <activity
-            android:name=".screen_activities.ImportScreen"
+            android:name=".screens.ImportScreen"
             android:theme="@style/AppTheme" />
-
     </application>
 
 </manifest>

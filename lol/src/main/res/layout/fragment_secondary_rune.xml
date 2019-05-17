@@ -8,7 +8,7 @@
 
     <include
         android:id="@+id/primaryRunes"
-        layout="@layout/layout_family_runes_static"
+        layout="@layout/family_runes"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
@@ -31,7 +31,7 @@
 
     <include
         android:id="@+id/adaptiveRunes"
-        layout="@layout/layout_adaptive_runes"
+        layout="@layout/layout_tertiary_runes"
         android:layout_width="180dp"
         android:layout_height="202dp"
         app:layout_constraintBottom_toBottomOf="parent"
