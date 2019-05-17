@@ -9,12 +9,13 @@ import androidx.fragment.app.Fragment;
 
 import pocketspace.metamanager.R;
 
-public class ChildChildFPrimaryAss extends Fragment {
+public class KeystonePrecisionFragment extends Fragment {
 
+    private static final String TAG = "PrecisionFragment";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.precision_primary_runes_layout, container, false);
+        View v = inflater.inflate(pocketspace.metamanager.lol.R.layout.precision_primary_runes_layout, container, false);
         return v;
     }
 

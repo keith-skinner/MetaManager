@@ -7,13 +7,9 @@ import android.os.Bundle;
 
 import pocketspace.metamanager.R;
 import pocketspace.metamanager.data.build.Build;
-import pocketspace.metamanager.data.build.MockBuild;
 import pocketspace.metamanager.tab.TabAdapter;
-import pocketspace.metamanager.tab.TabItemFragment;
-import pocketspace.metamanager.tab.prime_tab.TabPrimeFragment;
-import pocketspace.metamanager.tab.TabSecondaryRuneFragment;
-import pocketspace.metamanager.tab.TabSkillFragment;
-import pocketspace.metamanager.tab.TabSpellFragment;
+import pocketspace.metamanager.tab.prime_tab.PrimaryRuneTabFragment;
+import pocketspace.metamanager.tab.secondary_tab.TabSecondaryRuneFragment;
 
 public class BuildScreen extends AppCompatActivity {
 
@@ -48,8 +44,9 @@ public class BuildScreen extends AppCompatActivity {
         tabLayout = findViewById(R.id.tabLayout);
         adapter = new TabAdapter(getSupportFragmentManager());
 //        adapter.addFragment(TabPrimeRuneFragment.newInstance(MockBuild.makeBuildObject().runes.primary), "PRIME");
-        adapter.addFragment(new TabPrimeFragment(),"PRIME");
+        adapter.addFragment(new PrimaryRuneTabFragment(),"PRIME");
         adapter.addFragment(new TabSecondaryRuneFragment(), "SECOND");
+
 //        adapter.addFragment(new TabSpellFragment(), "SPELL");
 //        adapter.addFragment(new TabItemFragment(), "ITEM");
 //        adapter.addFragment(new TabSkillFragment(), "SKILL");

@@ -1,4 +1,4 @@
-package pocketspace.metamanager.tab;
+package pocketspace.metamanager.tab.secondary_tab;
 
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
@@ -16,6 +16,9 @@ public class TabSecondaryRuneFragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+
+
         return inflater.inflate(R.layout.fragment_secondary_rune, container, false);
     }
 
